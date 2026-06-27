@@ -1,14 +1,176 @@
-# WODie — Developer Guide
+# WODie 🏋️
 
-AI-powered CrossFit programming app. Static PWA hosted on GitHub Pages with zero runtime API calls. This guide is for developers and contributors.
+**AI-Powered CrossFit Programming at Your Fingertips**
 
-**For users:** Visit [wodie.app](https://wodie.app) to use the app.
+Your personal AI coach that delivers science-backed workout programs tailored to your goals. Every session is pre-planned, equipment-optimized, and rooted in sports science research.
+
+## 🚀 Get Started
+
+Visit **[wodie.app](https://wodie.app)** to use WODie now. Install it on your phone like any other app — no subscription required.
 
 ---
 
-## Quick Start
+## What Is WODie?
 
-### 1. Clone and Setup
+WODie is a Progressive Web App (PWA) that gives you:
+
+- **Smart Programs** — Structured 2, 3, or 4-week training plans with progressive loading that gets you stronger safely
+- **Daily WODs** — Rotating pool of workouts across all categories: full-body, upper-body, lower-body, strength, and cardio
+- **Science-Backed** — Every movement, set, and load percentage is grounded in peer-reviewed sports science
+- **Equipment Aware** — Knows what you need before you start; never surprises you mid-workout
+- **Built-in Timer** — Pre-configured for your workout format (AMRAP, EMOM, For Time); runs offline
+- **Zero Cost, Zero Ads** — Completely free. No API calls. No tracking. No server costs.
+
+### Why WODie?
+
+Most fitness apps make real-time API calls, track your data, and require subscriptions. WODie is different:
+
+- ✅ **Works Offline** — All content is generated offline and served as static files
+- ✅ **Lightning Fast** — No server delays; your workout starts instantly
+- ✅ **Always Available** — Hosted on GitHub Pages; scales to unlimited users at zero cost
+- ✅ **Privacy First** — Everything happens in your browser; no data collection
+- ✅ **Transparent** — Open-source; see exactly how your workouts are built
+
+---
+
+## How WODie Works
+
+### For Users
+
+1. **Open the app** on [wodie.app](https://wodie.app) or install it to your home screen
+2. **Choose your mode:**
+   - **Program Mode** — Pick a structured 2/3/4-week program; it guides you day-by-day with progressive loading
+   - **WOD Mode** — Pick a category (or random); get a single workout with built-in timer
+3. **See your workout** — Equipment list, warmup, main work, metcon, cooldown — all planned
+4. **Tap "Start Session"** — Timer runs, clock auto-advances through blocks, beeps at transitions
+5. **Track your session** — App remembers your progress (stored locally on your device)
+
+### For Tech Enthusiasts
+
+WODie uses a unique offline-first architecture:
+
+```
+[AI Generation (Python)]    [Static Hosting]        [Your Browser]
+  ↓ writes JSON             (GitHub Pages)           ↓
+docs/data/programs/         ← served as static files
+docs/data/wods/             ← zero runtime API calls
+                            ← works fully offline
+```
+
+All workout content is pre-generated using Claude AI and curated sports science, then committed as static JSON. Your browser fetches and renders it. No servers, no runtime costs, no tracking.
+
+---
+
+## Features
+
+### Program Mode
+- **Periodized Training** — Progressive 2/3/4-week blocks with built-in deload weeks
+- **Customizable Loads** — Input your 1RMs; the app auto-calculates percentages
+- **Session Tracking** — See which days you've completed; pick up where you left off
+- **Scientific Rationale** — Every program explains the "why" behind movement selection, loading patterns, and recovery
+
+### WOD Mode
+- **5 Categories** — Full-body, Upper, Lower, Strength, Cardio
+- **Random or Filtered** — Pick a workout or get a surprise
+- **Adaptive Timer** — Pre-configured for AMRAP, EMOM, or For Time
+- **Scaling Suggestions** — Every movement includes options for different fitness levels
+
+### Built-in Timer
+- **Auto-Advancing Blocks** — Transitions automatically; beeps alert you
+- **Final 10-Second Alert** — Red screen + rapid beeps to signal the end
+- **Wake Lock** — Screen stays on during active timer (if your device supports it)
+- **Works Offline** — No internet required once the app is loaded
+
+### Dark Mode by Default
+- **Designed for the Gym** — Easy on the eyes under bright fluorescent lighting
+- **Battery Efficient** — Minimizes power drain on your phone
+
+---
+
+## Session Structure
+
+Every full session is exactly 60 minutes, carefully structured:
+
+| Block | Time | What Happens |
+|-------|------|---|
+| Static Warmup | 5 min | Stretching, mobility, joint prep |
+| Active Warmup | 5 min | Movement-specific activation |
+| Strength/Skill | 20–25 min | Main work (barbell, gymnastics, etc.) |
+| Metcon | 10–20 min | High-intensity metabolic conditioning |
+| Cooldown | 5–10 min | Static stretch, foam roll, recovery |
+
+**Skill cycles** (pure gymnastics) are 30 minutes — no metcon.
+
+---
+
+## Science Behind Every Workout
+
+WODie doesn't invent workouts. Every program is built from:
+
+- **Energy Systems Research** — Glassman, Gastin, CrossFit Journal
+- **Strength Science** — Haff, Zatsiorsky, Schoenfeld, NSCA guidelines
+- **Periodization** — Bompa, proven progressive loading models
+- **Gymnastics Methodology** — Sommer, CrossFit Gymnastics Course
+- **Recovery Science** — Kreher, Behm, evidence-based rest protocols
+
+Your workouts cite sources. Tap the "Why?" button to read the research.
+
+---
+
+## Install as an App
+
+### iPhone / iPad
+1. Open Safari and go to [wodie.app](https://wodie.app)
+2. Tap the Share button
+3. Tap "Add to Home Screen"
+4. Tap "Add"
+
+### Android
+1. Open Chrome and go to [wodie.app](https://wodie.app)
+2. Tap the menu (⋮)
+3. Tap "Install app"
+4. Tap "Install"
+
+Now WODie lives on your home screen like a native app.
+
+---
+
+## FAQ
+
+**Can I use it without WiFi?**
+Yes! Once loaded, WODie works completely offline. Your workouts are pre-generated and stored locally.
+
+**Will my data be sold?**
+No. WODie runs entirely in your browser. No data leaves your device. No trackers, no servers, no accounts.
+
+**How often is content updated?**
+WODie regenerates new programs and WODs weekly. Updates are rolled out automatically; nothing to do on your end.
+
+**Can I sync across devices?**
+Not yet. Your progress is stored locally on each device. We're exploring optional cross-device sync.
+
+**What if I don't have a barbell?**
+Every movement includes scaling options. The app shows alternatives like dumbbells, kettlebells, or bodyweight.
+
+**Is there a cost?**
+No. WODie is free and always will be.
+
+---
+
+## Contributing
+
+WODie is open-source. Developers can contribute to:
+- **Frontend improvements** — UI/UX, timer logic, offline sync
+- **Knowledge base** — Sports science, movement libraries, periodization models
+- **Automation** — GitHub Actions workflows, content generation
+
+See [CLAUDE.md](./CLAUDE.md) for developer setup and architecture details.
+
+---
+
+## Quick Start for Developers
+
+### 1. Clone & Install
 
 ```bash
 git clone https://github.com/yourusername/wodie.git
@@ -19,526 +181,24 @@ export ANTHROPIC_API_KEY=sk-ant-...
 
 ### 2. Run the Generator
 
-Generate a 3-week program:
-
 ```bash
 cd scripts
 python generate.py --type program --name back-in-shape --weeks 3
-```
-
-Output appears in `output/` directory as JSON + markdown preview.
-
-Generate a set of WODs:
-
-```bash
-python generate.py --type wod --count 7 --category full-body
 ```
 
 ### 3. Validate Output
 
-The generator validates all output against the schema. On success:
-
-```
-✓ Program generated: output/back-in-shape-3w.json
-✓ Validated 15 sessions
-✓ All rationales cited
-```
+Check `output/` for generated JSON and markdown preview.
 
 ---
-
-## Project Architecture
-
-### Knowledge Pyramid
-
-The app builds workouts from a strict hierarchy—nothing is invented:
-
-```
-┌─────────────────────────────┐
-│     AI GENERATION           │  assembles only
-│   (Claude API via Python)   │
-└──────────────┬──────────────┘
-               ↑ constrained by
-┌──────────────▼──────────────┐
-│   HARD RULES (JSON)         │  time caps, % tables,
-│   ├── time_caps             │  recovery constraints,
-│   ├── loading_percentages   │  weekly limits
-│   ├── weekly_constraints    │
-│   └── allowed_sources       │
-└──────────────┬──────────────┘
-               ↑ derived from
-┌──────────────▼──────────────┐
-│  KNOWLEDGE BASE (Markdown)  │  curated sports science
-│  ├── 01-energy-systems      │  real books, real papers
-│  ├── 02-crossfit-methodol   │
-│  ├── 03-periodization       │
-│  ├── 04-recovery            │
-│  └── 05-gymnastics          │
-└──────────────┬──────────────┘
-               ↑ validated by
-┌──────────────▼──────────────┐
-│   PRIMARY SCIENCE           │  energy systems,
-│  (unchanging foundations)   │  motor learning,
-└─────────────────────────────┘  biomechanics
-```
-
-### Offline-First Architecture
-
-```
-┌──────────────────────────────────────────────┐
-│  GitHub Actions (Scheduled or Manual)        │
-│  └─ runs generate.py locally                 │
-│     ├─ reads knowledge-base/ documents       │
-│     ├─ reads data/movement-library.json      │
-│     ├─ reads data/hard-rules.json            │
-│     ├─ calls Claude API                      │
-│     └─ writes to docs/data/*.json            │
-│                                              │
-│  outputs: programs/, wods/ JSON files        │
-│  commits to main, pushes to GitHub           │
-└──────────────────────────────────────────────┘
-                      ↓
-┌──────────────────────────────────────────────┐
-│  GitHub Pages (Static Hosting)               │
-│  └─ serves docs/ folder as website           │
-│     ├─ index.html (app shell)                │
-│     ├─ manifest.json (PWA config)            │
-│     ├─ sw.js (service worker)                │
-│     └─ data/ (generated JSON)                │
-└──────────────────────────────────────────────┘
-                      ↓
-┌──────────────────────────────────────────────┐
-│  User's Browser                              │
-│  └─ fetches static JSON                      │
-│  └─ renders workout                          │
-│  └─ runs timer                               │
-│  └─ stores progress in localStorage          │
-│     (NO API calls, fully offline capable)    │
-└──────────────────────────────────────────────┘
-```
-
-**Why this approach?**
-- Scales to unlimited users at zero cost
-- Works fully offline
-- No server maintenance
-- No backend vulnerabilities
-- Fast load times (static files + local storage)
-
----
-
-## Running the Generator
-
-### Basic Syntax
-
-```bash
-python generate.py --type <type> [options]
-```
-
-### Options
-
-#### Program Generation
-
-```bash
-python generate.py --type program \
-  --name back-in-shape \
-  --weeks 3
-```
-
-**Arguments:**
-- `--name`: Program identifier (lowercase, hyphens OK, maps to `data/programs.json` entry)
-- `--weeks`: Duration in weeks (2, 3, or 4)
-- `--output-dir`: Where to write output (default: `../output/`)
-
-**Output:**
-- `output/<name>-<weeks>w.json` — program data
-- `output/<name>-<weeks>w.md` — human-readable preview
-
----
-
-#### WOD Generation
-
-```bash
-python generate.py --type wod \
-  --count 7 \
-  --category full-body
-```
-
-**Arguments:**
-- `--count`: Number of WODs to generate
-- `--category`: One of: `full-body`, `upper-body`, `lower-body`, `cardio`, `strength`
-- `--output-dir`: Where to write output (default: `../output/`)
-
-**Output:**
-- `output/wods-<category>.json` — WOD pool
-- `output/wods-<category>.md` — preview
-
----
-
-### Full Example Workflow
-
-```bash
-cd scripts
-
-# Generate a complete program suite
-python generate.py --type program --name back-in-shape --weeks 2
-python generate.py --type program --name back-in-shape --weeks 3
-python generate.py --type program --name back-in-shape --weeks 4
-
-# Generate WOD pools (4 weeks of content each)
-python generate.py --type wod --count 28 --category full-body
-python generate.py --type wod --count 28 --category upper-body
-python generate.py --type wod --count 28 --category lower-body
-python generate.py --type wod --count 28 --category strength
-python generate.py --type wod --count 28 --category cardio
-
-# Output is ready in ../output/ for review or deployment
-```
-
----
-
-## Adding New Programs
-
-### 1. Define the Program
-
-Edit `data/programs.json` (create if it doesn't exist):
-
-```json
-{
-  "programs": [
-    {
-      "id": "back-in-shape",
-      "name": "Back in Shape",
-      "description": "Progressive return to training for general fitness",
-      "focus": "general",
-      "supported_durations": [2, 3, 4]
-    },
-    {
-      "id": "gymnastics-base",
-      "name": "Gymnastics Base",
-      "description": "30-minute skill cycle focused on body control",
-      "focus": "gymnastics",
-      "supported_durations": [4]
-    }
-  ]
-}
-```
-
-### 2. Update Knowledge Base if Needed
-
-If your program requires new concepts, add them to `knowledge-base/`:
-- `knowledge-base/*.md` files are the source of truth
-- Citation sources must be in `data/hard-rules.json → allowed_sources`
-- The generator cannot use concepts not in the knowledge base
-
-### 3. Generate
-
-```bash
-python generate.py --type program --name gymnastics-base --weeks 4
-```
-
-### 4. Validate
-
-Check `output/` for JSON and markdown preview. Verify:
-- All sessions are ≤60 min (or ≤30 for skill cycles)
-- All rationales cite real sources
-- All loading percentages respect hard rules
-- No Olympic lifting on consecutive days
-
----
-
-## Editing Hard Rules
-
-Hard rules enforce constraints that the generator must respect. They live in `data/hard-rules.json`:
-
-```json
-{
-  "time_caps": {
-    "full_session_minutes": 60,
-    "skill_session_minutes": 30,
-    "metcon_max_minutes": 20,
-    "warmup_static_minutes": 5,
-    "warmup_active_minutes": 5
-  },
-  "loading_percentages": {
-    "week_1": {"min": 70, "max": 75},
-    "week_2": {"min": 75, "max": 80},
-    "week_3": {"min": 80, "max": 85},
-    "week_4_deload": {"min": 60, "max": 65}
-  },
-  "weekly_constraints": {
-    "max_consecutive_olympic_days": 1,
-    "max_heavy_lower_days_per_week": 2,
-    "min_aerobic_sessions_per_week": 1,
-    "max_consecutive_high_cns_sessions": 1,
-    "min_push_pull_ratio": 1.0
-  },
-  "allowed_sources": [
-    "Glassman 2002 - CrossFit Journal",
-    "Haff & Triplett - NSCA Essentials 4th ed",
-    "... more sources"
-  ]
-}
-```
-
-**After editing:**
-
-1. Re-run the generator to validate changes
-2. If validation fails, you've violated a hard rule—fix the JSON
-3. Common mistakes:
-   - Loading % ranges that overlap or leave gaps
-   - Time caps that are too tight
-   - Missing source citations in `allowed_sources`
-
----
-
-## GitHub Actions Pipeline
-
-The workflow automatically regenerates content on a schedule and pushes to `docs/data/`.
-
-### Setup
-
-1. **Create workflow file:** `.github/workflows/generate.yml`
-
-```yaml
-name: Generate WODie Content
-
-on:
-  schedule:
-    # Run every Sunday at midnight UTC
-    - cron: '0 0 * * 0'
-  workflow_dispatch:  # Allow manual trigger
-
-jobs:
-  generate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: pip install anthropic
-
-      - name: Generate content
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          cd scripts
-          python generate.py --type program --name back-in-shape --weeks 2
-          python generate.py --type program --name back-in-shape --weeks 3
-          python generate.py --type program --name back-in-shape --weeks 4
-          python generate.py --type wod --count 28 --category full-body
-          python generate.py --type wod --count 28 --category upper-body
-          python generate.py --type wod --count 28 --category lower-body
-          python generate.py --type wod --count 28 --category strength
-          python generate.py --type wod --count 28 --category cardio
-
-          # Copy outputs to docs/data/
-          mkdir -p ../docs/data/programs
-          mkdir -p ../docs/data/wods
-          cp ../output/back-in-shape-*.json ../docs/data/programs/
-          cp ../output/wods-*.json ../docs/data/wods/
-
-      - name: Commit and push
-        run: |
-          git config user.name "WODie Bot"
-          git config user.email "bot@wodie.app"
-          git add docs/data/
-          git commit -m "chore: regenerate WOD and program content" || true
-          git push
-```
-
-2. **Set the API key secret:**
-   - Go to Settings → Secrets and variables → Actions
-   - Create `ANTHROPIC_API_KEY` secret
-   - Paste your Claude API key
-
-3. **Configure the schedule:**
-   - Edit the `cron` expression in the workflow file
-   - `0 0 * * 0` = every Sunday at midnight UTC
-   - Use [crontab.guru](https://crontab.guru) to experiment
-
----
-
-## Data Schema Reference
-
-### Program
-
-```json
-{
-  "id": "back-in-shape-3w",
-  "name": "Back in Shape",
-  "weeks": 3,
-  "focus": "general",
-  "description": "...",
-  "sessions": [
-    { "week": 1, "day": 1, "..." }
-  ]
-}
-```
-
-### Session
-
-```json
-{
-  "id": "day-1",
-  "week": 1,
-  "day": 1,
-  "title": "Squat + Short Metcon",
-  "durationMinutes": 60,
-  "equipment": ["barbell", "plates", "pull-up bar"],
-  "blocks": {
-    "staticWarmup": { "durationMinutes": 5, "content": [] },
-    "activeWarmup": { "durationMinutes": 5, "content": [] },
-    "strength": { "durationMinutes": 22, "content": [] },
-    "metcon": { "durationMinutes": 15, "format": "AMRAP", "timeCap": 12, "content": [] },
-    "cooldown": { "durationMinutes": 8, "content": [] }
-  },
-  "rationale": {
-    "session": { "text": "...", "source": "...", "url": "..." },
-    "movement": { "text": "...", "source": "...", "url": "..." },
-    "loading": { "text": "...", "source": "...", "url": "..." }
-  }
-}
-```
-
-### Movement (within a block)
-
-```json
-{
-  "name": "Back Squat",
-  "sets": 4,
-  "reps": 5,
-  "load": "75% 1RM",
-  "restSeconds": 180,
-  "notes": "Pause 2 seconds in the hole",
-  "scaling": "Goblet squat with KB if barbell unavailable"
-}
-```
-
-### WOD
-
-```json
-{
-  "id": "wod-14",
-  "title": "Grace-style",
-  "category": ["full-body", "strength"],
-  "equipment": ["barbell", "plates"],
-  "durationMinutes": 60,
-  "blocks": { },
-  "rationale": { }
-}
-```
-
----
-
-## Contributing
-
-### Code Style
-
-**Python:**
-- Follow PEP 8
-- Use type hints where practical
-- Test locally before committing
-
-**JavaScript:**
-- Use const/let, not var
-- Template literals for strings
-- Arrow functions preferred
-
-### Before Committing
-
-1. **Test the generator:**
-   ```bash
-   python generate.py --type program --name back-in-shape --weeks 2
-   ```
-
-2. **Verify output:**
-   ```bash
-   # Check that output/back-in-shape-2w.json is valid
-   # Read output/back-in-shape-2w.md for sanity
-   ```
-
-3. **Update docs if you change schemas:**
-   - Modify `README.md` Data Schema Reference section
-   - Update any examples that are now outdated
-
-4. **Commit message:**
-   ```
-   feat: add new program definition
-
-   - Added "Advanced Lifting" program to data/programs.json
-   - Updated knowledge base with Olympic lifting methodology
-   - Generator tested with 4-week variant
-   ```
-
----
-
-## Troubleshooting
-
-### "API key not recognized"
-
-```bash
-# Make sure the key is exported correctly
-export ANTHROPIC_API_KEY=sk-ant-...
-
-# Verify it's set
-echo $ANTHROPIC_API_KEY
-```
-
-### "Generator fails with validation error"
-
-Output will show which session failed. Common issues:
-
-1. **Session > 60 minutes:**
-   ```
-   ✗ Day 3: Session is 65 minutes, max is 60
-   ```
-   Solution: Reduce block durations in the prompt or hard rules.
-
-2. **Missing source citation:**
-   ```
-   ✗ Day 1: "Rationale" cites unknown source "Smith 2020"
-   ```
-   Solution: Add the source to `data/hard-rules.json → allowed_sources`.
-
-3. **Loading percentage out of range:**
-   ```
-   ✗ Day 2: Loading 90% exceeds week 1 max (75%)
-   ```
-   Solution: Adjust `hard-rules.json → loading_percentages`.
-
-### "Knowledge base concept not in output"
-
-The generator has strict rules:
-- Only uses concepts from `knowledge-base/` documents
-- Only cites sources from `data/hard-rules.json`
-- Cannot invent or generalize
-
-**Solution:** If a concept is missing, add it to the appropriate knowledge base file with citations, then re-run.
-
-### "Hard rules constraint violated"
-
-Example error:
-```
-✗ Week 1: Olympic lifting on days 1 and 2 (consecutive days)
-```
-
-Solution: Check `data/hard-rules.json` and the generator prompt for conflicting rules. The generator is correctly enforcing the constraint—adjust your program design.
-
----
-
-## Repository Structure
 
 ```
 wodie/
-├── CLAUDE.md                    ← project context for Claude Code
-├── DESIGN.md                    ← full product design document
-├── README.md                    ← this file (developer guide)
+├── README.md                    ← you are here
+├── CLAUDE.md                    ← project context for developers
+├── DESIGN.md                    ← full product design
 │
-├── knowledge-base/              ← source of truth (curated sports science)
+├── knowledge-base/              ← curated sports science
 │   ├── 01-energy-systems.md
 │   ├── 02-crossfit-methodology.md
 │   ├── 03-periodization.md
@@ -546,44 +206,37 @@ wodie/
 │   └── 05-gymnastics.md
 │
 ├── data/                        ← constraints and movement library
-│   ├── movement-library.json    ← 68 movements across 6 categories
-│   ├── programs.json            ← program definitions
-│   └── hard-rules.json          ← time caps, % tables, weekly limits
+│   ├── movement-library.json
+│   ├── programs.json
+│   └── hard-rules.json
 │
-├── scripts/                     ← generation code (not deployed)
-│   ├── generate.py              ← main CLI script
-│   └── render_md.py             ← markdown renderer for previews
+├── scripts/                     ← generation code
+│   ├── generate.py
+│   └── render_md.py
 │
-├── output/                      ← generated content (git-ignored during dev)
-│   ├── *.json                   ← program and WOD data
-│   └── *.md                     ← human-readable previews
+├── output/                      ← generated content (local)
+│   ├── *.json
+│   └── *.md
 │
-├── docs/                        ← GitHub Pages root (the app)
-│   ├── index.html               ← app shell
-│   ├── manifest.json            ← PWA config
-│   ├── sw.js                    ← service worker
+├── docs/                        ← GitHub Pages (the live app)
+│   ├── index.html
+│   ├── manifest.json
+│   ├── sw.js
 │   ├── assets/
-│   │   ├── css/app.css          ← sport-technical styling
-│   │   ├── js/app.js            ← frontend app logic
-│   │   └── icons/               ← PWA icons (iOS + Android)
-│   └── data/                    ← committed generated content
-│       ├── programs/            ← program JSON files
-│       └── wods/                ← WOD JSON files
+│   └── data/
 │
 └── .github/workflows/
-    └── generate.yml             ← GitHub Actions regeneration workflow
+    └── generate.yml
 ```
 
 ---
 
-## Further Reading
+## License
 
-- **[DESIGN.md](./DESIGN.md)** — full product design with UI/UX details
-- **[CLAUDE.md](./CLAUDE.md)** — project context and constraints
-- **[Anthropic API Docs](https://docs.anthropic.com)** — Claude API reference
+MIT
 
 ---
 
-**Last updated:** June 2026
-**Maintainer:** WODie Project
-**License:** MIT
+**Questions?** [Open an issue](https://github.com/yourusername/wodie/issues) or check out [CLAUDE.md](./CLAUDE.md) for developer documentation.
+
+Built with ❤️ using Claude AI and sports science.
