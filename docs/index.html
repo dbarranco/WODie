@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+  <!-- PWA Meta Tags -->
+  <meta name="description" content="Science-backed CrossFit programs with built-in timer">
+  <meta name="theme-color" content="#1a1a1a">
+
+  <!-- iOS PWA Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="WODie">
+  <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/icons/icon-192.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/app.css">
+
+  <!-- 8-segment display font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <title>WODie</title>
+</head>
+<body>
+  <div id="app">
+    <!-- Loading State -->
+    <div id="loading" class="loading">
+      <div class="loading-spinner"></div>
+      <p>Loading WODie...</p>
+    </div>
+
+    <!-- Main App Container (hidden until loaded) -->
+    <div id="main-container" class="hidden">
+
+      <!-- Onboarding Screen -->
+      <section id="view-onboarding" class="view active">
+        <div class="onboarding">
+          <h1>WODie</h1>
+          <p>Science-backed CrossFit programming</p>
+
+          <div class="onboarding-options">
+            <button id="btn-start-program" class="option-card">
+              <h3>Start Program</h3>
+              <p>Structured 2-4 week training cycle with progressive loading</p>
+            </button>
+
+            <button id="btn-random-wod-start" class="option-card">
+              <h3>Daily WOD</h3>
+              <p>Drop-in workout, no commitment</p>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Header -->
+      <header id="app-header" class="app-header hidden">
+        <div class="header-content">
+          <button id="btn-back" class="btn-back hidden">← Back</button>
+          <h1>WODie</h1>
+        </div>
+      </header>
+
+      <!-- Program Selection View -->
+      <section id="view-programs" class="view hidden">
+        <div class="programs-container">
+          <h2>Choose a Program</h2>
+          <div class="programs-list" id="programs-list">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Training List View -->
+      <section id="view-trainings" class="view hidden">
+        <div class="trainings-header">
+          <button id="btn-back-to-programs" class="btn-nav">← Back</button>
+          <h2 id="program-title">Program</h2>
+          <div class="progress-info">
+            <span id="trainings-completed">0/0 trainings</span>
+          </div>
+        </div>
+        <div class="trainings-list" id="trainings-list">
+          <!-- Populated by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Program Details View (existing training view) -->
+      <section id="view-program" class="view hidden">
+        <!-- Program Progress -->
+        <div class="program-progress">
+          <button id="btn-back-to-trainings" class="btn-nav">← Back</button>
+          <h2 id="program-name">Training</h2>
+          <div class="progress-info">
+            <span id="session-meta" class="session-meta">Training</span>
+          </div>
+        </div>
+        <div class="session-card">
+          <div class="session-header">
+            <h2 id="session-title">Today's Workout</h2>
+            <span id="session-details" class="session-meta">Training Details</span>
+          </div>
+
+          <!-- Equipment List -->
+          <div id="equipment-section" class="equipment-section collapsed">
+            <button class="section-toggle" data-target="equipment-list">
+              <span>Equipment Needed</span>
+              <span class="toggle-icon">▼</span>
+            </button>
+            <ul id="equipment-list" class="equipment-list hidden">
+              <li>Barbell</li>
+              <li>Plates</li>
+              <li>Pull-up bar</li>
+            </ul>
+          </div>
+
+          <!-- Workout Blocks -->
+          <div id="workout-blocks" class="workout-blocks">
+            <!-- Blocks will be populated by JavaScript -->
+            <div class="block-placeholder">
+              <p>Select a program or WOD to get started</p>
+            </div>
+          </div>
+
+          <!-- Rationale (Collapsed by default) -->
+          <div id="rationale-section" class="rationale-section collapsed">
+            <button class="section-toggle" data-target="rationale-content">
+              <span>🔬 Why This Session?</span>
+              <span class="toggle-icon">▼</span>
+            </button>
+            <div id="rationale-content" class="rationale-content hidden">
+              <!-- Populated by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Start Button -->
+          <div class="session-actions">
+            <button id="btn-start-session" class="btn-primary btn-large">
+              Start Session
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- WOD Mode View -->
+      <section id="view-wod" class="view hidden">
+        <div class="wod-controls">
+          <button id="btn-random-wod" class="btn-secondary">🎲 Random WOD</button>
+          <div class="wod-filters">
+            <button class="filter-btn" data-category="full-body">Full Body</button>
+            <button class="filter-btn" data-category="upper-body">Upper</button>
+            <button class="filter-btn" data-category="lower-body">Lower</button>
+            <button class="filter-btn" data-category="cardio">Cardio</button>
+            <button class="filter-btn" data-category="strength">Strength</button>
+          </div>
+        </div>
+        <div id="wod-display" class="session-card">
+          <p class="empty-state">Click "Random WOD" or select a category</p>
+        </div>
+      </section>
+
+      <!-- Timer Overlay (appears during active session) -->
+      <div id="timer-overlay" class="timer-overlay hidden">
+        <div class="timer-container">
+          <!-- Block Header -->
+          <div class="timer-header">
+            <h3 id="timer-block-name">Active Warmup</h3>
+            <span id="timer-round-info">Round 3/8</span>
+          </div>
+
+          <!-- Main Clock -->
+          <div id="timer-clock" class="timer-clock">
+            <span id="timer-display">00:00</span>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="timer-progress-container">
+            <div id="timer-progress-bar" class="timer-progress-bar"></div>
+          </div>
+
+          <!-- Block Content -->
+          <div id="timer-movements" class="timer-movements">
+            <p>Inchworm × 5</p>
+            <p>Hip circles × 10 each</p>
+            <p>Banded pull-apart × 15</p>
+          </div>
+
+          <!-- Next Block Preview -->
+          <div id="timer-next" class="timer-next">
+            <span>Next: Strength block</span>
+          </div>
+
+          <!-- Timer Controls -->
+          <div class="timer-controls">
+            <button id="btn-play" class="btn-timer">PLAY</button>
+            <button id="btn-pause" class="btn-timer">PAUSE</button>
+            <button id="btn-reset" class="btn-timer">RESET</button>
+          </div>
+
+          <!-- Stop Session Button -->
+          <div class="timer-actions">
+            <button id="btn-stop" class="btn-secondary">STOP SESSION</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./assets/js/app.js" type="module"></script>
+</body>
+</html>

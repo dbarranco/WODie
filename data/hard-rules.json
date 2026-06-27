@@ -1,0 +1,192 @@
+{
+  "version": "1.0",
+  "description": "Hard constraints enforced at generation time. The AI must not violate any of these rules. These are derived from sports science principles documented in the knowledge base.",
+
+  "session": {
+    "full_session_max_minutes": 60,
+    "skill_session_max_minutes": 30,
+    "blocks": {
+      "static_warmup_minutes": 5,
+      "active_warmup_minutes": 5,
+      "strength_block_minutes": { "min": 20, "max": 25 },
+      "metcon_minutes": { "min": 10, "max": 20 },
+      "cooldown_minutes": { "min": 5, "max": 10 }
+    },
+    "metcon": {
+      "max_time_cap_minutes": 20,
+      "allowed_formats": ["AMRAP", "EMOM", "For Time", "RFT"],
+      "forbidden_formats": ["Chipper", "Hero WOD"],
+      "time_domains": {
+        "short": { "max_minutes": 7, "primary_system": "phosphocreatine/glycolytic" },
+        "medium": { "max_minutes": 15, "primary_system": "glycolytic/mixed" }
+      }
+    }
+  },
+
+  "loading": {
+    "when_1rm_known": {
+      "week_1": { "intensity_pct": [70, 75], "rep_schemes": ["5x5", "4x5", "5x3"] },
+      "week_2": { "intensity_pct": [75, 80], "rep_schemes": ["4x4", "4x3", "5x3"] },
+      "week_3": { "intensity_pct": [80, 85], "rep_schemes": ["4x3", "5x2", "6x2"] },
+      "week_4_deload": { "intensity_pct": [60, 65], "rep_schemes": ["3x5", "3x3"] }
+    },
+    "when_1rm_unknown": {
+      "week_1": { "rpe": [7, 8], "rep_schemes": ["5x5", "4x5"] },
+      "week_2": { "rpe": [7, 8], "rep_schemes": ["4x4", "4x3"] },
+      "week_3": { "rpe": [8, 9], "rep_schemes": ["4x3", "5x2"] },
+      "week_4_deload": { "rpe": [6, 7], "rep_schemes": ["3x5", "3x3"] }
+    },
+    "rest_by_goal": {
+      "maximal_strength": { "rest_seconds": [180, 300] },
+      "hypertrophy": { "rest_seconds": [60, 90] },
+      "power": { "rest_seconds": [120, 180] },
+      "strength_endurance": { "rest_seconds": [30, 60] }
+    },
+    "strength_formats": {
+      "traditional": {
+        "description": "Traditional sets with timed rest",
+        "format": "Sets x Reps with rest period",
+        "use_case": "Peak intensity weeks, maximal loads, psychological readiness variation"
+      },
+      "emom": {
+        "description": "Every Minute/2 Minutes/3 Minutes On the Minute",
+        "allowed_intervals": ["E1MOM", "E2MOM", "E3MOM"],
+        "guidelines": {
+          "E1MOM": { "intensity_pct": [60, 70], "reps_per_round": [1, 3], "rounds": [10, 12] },
+          "E2MOM": { "intensity_pct": [70, 85], "reps_per_round": [2, 5], "rounds": [6, 10] },
+          "E3MOM": { "intensity_pct": [85, 90], "reps_per_round": [1, 3], "rounds": [5, 8] }
+        },
+        "rule": "Mix EMOM and traditional formats. Use EMOM for 30-50% of strength sessions.",
+        "rest_adequacy": "Interval must allow phosphocreatine recovery. Heavy loads (>80% 1RM) require minimum E2MOM. Maximal loads (>90% 1RM) require E3MOM."
+      }
+    },
+    "progression_schemes": {
+      "description": "Intra-session loading progression patterns. Must be justified in loading_why rationale.",
+      "schemes": {
+        "straight_sets": {
+          "description": "Same weight and reps across all sets",
+          "example": "5×5 @ 75% 1RM",
+          "best_for": "Hypertrophy, baseline strength, simple movements, novice athletes",
+          "when_to_use": "Week 1-2 baseline phases, moderate intensity work",
+          "justification_required": "Explain why constant load is appropriate for this session's goal"
+        },
+        "ramp_buildup": {
+          "description": "Progressively increase load across sets while decreasing reps",
+          "example": "5@65%, 4@72%, 3@78%, 2@83%",
+          "best_for": "Neural preparation, technique development, complex movements",
+          "when_to_use": "Week 1 of programs, Olympic lifting sessions, athletes returning from layoff",
+          "justification_required": "Explain why progressive neural preparation is needed (e.g., movement complexity, Week 1 technique focus)",
+          "reference": "Zatsiorsky & Kraemer - Science and Practice of Strength Training"
+        },
+        "wave_loading": {
+          "description": "Oscillate between heavier and lighter loads",
+          "example": "3@75%, 3@80%, 3@85%, 3@75%, 3@82%, 3@87%",
+          "best_for": "Strength emphasis, PAP exploitation, experienced athletes",
+          "when_to_use": "Week 2-3 of programs, heavy compound lifts",
+          "justification_required": "Explain why PAP exploitation is appropriate (e.g., Week 2-3 intensity phase, neural adaptation emphasis)",
+          "reference": "Robbins 2005 - Post-Activation Potentiation",
+          "note": "Intermediate+ athletes only"
+        },
+        "top_set_backoff": {
+          "description": "One heavy top set followed by lighter volume sets",
+          "example": "1×2@87%, 4×5@70%",
+          "best_for": "Time efficiency, peak intensity + volume, concurrent training",
+          "when_to_use": "Week 3 peak intensity, intermediate athletes, limited time sessions",
+          "justification_required": "Explain why combining peak intensity and volume work is appropriate (e.g., Week 3 intensity peak, concurrent training efficiency)",
+          "reference": "Bompa & Haff - Periodization 5th ed",
+          "note": "Intermediate+ athletes only"
+        }
+      },
+      "rules": {
+        "variety_required": "Do not use the same progression scheme for all strength sessions in a program",
+        "match_to_context": "Scheme must match training week, movement complexity, and athlete level",
+        "justification_mandatory": "Every strength block must explain in loading_why rationale WHY this specific progression scheme was chosen",
+        "week_guidelines": {
+          "week_1": "Prefer straight sets or ramp/buildup for baseline establishment",
+          "week_2": "Mix schemes - introduce wave loading for strength emphasis sessions",
+          "week_3": "Use top set + backoff for peak intensity sessions, wave loading for compounds",
+          "week_4_deload": "Straight sets only at reduced intensity"
+        }
+      }
+    }
+  },
+
+  "weekly": {
+    "frequency_limits": {
+      "olympic_lifting_sessions_max": 3,
+      "olympic_lifting_consecutive_days": false,
+      "heavy_lower_body_sessions_max": 2,
+      "heavy_upper_body_sessions_max": 2,
+      "high_intensity_metcon_sessions_max": 4,
+      "aerobic_sessions_min": 1
+    },
+    "sequencing_forbidden": [
+      "heavy posterior chain after heavy squat",
+      "olympic lifting after heavy lower body",
+      "two For Time metcons on consecutive days",
+      "two high-CNS sessions back to back"
+    ],
+    "movement_balance": {
+      "push_pull_ratio_min": 1.0,
+      "squat_pattern_required": true,
+      "hinge_pattern_required": true,
+      "monostructural_required": true,
+      "horizontal_push_pull_required": true,
+      "vertical_push_pull_required": true
+    },
+    "volume_per_pattern": {
+      "squat": { "sets_min": 6, "sets_max": 16 },
+      "hinge": { "sets_min": 4, "sets_max": 12 },
+      "push_horizontal": { "sets_min": 4, "sets_max": 12 },
+      "push_vertical": { "sets_min": 4, "sets_max": 10 },
+      "pull_horizontal": { "sets_min": 4, "sets_max": 12 },
+      "pull_vertical": { "sets_min": 4, "sets_max": 12 },
+      "olympic": { "sets_min": 4, "sets_max": 10 }
+    }
+  },
+
+  "programs": {
+    "durations_weeks": [2, 3, 4],
+    "deload_required_weeks": [4],
+    "sessions_per_week": 5,
+    "rest_days_per_week": 2
+  },
+
+  "rationale": {
+    "required_fields": ["session_why", "movement_why", "loading_why"],
+    "citation_required": true,
+    "allowed_sources": [
+      "Glassman 2002 - CrossFit Journal",
+      "Haff & Triplett - NSCA Essentials 4th ed",
+      "Bompa & Haff - Periodization 5th ed",
+      "Zatsiorsky & Kraemer - Science and Practice of Strength Training",
+      "Schoenfeld - Science and Development of Muscle Hypertrophy",
+      "Wilson et al 2012 - Concurrent Training Meta-Analysis",
+      "Robbins 2005 - Post-Activation Potentiation",
+      "Sommer - Building the Gymnastic Body",
+      "CrossFit Level 2 Training Guide",
+      "CrossFit Gymnastics Specialty Course",
+      "Gastin 2001 - Energy System Interaction",
+      "Behm et al 2016 - Acute Effects of Muscle Stretching",
+      "Kreher & Schwartz 2012 - Overtraining Syndrome"
+    ],
+    "fabrication_forbidden": true
+  },
+
+  "safety": {
+    "ghd_situp_note": "Introduce GHD sit-ups gradually — causes severe DOMS in untrained athletes. Cap at 10 reps in first exposure.",
+    "olympic_technique_note": "Olympic lifting prescriptions must include a technique note. Load must not exceed what allows technically sound execution.",
+    "kipping_prerequisite": "Do not prescribe kipping pull-ups without noting strict pull-up prerequisite (3+ strict reps minimum)."
+  },
+
+  "equipment_restrictions": {
+    "forbidden_equipment": ["PVC pipe", "PVC"],
+    "note": "PVC pipes are not commonly available. Use 'empty barbell' or 'broomstick' for mobility work instead."
+  },
+
+  "movement_descriptions": {
+    "required": true,
+    "rule": "Every movement must have clear, concise notes explaining what it is if the name is not self-evident. Use the 'notes' field to add brief descriptions (e.g., 'Hip opener stretch', 'Shoulder mobility drill')."
+  }
+}
+

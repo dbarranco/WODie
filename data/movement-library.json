@@ -1,0 +1,110 @@
+{
+  "version": "1.0",
+  "categories": {
+    "olympic": {
+      "label": "Olympic Lifting",
+      "cns_demand": "high",
+      "movements": [
+        { "id": "power-clean", "name": "Power Clean", "equipment": ["barbell", "plates"], "pattern": "hinge+pull", "load": "percentage", "scaling": "hang power clean, dumbbell power clean" },
+        { "id": "hang-power-clean", "name": "Hang Power Clean", "equipment": ["barbell", "plates"], "pattern": "hinge+pull", "load": "percentage", "scaling": "dumbbell hang clean, kettlebell swing" },
+        { "id": "clean", "name": "Clean (full squat)", "equipment": ["barbell", "plates"], "pattern": "hinge+pull+squat", "load": "percentage", "scaling": "power clean" },
+        { "id": "clean-and-jerk", "name": "Clean and Jerk", "equipment": ["barbell", "plates"], "pattern": "hinge+pull+squat+press", "load": "percentage", "scaling": "power clean + push press" },
+        { "id": "power-snatch", "name": "Power Snatch", "equipment": ["barbell", "plates"], "pattern": "hinge+pull", "load": "percentage", "scaling": "hang power snatch, dumbbell snatch" },
+        { "id": "hang-power-snatch", "name": "Hang Power Snatch", "equipment": ["barbell", "plates"], "pattern": "hinge+pull", "load": "percentage", "scaling": "dumbbell snatch" },
+        { "id": "snatch", "name": "Snatch (full squat)", "equipment": ["barbell", "plates"], "pattern": "hinge+pull+squat", "load": "percentage", "scaling": "power snatch" },
+        { "id": "push-jerk", "name": "Push Jerk", "equipment": ["barbell", "plates"], "pattern": "press", "load": "percentage", "scaling": "push press" },
+        { "id": "split-jerk", "name": "Split Jerk", "equipment": ["barbell", "plates"], "pattern": "press", "load": "percentage", "scaling": "push jerk, push press" },
+        { "id": "clean-pull", "name": "Clean Pull", "equipment": ["barbell", "plates"], "pattern": "hinge+pull", "load": "percentage", "scaling": "Romanian deadlift" }
+      ]
+    },
+    "powerlifts": {
+      "label": "Powerlifts and Strength",
+      "cns_demand": "high",
+      "movements": [
+        { "id": "back-squat", "name": "Back Squat", "equipment": ["barbell", "plates", "rack"], "pattern": "squat", "load": "percentage", "scaling": "goblet squat, dumbbell squat" },
+        { "id": "front-squat", "name": "Front Squat", "equipment": ["barbell", "plates", "rack"], "pattern": "squat", "load": "percentage", "scaling": "goblet squat, dumbbell front squat" },
+        { "id": "overhead-squat", "name": "Overhead Squat", "equipment": ["barbell", "plates"], "pattern": "squat", "load": "percentage", "scaling": "dumbbell overhead squat, PVC pipe OHS" },
+        { "id": "deadlift", "name": "Deadlift", "equipment": ["barbell", "plates"], "pattern": "hinge", "load": "percentage", "scaling": "trap bar deadlift, dumbbell deadlift, kettlebell deadlift" },
+        { "id": "romanian-deadlift", "name": "Romanian Deadlift", "equipment": ["barbell", "plates"], "pattern": "hinge", "load": "percentage", "scaling": "dumbbell RDL, single-leg RDL" },
+        { "id": "strict-press", "name": "Strict Press (Overhead)", "equipment": ["barbell", "plates", "rack"], "pattern": "push-vertical", "load": "percentage", "scaling": "dumbbell press, single-arm press" },
+        { "id": "push-press", "name": "Push Press", "equipment": ["barbell", "plates"], "pattern": "push-vertical", "load": "percentage", "scaling": "dumbbell push press" },
+        { "id": "bench-press", "name": "Bench Press", "equipment": ["barbell", "plates", "bench"], "pattern": "push-horizontal", "load": "percentage", "scaling": "dumbbell bench press" },
+        { "id": "barbell-row", "name": "Barbell Row (Bent Over)", "equipment": ["barbell", "plates"], "pattern": "pull-horizontal", "load": "percentage", "scaling": "dumbbell row, ring row" },
+        { "id": "sumo-deadlift-high-pull", "name": "Sumo Deadlift High Pull", "equipment": ["barbell", "plates"], "pattern": "hinge+pull", "load": "moderate", "scaling": "kettlebell SDHP" }
+      ]
+    },
+    "gymnastics": {
+      "label": "Gymnastics",
+      "cns_demand": "moderate",
+      "movements": [
+        { "id": "pull-up", "name": "Pull-Up", "equipment": ["pull-up bar"], "pattern": "pull-vertical", "load": "bodyweight", "scaling": "banded pull-up, ring row" },
+        { "id": "chest-to-bar", "name": "Chest-to-Bar Pull-Up", "equipment": ["pull-up bar"], "pattern": "pull-vertical", "load": "bodyweight", "scaling": "pull-up, banded pull-up" },
+        { "id": "bar-muscle-up", "name": "Bar Muscle-Up", "equipment": ["pull-up bar"], "pattern": "pull-vertical+push", "load": "bodyweight", "scaling": "chest-to-bar pull-up" },
+        { "id": "ring-muscle-up", "name": "Ring Muscle-Up", "equipment": ["rings"], "pattern": "pull-vertical+push", "load": "bodyweight", "scaling": "bar muscle-up, ring dip + pull-up" },
+        { "id": "ring-dip", "name": "Ring Dip", "equipment": ["rings"], "pattern": "push-vertical", "load": "bodyweight", "scaling": "box dip, parallel bar dip" },
+        { "id": "hspu", "name": "Handstand Push-Up", "equipment": ["wall"], "pattern": "push-vertical", "load": "bodyweight", "scaling": "pike push-up, box pike push-up" },
+        { "id": "toes-to-bar", "name": "Toes-to-Bar", "equipment": ["pull-up bar"], "pattern": "core", "load": "bodyweight", "scaling": "knees-to-chest, hanging knee raise" },
+        { "id": "knees-to-elbows", "name": "Knees-to-Elbows", "equipment": ["pull-up bar"], "pattern": "core", "load": "bodyweight", "scaling": "hanging knee raise" },
+        { "id": "push-up", "name": "Push-Up", "equipment": [], "pattern": "push-horizontal", "load": "bodyweight", "scaling": "banded push-up, knee push-up" },
+        { "id": "ring-row", "name": "Ring Row", "equipment": ["rings"], "pattern": "pull-horizontal", "load": "bodyweight", "scaling": "adjust body angle for difficulty" },
+        { "id": "hollow-body-hold", "name": "Hollow Body Hold", "equipment": [], "pattern": "core", "load": "bodyweight", "scaling": "bent knee hollow hold" },
+        { "id": "arch-body-hold", "name": "Arch Body Hold", "equipment": [], "pattern": "core", "load": "bodyweight", "scaling": "reduce hold duration" },
+        { "id": "l-sit", "name": "L-Sit", "equipment": ["parallel bars or rings"], "pattern": "core", "load": "bodyweight", "scaling": "tuck L-sit, single-leg L-sit" },
+        { "id": "handstand-hold", "name": "Handstand Hold", "equipment": ["wall"], "pattern": "push-vertical+balance", "load": "bodyweight", "scaling": "box pike hold, wall walk" },
+        { "id": "wall-walk", "name": "Wall Walk", "equipment": ["wall"], "pattern": "push-vertical", "load": "bodyweight", "scaling": "inchworm" },
+        { "id": "box-jump", "name": "Box Jump", "equipment": ["box"], "pattern": "power-lower", "load": "bodyweight", "scaling": "step-up, reduced height" },
+        { "id": "burpee", "name": "Burpee", "equipment": [], "pattern": "full-body", "load": "bodyweight", "scaling": "reduce pace, step-down burpee" },
+        { "id": "burpee-box-jump", "name": "Burpee Box Jump Over", "equipment": ["box"], "pattern": "full-body+power", "load": "bodyweight", "scaling": "burpee step-over" },
+        { "id": "double-under", "name": "Double-Under", "equipment": ["jump rope"], "pattern": "monostructural", "load": "bodyweight", "scaling": "single-under ×3" },
+        { "id": "ghd-sit-up", "name": "GHD Sit-Up", "equipment": ["ghd machine"], "pattern": "core", "load": "bodyweight", "scaling": "abmat sit-up", "note": "Introduce gradually — causes extreme DOMS in untrained athletes" }
+      ]
+    },
+    "kettlebell": {
+      "label": "Kettlebell",
+      "cns_demand": "moderate",
+      "movements": [
+        { "id": "kb-swing", "name": "Kettlebell Swing (Russian)", "equipment": ["kettlebell"], "pattern": "hinge", "load": "fixed", "scaling": "reduce weight" },
+        { "id": "kb-swing-american", "name": "Kettlebell Swing (American)", "equipment": ["kettlebell"], "pattern": "hinge+pull", "load": "fixed", "scaling": "Russian swing" },
+        { "id": "kb-goblet-squat", "name": "Goblet Squat", "equipment": ["kettlebell"], "pattern": "squat", "load": "fixed", "scaling": "reduce weight" },
+        { "id": "kb-turkish-getup", "name": "Turkish Get-Up", "equipment": ["kettlebell"], "pattern": "full-body", "load": "fixed", "scaling": "use lighter weight or no weight" },
+        { "id": "kb-clean", "name": "Kettlebell Clean", "equipment": ["kettlebell"], "pattern": "hinge+pull", "load": "fixed", "scaling": "reduce weight" },
+        { "id": "kb-press", "name": "Kettlebell Press", "equipment": ["kettlebell"], "pattern": "push-vertical", "load": "fixed", "scaling": "reduce weight" },
+        { "id": "kb-snatch", "name": "Kettlebell Snatch", "equipment": ["kettlebell"], "pattern": "hinge+pull", "load": "fixed", "scaling": "kb swing" }
+      ]
+    },
+    "monostructural": {
+      "label": "Monostructural Cardio",
+      "cns_demand": "low",
+      "movements": [
+        { "id": "run", "name": "Run", "equipment": [], "pattern": "monostructural", "load": "bodyweight", "scaling": "reduce distance or pace" },
+        { "id": "row", "name": "Row (Ergometer)", "equipment": ["rowing machine"], "pattern": "monostructural", "load": "bodyweight", "scaling": "reduce distance, lower pace" },
+        { "id": "assault-bike", "name": "Assault Bike / Echo Bike", "equipment": ["assault bike"], "pattern": "monostructural", "load": "bodyweight", "scaling": "reduce calories or time" },
+        { "id": "ski-erg", "name": "Ski Erg", "equipment": ["ski erg"], "pattern": "monostructural", "load": "bodyweight", "scaling": "reduce distance or calories" },
+        { "id": "jump-rope", "name": "Jump Rope (single-under)", "equipment": ["jump rope"], "pattern": "monostructural", "load": "bodyweight", "scaling": "step-through" }
+      ]
+    },
+    "accessory": {
+      "label": "Accessory and Mobility",
+      "cns_demand": "low",
+      "movements": [
+        { "id": "glute-bridge", "name": "Glute Bridge", "equipment": [], "pattern": "hinge", "load": "bodyweight", "scaling": "add barbell for load" },
+        { "id": "banded-pull-apart", "name": "Banded Pull-Apart", "equipment": ["resistance band"], "pattern": "pull-horizontal", "load": "bodyweight", "scaling": "adjust band tension" },
+        { "id": "face-pull", "name": "Face Pull", "equipment": ["resistance band or cable"], "pattern": "pull-horizontal", "load": "light", "scaling": "reduce load" },
+        { "id": "hip-flexor-stretch", "name": "Hip Flexor Stretch (90/90)", "equipment": [], "pattern": "mobility", "load": "none", "scaling": null },
+        { "id": "pigeon-pose", "name": "Pigeon Pose", "equipment": [], "pattern": "mobility", "load": "none", "scaling": null },
+        { "id": "thoracic-rotation", "name": "Thoracic Rotation", "equipment": [], "pattern": "mobility", "load": "none", "scaling": null },
+        { "id": "foam-roll-quads", "name": "Foam Roll — Quads", "equipment": ["foam roller"], "pattern": "recovery", "load": "none", "scaling": null },
+        { "id": "foam-roll-lats", "name": "Foam Roll — Lats", "equipment": ["foam roller"], "pattern": "recovery", "load": "none", "scaling": null },
+        { "id": "inchworm", "name": "Inchworm", "equipment": [], "pattern": "warmup", "load": "bodyweight", "scaling": null },
+        { "id": "world-greatest-stretch", "name": "World's Greatest Stretch", "equipment": [], "pattern": "warmup", "load": "bodyweight", "scaling": null },
+        { "id": "hip-circle", "name": "Hip Circles", "equipment": [], "pattern": "warmup", "load": "none", "scaling": null },
+        { "id": "shoulder-car", "name": "Shoulder CARs (Controlled Articular Rotations)", "equipment": [], "pattern": "warmup", "load": "none", "scaling": null },
+        { "id": "cat-cow", "name": "Cat-Cow", "equipment": [], "pattern": "warmup", "load": "none", "scaling": null },
+        { "id": "air-squat", "name": "Air Squat", "equipment": [], "pattern": "warmup", "load": "bodyweight", "scaling": null },
+        { "id": "good-morning", "name": "Good Morning (PVC or empty bar)", "equipment": ["pvc pipe or barbell"], "pattern": "warmup", "load": "none", "scaling": null },
+        { "id": "pass-through", "name": "PVC Pass-Through", "equipment": ["pvc pipe"], "pattern": "warmup", "load": "none", "scaling": null }
+      ]
+    }
+  }
+}
+

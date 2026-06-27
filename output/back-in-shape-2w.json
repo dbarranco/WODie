@@ -1,0 +1,1576 @@
+{
+  "program": {
+    "id": "back-in-shape",
+    "name": "Back in Shape",
+    "weeks": 2,
+    "focus": "general",
+    "description": "A 2-week general physical preparedness program designed to rebuild foundational strength, movement quality, and work capacity. Progressive loading from 70-80% 1RM across the cycle with balanced push/pull volume and varied energy system development.",
+    "sessions": [
+      {
+        "id": "w1d1",
+        "week": 1,
+        "day": 1,
+        "is_rest_day": false,
+        "title": "Lower Body Strength + Short Metcon",
+        "duration_minutes": 60,
+        "equipment": [
+          "barbell",
+          "plates",
+          "rack",
+          "pull-up bar",
+          "kettlebell"
+        ],
+        "blocks": {
+          "static_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Hip Circles",
+                "reps_or_duration": "10 each direction",
+                "notes": null
+              },
+              {
+                "name": "Cat-Cow",
+                "reps_or_duration": "10 reps",
+                "notes": "Focus on thoracic extension"
+              },
+              {
+                "name": "PVC Pass-Through",
+                "reps_or_duration": "15 reps",
+                "notes": "Wide grip"
+              },
+              {
+                "name": "World's Greatest Stretch",
+                "reps_or_duration": "5 each side",
+                "notes": null
+              }
+            ]
+          },
+          "active_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Air Squat",
+                "reps_or_duration": "15 reps",
+                "notes": "Pause 2 sec in bottom"
+              },
+              {
+                "name": "Good Morning (PVC or empty bar)",
+                "reps_or_duration": "10 reps",
+                "notes": "Hinge pattern prep"
+              },
+              {
+                "name": "Inchworm",
+                "reps_or_duration": "8 reps",
+                "notes": null
+              },
+              {
+                "name": "Banded Pull-Apart",
+                "reps_or_duration": "20 reps",
+                "notes": "Shoulder activation"
+              }
+            ]
+          },
+          "strength": {
+            "duration_minutes": 22,
+            "label": "Strength \u2014 Back Squat (Straight Sets)",
+            "movements": [
+              {
+                "name": "Back Squat",
+                "sets": 5,
+                "reps": "5",
+                "load": "70% 1RM",
+                "rest_seconds": 180,
+                "notes": "Week 1 baseline. Focus on depth and midline stability.",
+                "scaling": "Goblet squat 4x8 if 1RM unknown or returning from layoff"
+              }
+            ]
+          },
+          "metcon": {
+            "duration_minutes": 15,
+            "format": "AMRAP",
+            "time_cap_minutes": 12,
+            "rounds_or_duration": "12 min AMRAP",
+            "movements": [
+              {
+                "name": "Kettlebell Swing (Russian)",
+                "reps_or_duration": "15 reps",
+                "load": "24/16 kg",
+                "scaling": "Reduce weight or reps to 10"
+              },
+              {
+                "name": "Pull-Up",
+                "reps_or_duration": "10 reps",
+                "load": null,
+                "scaling": "Banded pull-up or ring row"
+              },
+              {
+                "name": "Burpee",
+                "reps_or_duration": "5 reps",
+                "load": null,
+                "scaling": "Step-down burpee"
+              }
+            ],
+            "target_score": "5+ rounds",
+            "timer_config": {
+              "type": "amrap",
+              "duration_seconds": 720,
+              "interval_seconds": null
+            }
+          },
+          "cooldown": {
+            "duration_minutes": 8,
+            "movements": [
+              {
+                "name": "Foam Roll \u2014 Quads",
+                "reps_or_duration": "90 sec each leg",
+                "notes": null
+              },
+              {
+                "name": "Pigeon Pose",
+                "reps_or_duration": "90 sec each side",
+                "notes": "Hip opener"
+              },
+              {
+                "name": "Thoracic Rotation",
+                "reps_or_duration": "10 each side",
+                "notes": "Supine position"
+              }
+            ]
+          }
+        },
+        "rationale": {
+          "session_why": {
+            "text": "Week 1 Day 1 establishes baseline squat volume at moderate intensity (70% 1RM). Short-duration metcon (12 min AMRAP) targets glycolytic system without excessive systemic fatigue. Squat + hinge pattern metcon maintains movement synergy while avoiding posterior chain overload.",
+            "source": "Bompa & Haff - Periodization 5th ed",
+            "url_or_ref": "Ch. 9"
+          },
+          "movement_why": {
+            "text": "Back squat chosen as primary lower body strength movement for Week 1 baseline. Metcon pairs hinge (KB swing), vertical pull (pull-up), and full-body conditioning (burpee) to balance squat-dominant strength work with posterior chain and upper body pulling volume.",
+            "source": "Haff & Triplett - NSCA Essentials 4th ed",
+            "url_or_ref": "Ch. 17"
+          },
+          "loading_why": {
+            "text": "Straight sets at 70% 1RM for 5x5 structure builds baseline strength and work capacity. This intensity allows technical proficiency while accumulating sufficient volume for structural adaptation. 180-second rest ensures phosphocreatine recovery between sets.",
+            "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training",
+            "url_or_ref": "Ch. 3"
+          }
+        }
+      },
+      {
+        "id": "w1d2",
+        "week": 1,
+        "day": 2,
+        "is_rest_day": false,
+        "title": "Olympic Lifting + Medium Metcon",
+        "duration_minutes": 60,
+        "equipment": [
+          "barbell",
+          "plates",
+          "rowing machine",
+          "box"
+        ],
+        "blocks": {
+          "static_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Shoulder CARs (Controlled Articular Rotations)",
+                "reps_or_duration": "5 each direction",
+                "notes": null
+              },
+              {
+                "name": "Hip Flexor Stretch (90/90)",
+                "reps_or_duration": "60 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Cat-Cow",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "PVC Pass-Through",
+                "reps_or_duration": "12 reps",
+                "notes": "Overhead mobility prep"
+              }
+            ]
+          },
+          "active_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Good Morning (PVC or empty bar)",
+                "reps_or_duration": "10 reps",
+                "notes": "Hinge activation"
+              },
+              {
+                "name": "Hang Power Clean (empty bar)",
+                "reps_or_duration": "8 reps",
+                "notes": "Movement prep"
+              },
+              {
+                "name": "Front Squat (empty bar)",
+                "reps_or_duration": "8 reps",
+                "notes": "Receiving position prep"
+              },
+              {
+                "name": "Inchworm",
+                "reps_or_duration": "6 reps",
+                "notes": null
+              }
+            ]
+          },
+          "strength": {
+            "duration_minutes": 24,
+            "label": "Strength \u2014 Hang Power Clean (EMOM)",
+            "movements": [
+              {
+                "name": "Hang Power Clean",
+                "sets": 8,
+                "reps": "3",
+                "load": "65% 1RM",
+                "rest_seconds": null,
+                "notes": "E2MOM x 8 rounds (16 min total). Complete 3 reps at top of each 2-min interval. Focus on hip extension and elbow turnover speed.",
+                "scaling": "Dumbbell hang clean or reduce to 60% 1RM if technique breaks down"
+              }
+            ]
+          },
+          "metcon": {
+            "duration_minutes": 14,
+            "format": "For Time",
+            "time_cap_minutes": 12,
+            "rounds_or_duration": "For Time",
+            "movements": [
+              {
+                "name": "Row (Ergometer)",
+                "reps_or_duration": "500m",
+                "load": null,
+                "scaling": "Reduce to 400m"
+              },
+              {
+                "name": "Box Jump",
+                "reps_or_duration": "20 reps",
+                "load": "24/20 inch box",
+                "scaling": "Step-up or reduce box height"
+              },
+              {
+                "name": "Row (Ergometer)",
+                "reps_or_duration": "500m",
+                "load": null,
+                "scaling": "Reduce to 400m"
+              }
+            ],
+            "target_score": "Sub 8 minutes",
+            "timer_config": {
+              "type": "for_time",
+              "duration_seconds": 720,
+              "interval_seconds": null
+            }
+          },
+          "cooldown": {
+            "duration_minutes": 7,
+            "movements": [
+              {
+                "name": "Foam Roll \u2014 Lats",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Hip Flexor Stretch (90/90)",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Thoracic Rotation",
+                "reps_or_duration": "10 each side",
+                "notes": null
+              }
+            ]
+          }
+        },
+        "rationale": {
+          "session_why": {
+            "text": "Olympic lifting on Day 2 after 24h recovery from squats. EMOM format maintains session flow and auto-regulates rest. Medium metcon (8-12 min target) develops glycolytic capacity with monostructural rowing and power output (box jumps).",
+            "source": "Haff & Triplett - NSCA Essentials 4th ed",
+            "url_or_ref": "Ch. 21"
+          },
+          "movement_why": {
+            "text": "Hang power clean targets explosive hip extension and receiving position without full squat demand, allowing recovery from Day 1 squats. Metcon pairs monostructural aerobic work (row) with lower body power (box jump) to develop mixed energy system capacity.",
+            "source": "Gastin 2001 - Energy System Interaction",
+            "url_or_ref": "Sports Medicine 31(10)"
+          },
+          "loading_why": {
+            "text": "EMOM strength format at 65% 1RM for 3 reps exploits auto-regulated rest while building technical proficiency. E2MOM interval provides adequate phosphocreatine recovery for power movements. Lower intensity than squat work allows CNS recovery while maintaining training stimulus.",
+            "source": "Bompa & Haff - Periodization 5th ed",
+            "url_or_ref": "Ch. 9"
+          }
+        }
+      },
+      {
+        "id": "w1d3",
+        "week": 1,
+        "day": 3,
+        "is_rest_day": true,
+        "title": "Rest Day",
+        "duration_minutes": 0,
+        "equipment": [],
+        "blocks": null,
+        "rationale": null
+      },
+      {
+        "id": "w1d4",
+        "week": 1,
+        "day": 4,
+        "is_rest_day": false,
+        "title": "Upper Body Push/Pull + Short Metcon",
+        "duration_minutes": 60,
+        "equipment": [
+          "barbell",
+          "plates",
+          "bench",
+          "pull-up bar",
+          "jump rope"
+        ],
+        "blocks": {
+          "static_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Shoulder CARs (Controlled Articular Rotations)",
+                "reps_or_duration": "5 each direction",
+                "notes": null
+              },
+              {
+                "name": "Cat-Cow",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Banded Pull-Apart",
+                "reps_or_duration": "20 reps",
+                "notes": "Scapular activation"
+              },
+              {
+                "name": "PVC Pass-Through",
+                "reps_or_duration": "15 reps",
+                "notes": null
+              }
+            ]
+          },
+          "active_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Push-Up",
+                "reps_or_duration": "10 reps",
+                "notes": "Strict, full range"
+              },
+              {
+                "name": "Ring Row",
+                "reps_or_duration": "10 reps",
+                "notes": "Body angle 45 degrees"
+              },
+              {
+                "name": "Inchworm",
+                "reps_or_duration": "8 reps",
+                "notes": null
+              },
+              {
+                "name": "Jump Rope (single-under)",
+                "reps_or_duration": "50 reps",
+                "notes": "Warmup for metcon"
+              }
+            ]
+          },
+          "strength": {
+            "duration_minutes": 24,
+            "label": "Strength \u2014 Bench Press (Ramp/Build-Up)",
+            "movements": [
+              {
+                "name": "Bench Press",
+                "sets": 4,
+                "reps": "5-4-3-2",
+                "load": "65%, 70%, 75%, 78% 1RM",
+                "rest_seconds": 180,
+                "notes": "Ramp/build-up sets. Set 1: 5 reps @ 65%, Set 2: 4 reps @ 70%, Set 3: 3 reps @ 75%, Set 4: 2 reps @ 78%. Progressive neural preparation for horizontal push pattern.",
+                "scaling": "Dumbbell bench press with same progression structure"
+              }
+            ]
+          },
+          "metcon": {
+            "duration_minutes": 14,
+            "format": "AMRAP",
+            "time_cap_minutes": 10,
+            "rounds_or_duration": "10 min AMRAP",
+            "movements": [
+              {
+                "name": "Chest-to-Bar Pull-Up",
+                "reps_or_duration": "8 reps",
+                "load": null,
+                "scaling": "Regular pull-up or banded pull-up"
+              },
+              {
+                "name": "Push-Up",
+                "reps_or_duration": "12 reps",
+                "load": null,
+                "scaling": "Knee push-up or reduce reps to 8"
+              },
+              {
+                "name": "Double-Under",
+                "reps_or_duration": "30 reps",
+                "load": null,
+                "scaling": "90 single-unders (3x substitution)"
+              }
+            ],
+            "target_score": "4+ rounds",
+            "timer_config": {
+              "type": "amrap",
+              "duration_seconds": 600,
+              "interval_seconds": null
+            }
+          },
+          "cooldown": {
+            "duration_minutes": 7,
+            "movements": [
+              {
+                "name": "Foam Roll \u2014 Lats",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Pigeon Pose",
+                "reps_or_duration": "60 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Thoracic Rotation",
+                "reps_or_duration": "10 each side",
+                "notes": null
+              }
+            ]
+          }
+        },
+        "rationale": {
+          "session_why": {
+            "text": "Upper body focus after rest day allows lower body recovery. Short metcon (10 min) maintains glycolytic stimulus without excessive fatigue accumulation. Push/pull pairing in both strength and metcon ensures balanced horizontal and vertical plane development.",
+            "source": "Haff & Triplett - NSCA Essentials 4th ed",
+            "url_or_ref": "Ch. 17"
+          },
+          "movement_why": {
+            "text": "Bench press (horizontal push) paired with chest-to-bar pull-up metcon (vertical pull) creates balanced upper body volume. Double-unders add monostructural cardio component while maintaining upper body engagement through coordination demand.",
+            "source": "Glassman 2002 - CrossFit Journal",
+            "url_or_ref": "What is Fitness"
+          },
+          "loading_why": {
+            "text": "Ramp/build-up progression (5@65%, 4@70%, 3@75%, 2@78%) provides progressive neural preparation while developing technique under increasing load. This scheme appropriate for Week 1 baseline establishment and allows athletes to find working weights safely.",
+            "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training",
+            "url_or_ref": "Ch. 3"
+          }
+        }
+      },
+      {
+        "id": "w1d5",
+        "week": 1,
+        "day": 5,
+        "is_rest_day": false,
+        "title": "Front Squat + Medium Metcon",
+        "duration_minutes": 60,
+        "equipment": [
+          "barbell",
+          "plates",
+          "rack",
+          "pull-up bar",
+          "kettlebell"
+        ],
+        "blocks": {
+          "static_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Hip Circles",
+                "reps_or_duration": "10 each direction",
+                "notes": null
+              },
+              {
+                "name": "Cat-Cow",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Shoulder CARs (Controlled Articular Rotations)",
+                "reps_or_duration": "5 each direction",
+                "notes": "Front rack prep"
+              },
+              {
+                "name": "World's Greatest Stretch",
+                "reps_or_duration": "5 each side",
+                "notes": null
+              }
+            ]
+          },
+          "active_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Air Squat",
+                "reps_or_duration": "15 reps",
+                "notes": null
+              },
+              {
+                "name": "Good Morning (PVC or empty bar)",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Front Squat (empty bar)",
+                "reps_or_duration": "10 reps",
+                "notes": "Movement-specific prep"
+              },
+              {
+                "name": "Inchworm",
+                "reps_or_duration": "6 reps",
+                "notes": null
+              }
+            ]
+          },
+          "strength": {
+            "duration_minutes": 22,
+            "label": "Strength \u2014 Front Squat (Straight Sets)",
+            "movements": [
+              {
+                "name": "Front Squat",
+                "sets": 4,
+                "reps": "5",
+                "load": "72% 1RM",
+                "rest_seconds": 180,
+                "notes": "Week 1 baseline. Emphasize upright torso and elbow position.",
+                "scaling": "Goblet squat 4x8 if front rack mobility limited"
+              }
+            ]
+          },
+          "metcon": {
+            "duration_minutes": 15,
+            "format": "For Time",
+            "time_cap_minutes": 14,
+            "rounds_or_duration": "5 Rounds For Time",
+            "movements": [
+              {
+                "name": "Toes-to-Bar",
+                "reps_or_duration": "10 reps",
+                "load": null,
+                "scaling": "Knees-to-elbows or hanging knee raises"
+              },
+              {
+                "name": "Kettlebell Swing (American)",
+                "reps_or_duration": "15 reps",
+                "load": "24/16 kg",
+                "scaling": "Russian swing or reduce weight"
+              },
+              {
+                "name": "Burpee",
+                "reps_or_duration": "8 reps",
+                "load": null,
+                "scaling": "Step-down burpee"
+              }
+            ],
+            "target_score": "Sub 12 min",
+            "timer_config": {
+              "type": "for_time",
+              "duration_seconds": 840,
+              "interval_seconds": null
+            }
+          },
+          "cooldown": {
+            "duration_minutes": 8,
+            "movements": [
+              {
+                "name": "Foam Roll \u2014 Quads",
+                "reps_or_duration": "90 sec each leg",
+                "notes": null
+              },
+              {
+                "name": "Hip Flexor Stretch (90/90)",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Pigeon Pose",
+                "reps_or_duration": "60 sec each side",
+                "notes": null
+              }
+            ]
+          }
+        },
+        "rationale": {
+          "session_why": {
+            "text": "Second squat session of Week 1 uses front squat variation to target quad-dominant pattern while reducing axial load compared to back squat. Medium metcon (12-14 min target) develops glycolytic capacity. Day 5 placement allows 48h recovery before Week 2 intensity increase.",
+            "source": "Bomba & Haff - Periodization 5th ed",
+            "url_or_ref": "Ch. 9"
+          },
+          "movement_why": {
+            "text": "Front squat complements Day 1 back squat, providing squat volume without posterior chain overload. Metcon combines core demand (toes-to-bar), hinge pattern (KB swing), and conditioning (burpee) to develop work capacity across multiple planes.",
+            "source": "Haff & Triplett - NSCA Essentials 4th ed",
+            "url_or_ref": "Ch. 17"
+          },
+          "loading_why": {
+            "text": "Straight sets at 72% 1RM (slightly higher than Day 1 back squat) accumulates volume for hypertrophy while maintaining technical quality. Front squat typically loaded at lower percentage than back squat due to greater demand on trunk stabilizers and mobility.",
+            "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training",
+            "url_or_ref": "Ch. 3"
+          }
+        }
+      },
+      {
+        "id": "w1d6",
+        "week": 1,
+        "day": 6,
+        "is_rest_day": false,
+        "title": "Gymnastics Skill + Aerobic Work",
+        "duration_minutes": 60,
+        "equipment": [
+          "pull-up bar",
+          "rings",
+          "rowing machine"
+        ],
+        "blocks": {
+          "static_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Shoulder CARs (Controlled Articular Rotations)",
+                "reps_or_duration": "5 each direction",
+                "notes": null
+              },
+              {
+                "name": "Cat-Cow",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Banded Pull-Apart",
+                "reps_or_duration": "20 reps",
+                "notes": null
+              },
+              {
+                "name": "Hip Circles",
+                "reps_or_duration": "10 each direction",
+                "notes": null
+              }
+            ]
+          },
+          "active_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Inchworm",
+                "reps_or_duration": "8 reps",
+                "notes": null
+              },
+              {
+                "name": "Ring Row",
+                "reps_or_duration": "10 reps",
+                "notes": "Light activation"
+              },
+              {
+                "name": "Push-Up",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Air Squat",
+                "reps_or_duration": "15 reps",
+                "notes": null
+              }
+            ]
+          },
+          "strength": {
+            "duration_minutes": 22,
+            "label": "Gymnastics Skill \u2014 Pull-Up Progression + Body Tension",
+            "movements": [
+              {
+                "name": "Hollow Body Hold",
+                "sets": 4,
+                "reps": "20-30 sec",
+                "load": null,
+                "rest_seconds": 60,
+                "notes": "Foundational body tension work. Maintain lower back contact with floor.",
+                "scaling": "Bent knee hollow hold"
+              },
+              {
+                "name": "Arch Body Hold",
+                "sets": 4,
+                "reps": "20-30 sec",
+                "load": null,
+                "rest_seconds": 60,
+                "notes": "Complement to hollow position. Focus on glute engagement.",
+                "scaling": "Reduce duration to 15 sec"
+              },
+              {
+                "name": "Pull-Up (Strict)",
+                "sets": 5,
+                "reps": "3-5",
+                "load": null,
+                "rest_seconds": 90,
+                "notes": "Quality focus. Full range of motion, controlled descent.",
+                "scaling": "Banded pull-up or jumping pull-up with slow 3-sec negative"
+              }
+            ]
+          },
+          "metcon": {
+            "duration_minutes": 16,
+            "format": "For Time",
+            "time_cap_minutes": 15,
+            "rounds_or_duration": "For Time",
+            "movements": [
+              {
+                "name": "Row (Ergometer)",
+                "reps_or_duration": "2000m",
+                "load": null,
+                "scaling": "Reduce to 1500m"
+              }
+            ],
+            "target_score": "Sub 8:30",
+            "timer_config": {
+              "type": "for_time",
+              "duration_seconds": 900,
+              "interval_seconds": null
+            }
+          },
+          "cooldown": {
+            "duration_minutes": 7,
+            "movements": [
+              {
+                "name": "Foam Roll \u2014 Lats",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Pigeon Pose",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Thoracic Rotation",
+                "reps_or_duration": "10 each side",
+                "notes": null
+              }
+            ]
+          }
+        },
+        "rationale": {
+          "session_why": {
+            "text": "Day 6 gymnastics skill session develops pulling strength and body tension without high CNS demand. Pure aerobic monostructural work (2k row) satisfies weekly aerobic minimum and provides active recovery before rest day. Low interference with strength adaptations.",
+            "source": "Wilson et al 2012 - Concurrent Training Meta-Analysis",
+            "url_or_ref": "J Strength Cond Res 26(8)"
+          },
+          "movement_why": {
+            "text": "Hollow and arch body holds are prerequisite foundational tension for all gymnastics movements. Strict pull-up development builds pulling strength capacity required before kipping progression. Rowing provides low-impact aerobic stimulus.",
+            "source": "Sommer - Building the Gymnastic Body",
+            "url_or_ref": "Ch. 2"
+          },
+          "loading_why": {
+            "text": "Skill work uses moderate volume (4-5 sets) with full rest to prioritize movement quality over fatigue accumulation. Hold durations (20-30 sec) build structural endurance. Pull-up prescription focuses on quality reps (3-5) to develop strict strength foundation.",
+            "source": "CrossFit Gymnastics Specialty Course",
+            "url_or_ref": null
+          }
+        }
+      },
+      {
+        "id": "w1d7",
+        "week": 1,
+        "day": 7,
+        "is_rest_day": true,
+        "title": "Rest Day",
+        "duration_minutes": 0,
+        "equipment": [],
+        "blocks": null,
+        "rationale": null
+      },
+      {
+        "id": "w2d1",
+        "week": 2,
+        "day": 1,
+        "is_rest_day": false,
+        "title": "Lower Body Strength + Short Metcon",
+        "duration_minutes": 60,
+        "equipment": [
+          "barbell",
+          "plates",
+          "rack",
+          "pull-up bar",
+          "box"
+        ],
+        "blocks": {
+          "static_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Hip Circles",
+                "reps_or_duration": "10 each direction",
+                "notes": null
+              },
+              {
+                "name": "Cat-Cow",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "PVC Pass-Through",
+                "reps_or_duration": "15 reps",
+                "notes": null
+              },
+              {
+                "name": "World's Greatest Stretch",
+                "reps_or_duration": "5 each side",
+                "notes": null
+              }
+            ]
+          },
+          "active_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Air Squat",
+                "reps_or_duration": "15 reps",
+                "notes": null
+              },
+              {
+                "name": "Good Morning (PVC or empty bar)",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Back Squat (empty bar)",
+                "reps_or_duration": "10 reps",
+                "notes": "Movement-specific warmup"
+              },
+              {
+                "name": "Inchworm",
+                "reps_or_duration": "8 reps",
+                "notes": null
+              }
+            ]
+          },
+          "strength": {
+            "duration_minutes": 24,
+            "label": "Strength \u2014 Back Squat (Wave Loading)",
+            "movements": [
+              {
+                "name": "Back Squat",
+                "sets": 6,
+                "reps": "3-3-3-3-3-3",
+                "load": "75%, 78%, 82%, 75%, 80%, 84% 1RM",
+                "rest_seconds": 180,
+                "notes": "Wave loading: Wave 1 (75%, 78%, 82%), Wave 2 (75%, 80%, 84%). Exploits post-activation potentiation to achieve higher loads in second wave.",
+                "scaling": "Reduce to straight sets 4x3 @ 77% if wave loading too complex"
+              }
+            ]
+          },
+          "metcon": {
+            "duration_minutes": 14,
+            "format": "EMOM",
+            "time_cap_minutes": 12,
+            "rounds_or_duration": "12 min EMOM",
+            "movements": [
+              {
+                "name": "Box Jump",
+                "reps_or_duration": "8 reps",
+                "load": "24/20 inch box",
+                "scaling": "Step-up or reduce height"
+              },
+              {
+                "name": "Chest-to-Bar Pull-Up",
+                "reps_or_duration": "6 reps",
+                "load": null,
+                "scaling": "Regular pull-up or banded pull-up"
+              }
+            ],
+            "target_score": "Maintain unbroken sets all 12 rounds",
+            "timer_config": {
+              "type": "emom",
+              "duration_seconds": 720,
+              "interval_seconds": 60
+            }
+          },
+          "cooldown": {
+            "duration_minutes": 7,
+            "movements": [
+              {
+                "name": "Foam Roll \u2014 Quads",
+                "reps_or_duration": "90 sec each leg",
+                "notes": null
+              },
+              {
+                "name": "Pigeon Pose",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Hip Flexor Stretch (90/90)",
+                "reps_or_duration": "60 sec each side",
+                "notes": null
+              }
+            ]
+          }
+        },
+        "rationale": {
+          "session_why": {
+            "text": "Week 2 increases intensity to 75-84% range via wave loading structure. Day 1 back squat builds on Week 1 baseline. Short EMOM metcon maintains glycolytic stimulus while allowing managed recovery between sets. 48h separation from Week 1 Day 5 front squat ensures adequate recovery.",
+            "source": "Bompa & Haff - Periodization 5th ed",
+            "url_or_ref": "Ch. 9"
+          },
+          "movement_why": {
+            "text": "Back squat returns as primary lower body movement with increased complexity (wave loading). Metcon pairs lower body power (box jump) with vertical pull to balance squat-dominant strength work without posterior chain overload.",
+            "source": "Haff & Triplett - NSCA Essentials 4th ed",
+            "url_or_ref": "Ch. 17"
+          },
+          "loading_why": {
+            "text": "Wave loading oscillates between heavier and lighter loads (75-78-82%, then 75-80-84%) to exploit post-activation potentiation. Heavy sets prime nervous system for subsequent performance, allowing higher loads in second wave while managing fatigue accumulation.",
+            "source": "Robbins 2005 - Post-Activation Potentiation",
+            "url_or_ref": "J Strength Cond Res 19(2)"
+          }
+        }
+      },
+      {
+        "id": "w2d2",
+        "week": 2,
+        "day": 2,
+        "is_rest_day": false,
+        "title": "Olympic Lifting + Medium Metcon",
+        "duration_minutes": 60,
+        "equipment": [
+          "barbell",
+          "plates",
+          "assault bike",
+          "pull-up bar"
+        ],
+        "blocks": {
+          "static_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Shoulder CARs (Controlled Articular Rotations)",
+                "reps_or_duration": "5 each direction",
+                "notes": null
+              },
+              {
+                "name": "Hip Flexor Stretch (90/90)",
+                "reps_or_duration": "60 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Cat-Cow",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "PVC Pass-Through",
+                "reps_or_duration": "12 reps",
+                "notes": null
+              }
+            ]
+          },
+          "active_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Good Morning (PVC or empty bar)",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Power Clean (empty bar)",
+                "reps_or_duration": "8 reps",
+                "notes": "Full movement prep"
+              },
+              {
+                "name": "Front Squat (empty bar)",
+                "reps_or_duration": "8 reps",
+                "notes": null
+              },
+              {
+                "name": "Inchworm",
+                "reps_or_duration": "6 reps",
+                "notes": null
+              }
+            ]
+          },
+          "strength": {
+            "duration_minutes": 24,
+            "label": "Strength \u2014 Power Clean (Build to Heavy)",
+            "movements": [
+              {
+                "name": "Power Clean",
+                "sets": 5,
+                "reps": "3-3-2-2-1",
+                "load": "70%, 75%, 78%, 82%, 85% 1RM",
+                "rest_seconds": 180,
+                "notes": "Ramp/build-up to heavy single. Set 1-2: 3 reps, Set 3-4: 2 reps, Set 5: 1 rep. Focus on explosive hip extension throughout.",
+                "scaling": "Hang power clean with same structure or reduce percentages by 5%"
+              }
+            ]
+          },
+          "metcon": {
+            "duration_minutes": 14,
+            "format": "AMRAP",
+            "time_cap_minutes": 12,
+            "rounds_or_duration": "12 min AMRAP",
+            "movements": [
+              {
+                "name": "Assault Bike / Echo Bike",
+                "reps_or_duration": "12/9 calories",
+                "load": null,
+                "scaling": "Reduce to 10/7 calories"
+              },
+              {
+                "name": "Burpee Box Jump Over",
+                "reps_or_duration": "6 reps",
+                "load": "24/20 inch box",
+                "scaling": "Burpee step-over or regular burpee"
+              },
+              {
+                "name": "Toes-to-Bar",
+                "reps_or_duration": "9 reps",
+                "load": null,
+                "scaling": "Knees-to-elbows or hanging knee raises"
+              }
+            ],
+            "target_score": "5+ rounds",
+            "timer_config": {
+              "type": "amrap",
+              "duration_seconds": 720,
+              "interval_seconds": null
+            }
+          },
+          "cooldown": {
+            "duration_minutes": 7,
+            "movements": [
+              {
+                "name": "Foam Roll \u2014 Lats",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Pigeon Pose",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Thoracic Rotation",
+                "reps_or_duration": "10 each side",
+                "notes": null
+              }
+            ]
+          }
+        },
+        "rationale": {
+          "session_why": {
+            "text": "Olympic lifting Day 2 with 24h separation from squats. Power clean (full movement vs Week 1 hang variation) increases complexity. Medium AMRAP develops mixed energy system capacity. Placement allows CNS recovery before rest day.",
+            "source": "Haff & Triplett - NSCA Essentials 4th ed",
+            "url_or_ref": "Ch. 21"
+          },
+          "movement_why": {
+            "text": "Power clean progression from Week 1 hang variation. Full movement requires greater technical proficiency and posterior chain engagement. Metcon balances monostructural (bike), power (burpee box jump), and core (toes-to-bar) for comprehensive conditioning.",
+            "source": "Glassman 2002 - CrossFit Journal",
+            "url_or_ref": "What is Fitness"
+          },
+          "loading_why": {
+            "text": "Ramp/build-up structure (3-3-2-2-1 at 70-75-78-82-85%) provides progressive neural preparation while building to Week 2 intensity peak. Decreasing reps as load increases allows technique maintenance. This scheme appropriate for complex Olympic movements requiring high technical precision.",
+            "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training",
+            "url_or_ref": "Ch. 3"
+          }
+        }
+      },
+      {
+        "id": "w2d3",
+        "week": 2,
+        "day": 3,
+        "is_rest_day": true,
+        "title": "Rest Day",
+        "duration_minutes": 0,
+        "equipment": [],
+        "blocks": null,
+        "rationale": null
+      },
+      {
+        "id": "w2d4",
+        "week": 2,
+        "day": 4,
+        "is_rest_day": false,
+        "title": "Upper Body Strength + Medium Metcon",
+        "duration_minutes": 60,
+        "equipment": [
+          "barbell",
+          "plates",
+          "rack",
+          "rings",
+          "rowing machine"
+        ],
+        "blocks": {
+          "static_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Shoulder CARs (Controlled Articular Rotations)",
+                "reps_or_duration": "5 each direction",
+                "notes": null
+              },
+              {
+                "name": "Cat-Cow",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Banded Pull-Apart",
+                "reps_or_duration": "20 reps",
+                "notes": null
+              },
+              {
+                "name": "PVC Pass-Through",
+                "reps_or_duration": "15 reps",
+                "notes": null
+              }
+            ]
+          },
+          "active_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Push-Up",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Ring Row",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Strict Press (empty bar)",
+                "reps_or_duration": "10 reps",
+                "notes": "Movement-specific prep"
+              },
+              {
+                "name": "Inchworm",
+                "reps_or_duration": "8 reps",
+                "notes": null
+              }
+            ]
+          },
+          "strength": {
+            "duration_minutes": 24,
+            "label": "Strength \u2014 Strict Press (Top Set + Back-Off)",
+            "movements": [
+              {
+                "name": "Strict Press (Overhead)",
+                "sets": 5,
+                "reps": "2-5-5-5-5",
+                "load": "85% 1RM (set 1), 70% 1RM (sets 2-5)",
+                "rest_seconds": 180,
+                "notes": "Top set + back-off volume. Set 1: Heavy double @ 85% for neural stimulus. Sets 2-5: Volume work @ 70% for structural adaptation.",
+                "scaling": "Dumbbell press with same structure"
+              }
+            ]
+          },
+          "metcon": {
+            "duration_minutes": 14,
+            "format": "For Time",
+            "time_cap_minutes": 13,
+            "rounds_or_duration": "4 Rounds For Time",
+            "movements": [
+              {
+                "name": "Ring Dip",
+                "reps_or_duration": "12 reps",
+                "load": null,
+                "scaling": "Box dip or parallel bar dip"
+              },
+              {
+                "name": "Row (Ergometer)",
+                "reps_or_duration": "250m",
+                "load": null,
+                "scaling": "Reduce to 200m"
+              },
+              {
+                "name": "Handstand Push-Up",
+                "reps_or_duration": "8 reps",
+                "load": null,
+                "scaling": "Pike push-up or box pike push-up"
+              }
+            ],
+            "target_score": "Sub 11 min",
+            "timer_config": {
+              "type": "for_time",
+              "duration_seconds": 780,
+              "interval_seconds": null
+            }
+          },
+          "cooldown": {
+            "duration_minutes": 7,
+            "movements": [
+              {
+                "name": "Foam Roll \u2014 Lats",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Hip Flexor Stretch (90/90)",
+                "reps_or_duration": "60 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Thoracic Rotation",
+                "reps_or_duration": "10 each side",
+                "notes": null
+              }
+            ]
+          }
+        },
+        "rationale": {
+          "session_why": {
+            "text": "Upper body day after rest allows lower body recovery. Strict press targets vertical push strength. Medium metcon (11-13 min target) develops glycolytic capacity with upper body emphasis (ring dip, HSPU) balanced by monostructural rowing.",
+            "source": "Haff & Triplett - NSCA Essentials 4th ed",
+            "url_or_ref": "Ch. 17"
+          },
+          "movement_why": {
+            "text": "Strict press (vertical push) complements Week 1 Day 4 bench press (horizontal push). Metcon maintains push emphasis (ring dip, HSPU) with rowing providing aerobic component. Push-dominant volume balanced by pull work in subsequent sessions.",
+            "source": "Glassman 2002 - CrossFit Journal",
+            "url_or_ref": "What is Fitness"
+          },
+          "loading_why": {
+            "text": "Top set + back-off structure (1x2@85%, 4x5@70%) combines neural stimulation from heavy double with hypertrophy volume from back-off sets. This concurrent training approach maximizes adaptation diversity while managing CNS fatigue. Appropriate for Week 2 intensity build.",
+            "source": "Bompa & Haff - Periodization 5th ed",
+            "url_or_ref": "Ch. 9"
+          }
+        }
+      },
+      {
+        "id": "w2d5",
+        "week": 2,
+        "day": 5,
+        "is_rest_day": false,
+        "title": "Deadlift + Short Metcon",
+        "duration_minutes": 60,
+        "equipment": [
+          "barbell",
+          "plates",
+          "pull-up bar",
+          "kettlebell"
+        ],
+        "blocks": {
+          "static_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Hip Circles",
+                "reps_or_duration": "10 each direction",
+                "notes": null
+              },
+              {
+                "name": "Cat-Cow",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "World's Greatest Stretch",
+                "reps_or_duration": "5 each side",
+                "notes": null
+              },
+              {
+                "name": "Glute Bridge",
+                "reps_or_duration": "15 reps",
+                "notes": "Posterior chain activation"
+              }
+            ]
+          },
+          "active_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Good Morning (PVC or empty bar)",
+                "reps_or_duration": "10 reps",
+                "notes": "Hinge pattern prep"
+              },
+              {
+                "name": "Romanian Deadlift (empty bar)",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Deadlift (empty bar)",
+                "reps_or_duration": "8 reps",
+                "notes": "Movement-specific warmup"
+              },
+              {
+                "name": "Inchworm",
+                "reps_or_duration": "6 reps",
+                "notes": null
+              }
+            ]
+          },
+          "strength": {
+            "duration_minutes": 24,
+            "label": "Strength \u2014 Deadlift (EMOM)",
+            "movements": [
+              {
+                "name": "Deadlift",
+                "sets": 8,
+                "reps": "3",
+                "load": "78% 1RM",
+                "rest_seconds": null,
+                "notes": "E2MOM x 8 rounds (16 min total). Complete 3 reps at top of each 2-min interval. Focus on hip hinge mechanics and neutral spine.",
+                "scaling": "Trap bar deadlift or reduce to 75% 1RM"
+              }
+            ]
+          },
+          "metcon": {
+            "duration_minutes": 14,
+            "format": "AMRAP",
+            "time_cap_minutes": 10,
+            "rounds_or_duration": "10 min AMRAP",
+            "movements": [
+              {
+                "name": "Pull-Up",
+                "reps_or_duration": "5 reps",
+                "load": null,
+                "scaling": "Banded pull-up or ring row"
+              },
+              {
+                "name": "Kettlebell Swing (Russian)",
+                "reps_or_duration": "10 reps",
+                "load": "24/16 kg",
+                "scaling": "Reduce weight"
+              },
+              {
+                "name": "Push-Up",
+                "reps_or_duration": "15 reps",
+                "load": null,
+                "scaling": "Knee push-up or reduce reps to 10"
+              }
+            ],
+            "target_score": "8+ rounds",
+            "timer_config": {
+              "type": "amrap",
+              "duration_seconds": 600,
+              "interval_seconds": null
+            }
+          },
+          "cooldown": {
+            "duration_minutes": 7,
+            "movements": [
+              {
+                "name": "Foam Roll \u2014 Quads",
+                "reps_or_duration": "90 sec each leg",
+                "notes": null
+              },
+              {
+                "name": "Pigeon Pose",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Glute Bridge",
+                "reps_or_duration": "20 reps",
+                "notes": "Active recovery"
+              }
+            ]
+          }
+        },
+        "rationale": {
+          "session_why": {
+            "text": "Deadlift provides hinge pattern volume without excessive posterior chain fatigue (48h before Week 2 end). EMOM format manages session flow. Short metcon maintains glycolytic stimulus. Day 5 placement allows recovery window before final gymnastics session.",
+            "source": "Haff & Triplett - NSCA Essentials 4th ed",
+            "url_or_ref": "Ch. 21"
+          },
+          "movement_why": {
+            "text": "Deadlift fulfills hinge pattern requirement for Week 2. Placement after 48h from Day 1 squats respects posterior chain recovery needs. Metcon balances pull (pull-up), hinge (KB swing), and push (push-up) across all three fundamental patterns.",
+            "source": "Glassman 2002 - CrossFit Journal",
+            "url_or_ref": "What is Fitness"
+          },
+          "loading_why": {
+            "text": "E2MOM at 78% 1RM for 3 reps provides adequate rest for heavy hinge pattern while maintaining session efficiency. Week 2 intensity (78% vs Week 1 65-75% range) represents appropriate progressive overload. Interval ensures phosphocreatine recovery between sets.",
+            "source": "Bompa & Haff - Periodization 5th ed",
+            "url_or_ref": "Ch. 9"
+          }
+        }
+      },
+      {
+        "id": "w2d6",
+        "week": 2,
+        "day": 6,
+        "is_rest_day": false,
+        "title": "Gymnastics Skill + Aerobic Work",
+        "duration_minutes": 60,
+        "equipment": [
+          "pull-up bar",
+          "rings",
+          "ski erg"
+        ],
+        "blocks": {
+          "static_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Shoulder CARs (Controlled Articular Rotations)",
+                "reps_or_duration": "5 each direction",
+                "notes": null
+              },
+              {
+                "name": "Cat-Cow",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Banded Pull-Apart",
+                "reps_or_duration": "20 reps",
+                "notes": null
+              },
+              {
+                "name": "Hip Circles",
+                "reps_or_duration": "10 each direction",
+                "notes": null
+              }
+            ]
+          },
+          "active_warmup": {
+            "duration_minutes": 5,
+            "movements": [
+              {
+                "name": "Inchworm",
+                "reps_or_duration": "8 reps",
+                "notes": null
+              },
+              {
+                "name": "Ring Row",
+                "reps_or_duration": "10 reps",
+                "notes": null
+              },
+              {
+                "name": "Ring Dip (or box dip)",
+                "reps_or_duration": "8 reps",
+                "notes": "Light warmup"
+              },
+              {
+                "name": "Air Squat",
+                "reps_or_duration": "15 reps",
+                "notes": null
+              }
+            ]
+          },
+          "strength": {
+            "duration_minutes": 22,
+            "label": "Gymnastics Skill \u2014 Ring Work + Body Tension",
+            "movements": [
+              {
+                "name": "Hollow Body Hold",
+                "sets": 4,
+                "reps": "25-30 sec",
+                "load": null,
+                "rest_seconds": 60,
+                "notes": "Week 2 progression: increased duration from Week 1. Maintain quality over duration.",
+                "scaling": "Bent knee hollow hold or reduce to 20 sec"
+              },
+              {
+                "name": "Arch Body Hold",
+                "sets": 4,
+                "reps": "25-30 sec",
+                "load": null,
+                "rest_seconds": 60,
+                "notes": "Week 2 progression. Focus on posterior chain engagement.",
+                "scaling": "Reduce to 20 sec"
+              },
+              {
+                "name": "Ring Dip",
+                "sets": 5,
+                "reps": "5-8",
+                "load": null,
+                "rest_seconds": 90,
+                "notes": "Quality focus. Full range of motion, stable rings at top and bottom.",
+                "scaling": "Box dip or parallel bar dip"
+              }
+            ]
+          },
+          "metcon": {
+            "duration_minutes": 16,
+            "format": "AMRAP",
+            "time_cap_minutes": 15,
+            "rounds_or_duration": "15 min AMRAP",
+            "movements": [
+              {
+                "name": "Ski Erg",
+                "reps_or_duration": "250m",
+                "load": null,
+                "scaling": "Reduce to 200m or substitute rowing 300m"
+              },
+              {
+                "name": "Ring Row",
+                "reps_or_duration": "15 reps",
+                "load": null,
+                "scaling": "Adjust body angle for difficulty"
+              },
+              {
+                "name": "Air Squat",
+                "reps_or_duration": "20 reps",
+                "load": null,
+                "scaling": "Reduce reps to 15"
+              }
+            ],
+            "target_score": "6+ rounds",
+            "timer_config": {
+              "type": "amrap",
+              "duration_seconds": 900,
+              "interval_seconds": null
+            }
+          },
+          "cooldown": {
+            "duration_minutes": 7,
+            "movements": [
+              {
+                "name": "Foam Roll \u2014 Lats",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Pigeon Pose",
+                "reps_or_duration": "90 sec each side",
+                "notes": null
+              },
+              {
+                "name": "Thoracic Rotation",
+                "reps_or_duration": "10 each side",
+                "notes": null
+              }
+            ]
+          }
+        },
+        "rationale": {
+          "session_why": {
+            "text": "Final session of 2-week program emphasizes gymnastics skill progression (ring dip vs Week 1 pull-up focus) and aerobic capacity. Low CNS demand allows recovery while maintaining training stimulus. AMRAP format with longer duration (15 min) develops oxidative capacity.",
+            "source": "Gastin 2001 - Energy System Interaction",
+            "url_or_ref": "Sports Medicine 31(10)"
+          },
+          "movement_why": {
+            "text": "Ring dip progression from Week 1 pull-up focus provides balanced push development. Hollow/arch holds continue foundational tension work with increased duration. Aerobic metcon uses pulling (row), monostructural (ski), and bodyweight (squat) for low-impact volume.",
+            "source": "Sommer - Building the Gymnastic Body",
+            "url_or_ref": "Ch. 2"
+          },
+          "loading_why": {
+            "text": "Body tension holds progress to 25-30 sec (from Week 1 20-30 sec) for progressive overload. Ring dip volume (5x5-8) builds pushing strength and ring stability. Skill work maintains quality-over-quantity emphasis with full rest periods between sets.",
+            "source": "CrossFit Gymnastics Specialty Course",
+            "url_or_ref": null
+          }
+        }
+      },
+      {
+        "id": "w2d7",
+        "week": 2,
+        "day": 7,
+        "is_rest_day": true,
+        "title": "Rest Day",
+        "duration_minutes": 0,
+        "equipment": [],
+        "blocks": null,
+        "rationale": null
+      }
+    ]
+  }
+}
