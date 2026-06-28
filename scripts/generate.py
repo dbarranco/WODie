@@ -13,8 +13,9 @@ Usage:
 import os
 import json
 import argparse
+import subprocess
+import sys
 from pathlib import Path
-import anthropic
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 ROOT = Path(__file__).parent.parent
@@ -232,53 +233,63 @@ Return this JSON structure, nothing else:
 # ── API call ───────────────────────────────────────────────────────────────────
 
 def call_claude(prompt: str, retries: int = 2) -> dict:
-    """Call Claude API and parse JSON response. Retries on JSON parse failure."""
-    client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from env
+    """Call Claude via CLI and parse JSON response. Retries on JSON parse failure."""
 
     for attempt in range(1, retries + 1):
-        print(f"→ Calling Claude API with prompt caching... (attempt {attempt}/{retries})")
-        response = client.messages.create(
-            model="claude-sonnet-4-5-20250929",  # Sonnet 4.5
-            max_tokens=20000,
-            system=[
-                {
-                    "type": "text",
-                    "text": SYSTEM_PROMPT,
-                },
-                {
-                    "type": "text",
-                    "text": "KNOWLEDGE BASE AND HARD RULES BELOW — CACHED FOR EFFICIENCY\n(This content is cached and reused across multiple generations)",
-                    "cache_control": {"type": "ephemeral"}
-                }
-            ],
-            messages=[{"role": "user", "content": prompt}]
-        )
+        print(f"→ Calling Claude via CLI... (attempt {attempt}/{retries})")
 
-        raw = response.content[0].text.strip()
+        # Build the full prompt with system instructions
+        full_prompt = f"""{SYSTEM_PROMPT}
 
-        # Log cache performance
-        usage = response.usage
-        print(f"   Input tokens: {usage.input_tokens} | Cache write: {getattr(usage, 'cache_creation_input_tokens', 0)} | Cache read: {getattr(usage, 'cache_read_input_tokens', 0)}")
-
-        # Strip markdown fences if present
-        if raw.startswith("```"):
-            raw = raw.split("\n", 1)[1]
-            raw = raw.rsplit("```", 1)[0]
+KNOWLEDGE BASE AND HARD RULES BELOW:
+{prompt}"""
 
         try:
-            result = json.loads(raw)
-            print(f"   ✅ JSON parsed successfully")
-            return result
-        except json.JSONDecodeError as e:
+            # Call claude CLI
+            result = subprocess.run(
+                ["claude", "-"],
+                input=full_prompt,
+                capture_output=True,
+                text=True,
+                timeout=120
+            )
+
+            if result.returncode != 0:
+                print(f"   ❌ Claude CLI error: {result.stderr}")
+                if attempt < retries:
+                    print(f"   Retrying...")
+                    continue
+                else:
+                    raise RuntimeError(f"Claude CLI failed: {result.stderr}")
+
+            raw = result.stdout.strip()
+
+            # Strip markdown fences if present
+            if raw.startswith("```"):
+                raw = raw.split("\n", 1)[1]
+                raw = raw.rsplit("```", 1)[0]
+
+            try:
+                parsed = json.loads(raw)
+                print(f"   ✅ JSON parsed successfully")
+                return parsed
+            except json.JSONDecodeError as e:
+                if attempt < retries:
+                    print(f"   ❌ JSON parse error (attempt {attempt}): {e}")
+                    print(f"   Retrying...")
+                    continue
+                else:
+                    print(f"ERROR: Failed to parse JSON after {retries} attempts: {e}")
+                    print("Raw response saved to output/debug-last-response.txt")
+                    (OUTPUT_DIR / "debug-last-response.txt").write_text(raw)
+                    raise
+        except subprocess.TimeoutExpired:
+            print(f"   ❌ Claude CLI timeout (attempt {attempt})")
             if attempt < retries:
-                print(f"   ❌ JSON parse error (attempt {attempt}): {e}")
-                print(f"   Retrying with same prompt...")
+                print(f"   Retrying...")
                 continue
             else:
-                print(f"ERROR: Failed to parse JSON after {retries} attempts: {e}")
-                print("Raw response saved to output/debug-last-response.txt")
-                (OUTPUT_DIR / "debug-last-response.txt").write_text(raw)
-                raise
+                raise RuntimeError("Claude CLI timed out after all retries")
 
 
 # ── Validation ─────────────────────────────────────────────────────────────────
