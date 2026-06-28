@@ -851,13 +851,20 @@ function displayBlock(index) {
   let numRounds = 1;
   let perRound = baseDuration;
 
-  // Calculate rounds for warmups/cooldowns
-  if ((key === 'active_warmup' || key === 'static_warmup' || key === 'cooldown') && block.movements && block.movements.length > 0) {
+  // Calculate rounds for warmups only (NOT cooldowns)
+  // Cooldowns should just be a single continuous block
+  if ((key === 'active_warmup' || key === 'static_warmup') && block.movements && block.movements.length > 0) {
     numRounds = Math.max(1, Math.floor(baseDuration / Math.max(1, block.movements.length * 0.5)));
     if (numRounds > 1) {
       perRound = Math.ceil(baseDuration / numRounds);
       totalDuration = numRounds * perRound;
     }
+  } else if (key === 'cooldown') {
+    // Cooldown blocks don't have rounds - just use total duration
+    numRounds = 1;
+    perRound = baseDuration;
+    totalDuration = baseDuration;
+    roundInfo = `${baseDuration} minutes`;
   } else if (key === 'metcon' && block.rounds_or_duration) {
     roundInfo = block.rounds_or_duration;
     // For metcon, try to extract number of rounds if format is "X rounds"
