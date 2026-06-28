@@ -136,29 +136,34 @@ Centralized JSON file containing all static UI strings, keyed by semantic ID:
 
 ## Generated Program & WOD Translation
 
-Programs and WODs are **generated in Spanish** via the generator pipeline, not post-translated:
+Programs and WODs follow a **two-step pipeline**:
 
+**Step 1: Generate English (one-time)**
 ```bash
-# Generate English (existing workflow)
 python3 scripts/generate.py --type program --name back-in-shape --weeks 2
 python3 scripts/generate.py --type wod --count 5 --category full-body
-
-# Generate Spanish (new)
-python3 scripts/generate.py --type program --name back-in-shape --weeks 2 --language es
-python3 scripts/generate.py --type wod --count 5 --category full-body --language es
+# ... repeat for all variants
 ```
 
-**Spanish output:**
-- Sessions, blocks, movements all written in Spanish
-- Rationale text authored in Spanish (not machine-translated)
-- Citations and sources preserved
-- JSON schema identical to English variant
-- Output path: `docs/data-es/programs/` and `docs/data-es/wods/`
+**Step 2: Translate to Spanish (whenever English changes)**
+```bash
+python3 scripts/translate.py --language es
+```
 
-**Why generate, not translate?**
-- Rationales cite sports science sources — Spanish requires domain expertise, not dictionary lookup
-- Movement cues and scaling notes read better when authored naturally in Spanish
-- Aligns with "generation is the source of truth" principle
+**The translator (`scripts/translate.py`):**
+- Reads all English JSON from `docs/data/programs/` and `docs/data/wods/`
+- Calls Claude API to translate text while preserving JSON structure
+- Keeps acronyms in English (AMRAP, EMOM, RPE, etc.) — standard in Spanish fitness
+- Preserves all numbers, percentages, loading schemes, IDs unchanged
+- Preserves citations and sources exactly as-is
+- Writes Spanish variants to `docs/data-es/programs/` and `docs/data-es/wods/`
+
+**Why this approach?**
+- **English is source of truth** — single generation, no duplication
+- **Spanish derived from English** — clean, unambiguous dependency
+- **Graceful fallback** — if Spanish file missing, app falls back to English (not confusing)
+- **Decoupled pipelines** — can regenerate English without touching Spanish, or re-translate without regenerating
+- **Reusable domain context** — translator uses movement names from `docs/i18n/es.json`
 - Easier quality control (validate generated Spanish directly)
 
 ---
