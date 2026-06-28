@@ -1,8 +1,8 @@
 {
   "wods": [
     {
-      "id": "wod-ub-001",
-      "title": "Press Power Foundation",
+      "id": "wod-upper-001",
+      "title": "Strict Press Build + Chest-to-Bar Density",
       "category": [
         "upper-body"
       ],
@@ -19,20 +19,651 @@
           "movements": [
             {
               "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
+              "movement_name": "Shoulder CARs",
               "reps_or_duration": "10 each direction",
               "notes": "Controlled articular rotations - slow, deliberate shoulder circles through full ROM"
             },
             {
               "movement_id": "banded-pull-apart",
-              "name": "Banded Pull-Apart",
+              "movement_name": "Banded Pull-Apart",
               "reps_or_duration": "20 reps",
-              "notes": "Light band, focus on scapular retraction"
+              "notes": "Light band tension, focus on scapular retraction"
             },
             {
               "movement_id": "cat-cow",
-              "name": "Cat-Cow",
+              "movement_name": "Cat-Cow",
+              "reps_or_duration": "10 cycles",
+              "notes": "Thoracic spine mobility drill"
+            }
+          ]
+        },
+        "active_warmup": {
+          "duration_minutes": 5,
+          "movements": [
+            {
+              "movement_id": "inchworm",
+              "movement_name": "Inchworm",
+              "reps_or_duration": "8 reps",
+              "notes": "Walk hands out to plank, pike back to standing"
+            },
+            {
+              "movement_id": "push-up",
+              "movement_name": "Push-Up",
               "reps_or_duration": "10 reps",
+              "notes": "Slow, controlled tempo"
+            },
+            {
+              "movement_id": "ring-row",
+              "movement_name": "Ring Row",
+              "reps_or_duration": "10 reps",
+              "notes": "Moderate body angle, activate lats"
+            },
+            {
+              "movement_id": "strict-press",
+              "movement_name": "Strict Press",
+              "reps_or_duration": "5 reps empty bar",
+              "notes": "Movement-specific warmup, focus on lockout position"
+            }
+          ]
+        },
+        "strength": {
+          "duration_minutes": 22,
+          "label": "Strict Press - Ramp to Heavy Double",
+          "movements": [
+            {
+              "movement_id": "strict-press",
+              "movement_name": "Strict Press",
+              "sets": 5,
+              "reps": "5, 4, 3, 2, 2",
+              "loading": "65%, 72%, 78%, 83%, 85% of 1RM",
+              "rest": "2-3 minutes between sets",
+              "tempo": null,
+              "notes": "Ramp/build-up progression scheme. Progressive loading prepares nervous system for heavier weights while maintaining technical precision. Final two sets are working doubles at peak intensity.",
+              "rpe": null,
+              "progression_scheme": "ramp_buildup"
+            }
+          ]
+        },
+        "metcon": {
+          "duration_minutes": 15,
+          "format": "AMRAP",
+          "time_cap_minutes": 12,
+          "rounds_or_duration": "12 minutes",
+          "movements": [
+            {
+              "movement_id": "chest-to-bar",
+              "movement_name": "Chest-to-Bar Pull-Up",
+              "reps": 5,
+              "loading": "bodyweight",
+              "notes": "Scale to regular pull-ups if needed. Kipping allowed.",
+              "scaling": "pull-up, banded pull-up"
+            },
+            {
+              "movement_id": "push-up",
+              "movement_name": "Push-Up",
+              "reps": 10,
+              "loading": "bodyweight",
+              "notes": "Full ROM, chest to deck",
+              "scaling": "banded push-up, knee push-up"
+            },
+            {
+              "movement_id": "kb-swing-american",
+              "movement_name": "Kettlebell Swing (American)",
+              "reps": 15,
+              "loading": "53/35 lbs",
+              "notes": "Full overhead lockout at top",
+              "scaling": "Russian swing (eye level)"
+            }
+          ],
+          "target_score": "Target 8+ rounds",
+          "timer_config": {
+            "type": "AMRAP",
+            "duration_seconds": 720,
+            "interval_seconds": null
+          }
+        },
+        "cooldown": {
+          "duration_minutes": 8,
+          "movements": [
+            {
+              "movement_id": "foam-roll-lats",
+              "movement_name": "Foam Roll - Lats",
+              "reps_or_duration": "90 seconds each side",
+              "notes": "Soft tissue work for pulling muscles"
+            },
+            {
+              "movement_id": "pigeon-pose",
+              "movement_name": "Pigeon Pose",
+              "reps_or_duration": "90 seconds each side",
+              "notes": "Hip opener, promotes parasympathetic recovery"
+            },
+            {
+              "movement_id": "shoulder-car",
+              "movement_name": "Shoulder CARs",
+              "reps_or_duration": "5 slow circles each direction",
+              "notes": "Active cooldown for shoulder joint"
+            }
+          ]
+        }
+      },
+      "rationale": {
+        "session_why": {
+          "text": "Vertical pressing strength followed by upper body pulling/pushing density work. Strict press first exploits full CNS availability for maximal strength development. The AMRAP metcon creates a glycolytic/aerobic mixed stimulus emphasizing upper body work capacity without interfering with strength adaptation due to moderate time domain (12 min).",
+          "source": "Wilson et al 2012 - Concurrent Training Meta-Analysis",
+          "url_or_ref": "Journal of Strength and Conditioning Research 26(8)"
+        },
+        "movement_why": {
+          "text": "Chest-to-bar pull-ups develop vertical pulling strength and lat hypertrophy. Push-ups provide horizontal pushing volume at low CNS cost. Kettlebell swings add posterior chain activation and cardiovascular stimulus without lower body dominance. This combination ensures push:pull ratio \u22651:1 while maintaining upper body focus.",
+          "source": "Glassman 2002 - CrossFit Journal",
+          "url_or_ref": "What is Fitness?"
+        },
+        "loading_why": {
+          "text": "Ramp/buildup progression scheme used for Week 1-2 baseline establishment. Progressive loading from 65% to 85% allows technique refinement under increasing load while preparing neural pathways for heavier weights. This approach minimizes injury risk and develops consistent motor patterns in the strict press, a technically demanding movement requiring stable midline and precise bar path.",
+          "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training",
+          "url_or_ref": "Chapter 3 - Progressive warm-up sets for neural preparation"
+        }
+      }
+    },
+    {
+      "id": "wod-upper-002",
+      "title": "Bench Press Waves + Ring Work EMOM",
+      "category": [
+        "upper-body"
+      ],
+      "equipment": [
+        "barbell",
+        "plates",
+        "bench",
+        "rings"
+      ],
+      "duration_minutes": 60,
+      "blocks": {
+        "static_warmup": {
+          "duration_minutes": 5,
+          "movements": [
+            {
+              "movement_id": "pass-through",
+              "movement_name": "Shoulder Pass-Through",
+              "reps_or_duration": "15 reps",
+              "notes": "Use empty barbell or broomstick, wide grip"
+            },
+            {
+              "movement_id": "thoracic-rotation",
+              "movement_name": "Thoracic Rotation",
+              "reps_or_duration": "10 each side",
+              "notes": "Quadruped position, open up through mid-back"
+            },
+            {
+              "movement_id": "world-greatest-stretch",
+              "movement_name": "World's Greatest Stretch",
+              "reps_or_duration": "5 each side",
+              "notes": "Hip flexor, hamstring, and thoracic rotation combo"
+            }
+          ]
+        },
+        "active_warmup": {
+          "duration_minutes": 5,
+          "movements": [
+            {
+              "movement_id": "push-up",
+              "movement_name": "Push-Up",
+              "reps_or_duration": "15 reps",
+              "notes": "Activate chest and triceps"
+            },
+            {
+              "movement_id": "ring-row",
+              "movement_name": "Ring Row",
+              "reps_or_duration": "12 reps",
+              "notes": "Prepare scapular retractors"
+            },
+            {
+              "movement_id": "bench-press",
+              "movement_name": "Bench Press",
+              "reps_or_duration": "10 reps empty bar, 5 reps @ 50%",
+              "notes": "Movement-specific activation"
+            }
+          ]
+        },
+        "strength": {
+          "duration_minutes": 24,
+          "label": "Bench Press - Wave Loading",
+          "movements": [
+            {
+              "movement_id": "bench-press",
+              "movement_name": "Bench Press",
+              "sets": 6,
+              "reps": "3, 3, 3, 3, 3, 3",
+              "loading": "Wave: 75%, 80%, 85%, 77%, 82%, 87% of 1RM",
+              "rest": "3 minutes between sets",
+              "tempo": "controlled eccentric, explosive concentric",
+              "notes": "Wave loading exploits post-activation potentiation. Heavy sets (85%, 87%) prime the nervous system, making subsequent moderate sets (77%, 82%) feel lighter and allowing higher quality reps at near-maximal intensities. This is a Week 2-3 intensity scheme for experienced lifters.",
+              "rpe": null,
+              "progression_scheme": "wave_loading"
+            }
+          ]
+        },
+        "metcon": {
+          "duration_minutes": 14,
+          "format": "EMOM",
+          "time_cap_minutes": 14,
+          "rounds_or_duration": "14 minutes (7 rounds)",
+          "movements": [
+            {
+              "movement_id": "ring-dip",
+              "movement_name": "Ring Dip",
+              "reps": 8,
+              "loading": "bodyweight",
+              "notes": "Minute 1: Ring dips. Scale to box dips if needed.",
+              "scaling": "box dip, parallel bar dip"
+            },
+            {
+              "movement_id": "ring-row",
+              "movement_name": "Ring Row",
+              "reps": 12,
+              "loading": "bodyweight",
+              "notes": "Minute 2: Ring rows. Adjust body angle for difficulty - more horizontal = harder.",
+              "scaling": "adjust body angle"
+            }
+          ],
+          "target_score": "Complete all reps within each minute with 15-20 seconds rest",
+          "timer_config": {
+            "type": "EMOM",
+            "duration_seconds": 840,
+            "interval_seconds": 60
+          }
+        },
+        "cooldown": {
+          "duration_minutes": 7,
+          "movements": [
+            {
+              "movement_id": "banded-pull-apart",
+              "movement_name": "Banded Pull-Apart",
+              "reps_or_duration": "3 sets of 20",
+              "notes": "Light band, scapular health"
+            },
+            {
+              "movement_id": "pigeon-pose",
+              "movement_name": "Pigeon Pose",
+              "reps_or_duration": "90 seconds each side",
+              "notes": "Static stretching appropriate post-workout"
+            },
+            {
+              "movement_id": "shoulder-car",
+              "movement_name": "Shoulder CARs",
+              "reps_or_duration": "5 slow circles each direction",
+              "notes": "Joint health maintenance"
+            }
+          ]
+        }
+      },
+      "rationale": {
+        "session_why": {
+          "text": "Horizontal pressing strength emphasized through wave loading, followed by gymnastic pushing and pulling volume in EMOM format. The EMOM metcon keeps work:rest ratio favorable (15-20 sec work, 40-45 sec rest per minute) to maintain movement quality while accumulating volume. Time domain is short-medium (14 min), preventing excessive glycolytic fatigue that would interfere with strength adaptation.",
+          "source": "Bompa & Haff - Periodization 5th ed",
+          "url_or_ref": "Chapter 9 - Concurrent periodization model"
+        },
+        "movement_why": {
+          "text": "Ring dips and ring rows train vertical and horizontal push/pull patterns with unstable implements, increasing stabilizer demand and core engagement compared to fixed implements. This develops coordination and balance (two of the 10 physical skills) while building structural strength. The alternating minute format allows each muscle group to recover while the antagonist works, supporting work capacity.",
+          "source": "Glassman 2002 - CrossFit Journal",
+          "url_or_ref": "What is Fitness? - 10 Physical Skills"
+        },
+        "loading_why": {
+          "text": "Wave loading oscillates between 75-87% intensity across 6 sets of 3 reps. This exploits post-activation potentiation (PAP): heavy sets at 85-87% increase motor unit recruitment, temporarily enhancing force production for 3-10 minutes. The 'down waves' at 77-82% benefit from this priming effect, allowing higher quality execution at intensities that would otherwise feel heavier. This scheme is appropriate for Week 2-3 strength emphasis and requires intermediate+ lifting experience.",
+          "source": "Robbins 2005 - Post-Activation Potentiation",
+          "url_or_ref": "Journal of Strength and Conditioning Research 19(2)"
+        }
+      }
+    },
+    {
+      "id": "wod-upper-003",
+      "title": "Push Press Volume + Pull-Up Ladder",
+      "category": [
+        "upper-body"
+      ],
+      "equipment": [
+        "barbell",
+        "plates",
+        "rack",
+        "pull-up bar"
+      ],
+      "duration_minutes": 60,
+      "blocks": {
+        "static_warmup": {
+          "duration_minutes": 5,
+          "movements": [
+            {
+              "movement_id": "hip-circle",
+              "movement_name": "Hip Circles",
+              "reps_or_duration": "10 each direction",
+              "notes": "Warm up hip flexors for dip portion of push press"
+            },
+            {
+              "movement_id": "shoulder-car",
+              "movement_name": "Shoulder CARs",
+              "reps_or_duration": "10 each direction",
+              "notes": "Shoulder joint preparation"
+            },
+            {
+              "movement_id": "cat-cow",
+              "movement_name": "Cat-Cow",
+              "reps_or_duration": "10 cycles",
+              "notes": "Spinal mobility"
+            }
+          ]
+        },
+        "active_warmup": {
+          "duration_minutes": 5,
+          "movements": [
+            {
+              "movement_id": "air-squat",
+              "movement_name": "Air Squat",
+              "reps_or_duration": "15 reps",
+              "notes": "Activate legs for push press dip"
+            },
+            {
+              "movement_id": "push-press",
+              "movement_name": "Push Press",
+              "reps_or_duration": "10 reps empty bar, 5 reps @ 40%",
+              "notes": "Groove dip-drive pattern"
+            },
+            {
+              "movement_id": "pull-up",
+              "movement_name": "Pull-Up",
+              "reps_or_duration": "5 reps",
+              "notes": "Activate lats, test readiness",
+              "scaling": "banded pull-up if needed"
+            }
+          ]
+        },
+        "strength": {
+          "duration_minutes": 20,
+          "label": "Push Press - E2MOM Volume",
+          "movements": [
+            {
+              "movement_id": "push-press",
+              "movement_name": "Push Press",
+              "sets": 8,
+              "reps": 4,
+              "loading": "E2MOM \u00d7 8 rounds: 4 reps @ 75% of 1RM",
+              "rest": "remainder of 2-minute interval",
+              "tempo": "explosive drive, controlled descent",
+              "notes": "EMOM strength format. Perform 4 reps at the top of each 2-minute window, rest the remainder. Consistent load across all 8 sets builds work capacity at moderate-high intensity. Total volume: 32 reps. If reps take ~20-25 seconds, athlete gets ~95-100 seconds rest per round.",
+              "rpe": null,
+              "progression_scheme": "straight_sets"
+            }
+          ]
+        },
+        "metcon": {
+          "duration_minutes": 12,
+          "format": "For Time",
+          "time_cap_minutes": 12,
+          "rounds_or_duration": "For Time",
+          "movements": [
+            {
+              "movement_id": "pull-up",
+              "movement_name": "Pull-Up",
+              "reps": "21-15-9",
+              "loading": "bodyweight",
+              "notes": "Descending ladder. Kipping allowed.",
+              "scaling": "banded pull-up, ring row"
+            },
+            {
+              "movement_id": "push-up",
+              "movement_name": "Push-Up",
+              "reps": "21-15-9",
+              "loading": "bodyweight",
+              "notes": "Full ROM, maintain hollow body tension",
+              "scaling": "banded push-up, knee push-up"
+            },
+            {
+              "movement_id": "hollow-body-hold",
+              "movement_name": "Hollow Body Hold",
+              "reps": "30-20-10 seconds",
+              "loading": "bodyweight",
+              "notes": "Active midline stability between pulling and pushing sets",
+              "scaling": "bent knee hollow hold"
+            }
+          ],
+          "target_score": "Target sub-10 minutes",
+          "timer_config": {
+            "type": "For Time",
+            "duration_seconds": 720,
+            "interval_seconds": null
+          }
+        },
+        "cooldown": {
+          "duration_minutes": 8,
+          "movements": [
+            {
+              "movement_id": "foam-roll-lats",
+              "movement_name": "Foam Roll - Lats",
+              "reps_or_duration": "90 seconds each side",
+              "notes": "Release pulling muscle tension"
+            },
+            {
+              "movement_id": "pigeon-pose",
+              "movement_name": "Pigeon Pose",
+              "reps_or_duration": "90 seconds each side",
+              "notes": "Hip and glute release"
+            },
+            {
+              "movement_id": "shoulder-car",
+              "movement_name": "Shoulder CARs",
+              "reps_or_duration": "5 slow circles each direction",
+              "notes": "Restore shoulder ROM post-workout"
+            }
+          ]
+        }
+      },
+      "rationale": {
+        "session_why": {
+          "text": "Push press develops explosive upper body power through leg drive integration. E2MOM format maintains consistent output across 8 sets, building work capacity at 75% intensity. The For Time metcon creates glycolytic demand through descending rep ladder, emphasizing upper body pushing and pulling with midline stability holds. Total session emphasizes vertical pressing power and upper body stamina.",
+          "source": "Haff & Triplett - NSCA Essentials 4th ed",
+          "url_or_ref": "Chapter 17 - Program Design for Resistance Training"
+        },
+        "movement_why": {
+          "text": "Pull-ups and push-ups are foundational bodyweight movements building vertical pull and horizontal push strength. Hollow body holds between sets reinforce midline tension, a prerequisite for all gymnastics movements. This combination develops coordination and body control under fatigue. The 21-15-9 rep scheme is a classic CrossFit descending ladder creating psychological momentum as rounds get shorter.",
+          "source": "Sommer - Building the Gymnastic Body",
+          "url_or_ref": "Chapter on body tension fundamentals"
+        },
+        "loading_why": {
+          "text": "E2MOM straight sets at 75% of 1RM builds hypertrophy and strength-endurance. The 2-minute interval provides adequate phosphocreatine recovery for power movements while maintaining session flow and athlete engagement. This format auto-regulates rest: faster execution earns more recovery time. 8 rounds \u00d7 4 reps = 32 total reps at moderate-high intensity, appropriate for Week 1-2 baseline volume accumulation without excessive CNS fatigue.",
+          "source": "Bompa & Haff - Periodization 5th ed",
+          "url_or_ref": "Chapter 6 - Hypertrophy training parameters"
+        }
+      }
+    },
+    {
+      "id": "wod-upper-004",
+      "title": "Barbell Row Top Set + Upper Body Intervals",
+      "category": [
+        "upper-body"
+      ],
+      "equipment": [
+        "barbell",
+        "plates",
+        "pull-up bar",
+        "kettlebell"
+      ],
+      "duration_minutes": 60,
+      "blocks": {
+        "static_warmup": {
+          "duration_minutes": 5,
+          "movements": [
+            {
+              "movement_id": "cat-cow",
+              "movement_name": "Cat-Cow",
+              "reps_or_duration": "12 cycles",
+              "notes": "Prepare spine for hinge position"
+            },
+            {
+              "movement_id": "thoracic-rotation",
+              "movement_name": "Thoracic Rotation",
+              "reps_or_duration": "10 each side",
+              "notes": "Open up mid-back for rowing"
+            },
+            {
+              "movement_id": "banded-pull-apart",
+              "movement_name": "Banded Pull-Apart",
+              "reps_or_duration": "20 reps",
+              "notes": "Activate scapular retractors"
+            }
+          ]
+        },
+        "active_warmup": {
+          "duration_minutes": 5,
+          "movements": [
+            {
+              "movement_id": "good-morning",
+              "movement_name": "Good Morning",
+              "reps_or_duration": "10 reps with empty bar",
+              "notes": "Hip hinge pattern activation"
+            },
+            {
+              "movement_id": "barbell-row",
+              "movement_name": "Barbell Row",
+              "reps_or_duration": "10 reps empty bar, 5 reps @ 40%",
+              "notes": "Movement-specific warmup, establish hinge position"
+            },
+            {
+              "movement_id": "kb-swing",
+              "movement_name": "Kettlebell Swing (Russian)",
+              "reps_or_duration": "15 reps light",
+              "notes": "Activate posterior chain"
+            }
+          ]
+        },
+        "strength": {
+          "duration_minutes": 22,
+          "label": "Barbell Row - Top Set + Back-Off Volume",
+          "movements": [
+            {
+              "movement_id": "barbell-row",
+              "movement_name": "Barbell Row (Bent Over)",
+              "sets": 5,
+              "reps": "3, 5, 5, 5, 5",
+              "loading": "1 \u00d7 3 @ 85% (top set), then 4 \u00d7 5 @ 70%",
+              "rest": "3 min after top set, 90 sec between back-off sets",
+              "tempo": "explosive pull, controlled descent",
+              "notes": "Top set + back-off volume scheme. Single heavy triple at 85% provides maximal neural stimulus. Four back-off sets at 70% accumulate hypertrophy volume without excessive CNS fatigue. This combines strength and structural adaptation in time-efficient format, appropriate for Week 3 peak intensity sessions.",
+              "rpe": null,
+              "progression_scheme": "top_set_backoff"
+            }
+          ]
+        },
+        "metcon": {
+          "duration_minutes": 15,
+          "format": "EMOM",
+          "time_cap_minutes": 15,
+          "rounds_or_duration": "15 minutes (5 rounds)",
+          "movements": [
+            {
+              "movement_id": "chest-to-bar",
+              "movement_name": "Chest-to-Bar Pull-Up",
+              "reps": 7,
+              "loading": "bodyweight",
+              "notes": "Minute 1: 7 chest-to-bar pull-ups",
+              "scaling": "pull-up, banded pull-up"
+            },
+            {
+              "movement_id": "kb-press",
+              "movement_name": "Kettlebell Press",
+              "reps": "6 each arm",
+              "loading": "moderate (35/26 lbs)",
+              "notes": "Minute 2: 6 KB press each arm (12 total reps)",
+              "scaling": "reduce weight"
+            },
+            {
+              "movement_id": "push-up",
+              "movement_name": "Push-Up",
+              "reps": 15,
+              "loading": "bodyweight",
+              "notes": "Minute 3: 15 push-ups",
+              "scaling": "knee push-up"
+            }
+          ],
+          "target_score": "Complete all reps with 15-20 seconds rest each minute",
+          "timer_config": {
+            "type": "EMOM",
+            "duration_seconds": 900,
+            "interval_seconds": 60
+          }
+        },
+        "cooldown": {
+          "duration_minutes": 8,
+          "movements": [
+            {
+              "movement_id": "foam-roll-lats",
+              "movement_name": "Foam Roll - Lats",
+              "reps_or_duration": "90 seconds each side",
+              "notes": "Soft tissue work for back muscles"
+            },
+            {
+              "movement_id": "pigeon-pose",
+              "movement_name": "Pigeon Pose",
+              "reps_or_duration": "90 seconds each side",
+              "notes": "Hip opener"
+            },
+            {
+              "movement_id": "thoracic-rotation",
+              "movement_name": "Thoracic Rotation",
+              "reps_or_duration": "10 slow reps each side",
+              "notes": "Restore spinal mobility"
+            }
+          ]
+        }
+      },
+      "rationale": {
+        "session_why": {
+          "text": "Horizontal pulling strength emphasized through barbell rows, a foundational back-building movement. Top set + back-off scheme allows peak intensity exposure (85%) followed by hypertrophy volume (70%), maximizing both neural and structural adaptations within a single session. The 15-minute EMOM metcon rotates through vertical pull, vertical push, and horizontal push, creating balanced upper body work capacity development.",
+          "source": "Bompa & Haff - Periodization 5th ed",
+          "url_or_ref": "Chapter 9 - Concurrent training efficiency"
+        },
+        "movement_why": {
+          "text": "Barbell rows develop horizontal pulling strength and lat hypertrophy. Chest-to-bar pull-ups, KB press, and push-ups create a tri-set rotating through pull-vertical, push-vertical, and push-horizontal patterns. This ensures balanced upper body development and respects the push:pull \u22651:1 ratio requirement. The rotating EMOM format allows partial recovery between similar movement patterns.",
+          "source": "Schoenfeld - Science and Development of Muscle Hypertrophy",
+          "url_or_ref": "Chapter on volume landmarks for muscle growth"
+        },
+        "loading_why": {
+          "text": "Top set + back-off volume combines peak neural stimulation (1 \u00d7 3 @ 85%) with structural volume (4 \u00d7 5 @ 70%). The heavy triple maximizes motor unit recruitment without accumulating excessive fatigue. Back-off sets at 70% fall in the hypertrophy zone (65-80%) and accumulate 20 total reps for muscle growth. This scheme is time-efficient and appropriate for Week 3 intensity peaks while maintaining volume for concurrent strength and hypertrophy goals.",
+          "source": "Bompa & Haff - Periodization 5th ed",
+          "url_or_ref": "Chapter on combined intensity and volume methods"
+        }
+      }
+    },
+    {
+      "id": "wod-upper-005",
+      "title": "Handstand Push-Up Skill + Upper Body Chipper",
+      "category": [
+        "upper-body"
+      ],
+      "equipment": [
+        "wall",
+        "pull-up bar",
+        "rings",
+        "kettlebell"
+      ],
+      "duration_minutes": 60,
+      "blocks": {
+        "static_warmup": {
+          "duration_minutes": 5,
+          "movements": [
+            {
+              "movement_id": "shoulder-car",
+              "movement_name": "Shoulder CARs",
+              "reps_or_duration": "10 each direction",
+              "notes": "Critical for overhead shoulder health"
+            },
+            {
+              "movement_id": "pass-through",
+              "movement_name": "Shoulder Pass-Through",
+              "reps_or_duration": "15 reps",
+              "notes": "Use empty barbell or broomstick"
+            },
+            {
+              "movement_id": "cat-cow",
+              "movement_name": "Cat-Cow",
+              "reps_or_duration": "10 cycles",
               "notes": "Thoracic spine mobility"
             }
           ]
@@ -42,1193 +673,157 @@
           "movements": [
             {
               "movement_id": "inchworm",
-              "name": "Inchworm",
-              "reps_or_duration": "5 reps",
-              "notes": "Walk hands out to plank, walk feet to hands"
+              "movement_name": "Inchworm",
+              "reps_or_duration": "8 reps",
+              "notes": "Dynamic shoulder flexion prep"
             },
             {
               "movement_id": "push-up",
-              "name": "Push-Up",
-              "reps_or_duration": "10 reps",
-              "notes": "Controlled tempo, full range"
+              "movement_name": "Push-Up",
+              "reps_or_duration": "12 reps",
+              "notes": "Activate pressing muscles"
             },
             {
-              "movement_id": "strict-press",
-              "name": "Empty Bar Strict Press",
-              "reps_or_duration": "2 x 5 reps",
-              "notes": "Movement-specific prep, focus on bar path"
+              "movement_id": "wall-walk",
+              "movement_name": "Wall Walk",
+              "reps_or_duration": "3 reps",
+              "notes": "Movement-specific warmup for HSPU progression"
+            },
+            {
+              "movement_id": "handstand-hold",
+              "movement_name": "Handstand Hold (wall-supported)",
+              "reps_or_duration": "20 seconds",
+              "notes": "Build confidence in inverted position"
             }
           ]
         },
         "strength": {
-          "duration_minutes": 22,
-          "label": "Strict Press \u2014 Ramp to Heavy Double",
+          "duration_minutes": 25,
+          "label": "Handstand Push-Up Skill Development",
           "movements": [
-            {
-              "movement_id": "strict-press",
-              "name": "Strict Press",
-              "sets": 6,
-              "reps": "5, 4, 3, 2, 2, 2",
-              "loading": "Ramp: 65%, 70%, 75%, 80%, 83%, 85% of 1RM (or RPE 7\u21929)",
-              "rest": "2-3 min between sets",
-              "notes": "Progressive loading scheme. Bar path must be vertical. If 1RM unknown, build to RPE 9 on final double.",
-              "tempo": null,
-              "equipment": [
-                "barbell",
-                "plates",
-                "rack"
-              ]
-            }
-          ]
-        },
-        "metcon": {
-          "duration_minutes": 15,
-          "format": "AMRAP",
-          "time_cap_minutes": 12,
-          "rounds_or_duration": "12 minutes",
-          "movements": [
-            {
-              "movement_id": "push-press",
-              "name": "Push Press",
-              "reps": 8,
-              "loading": "95/65 lb (moderate)",
-              "notes": "Use leg drive, catch in partial dip",
-              "scaling": "Reduce load to maintain unbroken sets"
-            },
-            {
-              "movement_id": "pull-up",
-              "name": "Pull-Up",
-              "reps": 12,
-              "loading": "bodyweight",
-              "notes": "Strict or kipping, chest to bar not required",
-              "scaling": "Banded pull-up or ring row"
-            },
-            {
-              "movement_id": "burpee",
-              "name": "Burpee",
-              "reps": 16,
-              "loading": "bodyweight",
-              "notes": "Chest and hips to ground, full hip extension at top",
-              "scaling": "Step-back burpee, omit jump"
-            }
-          ],
-          "target_score": "8-10+ rounds for experienced athletes",
-          "timer_config": {
-            "type": "AMRAP",
-            "duration_seconds": 720,
-            "interval_seconds": null
-          }
-        },
-        "cooldown": {
-          "duration_minutes": 8,
-          "movements": [
-            {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Hip flexor, thoracic rotation, hamstring stretch combo"
-            },
-            {
-              "movement_id": "foam-roll-lats",
-              "name": "Foam Roll \u2014 Lats",
-              "reps_or_duration": "90 sec each side",
-              "notes": "Target latissimus from armpit to mid-back"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each direction",
-              "notes": "Slow, controlled, end-range emphasis"
-            }
-          ]
-        }
-      },
-      "rationale": {
-        "session_why": {
-          "text": "Vertical pressing strength is placed first to exploit full CNS availability. The metcon uses moderate-load pressing paired with pulling to maintain movement balance (push:pull ratio 1:1.5 favoring pull) and targets the glycolytic system with 12-minute AMRAP duration.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed, Ch. 17; Glassman 2002 - CrossFit Journal",
-          "url_or_ref": null
-        },
-        "movement_why": {
-          "text": "Strict press is the foundation for all overhead strength. Ramp loading allows progressive neural preparation under increasing load. Push press in metcon uses previously fatigued pressing musculature at moderate intensity, training strength-endurance. Pull-ups provide antagonist balance.",
-          "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training, Ch. 3; CrossFit Level 2 Training Guide",
-          "url_or_ref": null
-        },
-        "loading_why": {
-          "text": "Ramp/buildup scheme (5\u21924\u21923\u21922 reps at 65%\u219285%) prepares the nervous system for heavier loads while developing technique under progressively challenging weights. This is appropriate for Week 1 baseline establishment or complex movement introduction. Metcon load kept moderate (95/65 lb) to allow volume accumulation without technical breakdown.",
-          "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training; Bompa & Haff - Periodization 5th ed",
-          "url_or_ref": null
-        }
-      }
-    },
-    {
-      "id": "wod-ub-002",
-      "title": "Bench and Pull Density",
-      "category": [
-        "upper-body"
-      ],
-      "equipment": [
-        "barbell",
-        "plates",
-        "bench",
-        "pull-up bar"
-      ],
-      "duration_minutes": 60,
-      "blocks": {
-        "static_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "pass-through",
-              "name": "Band Pass-Through",
-              "reps_or_duration": "15 reps",
-              "notes": "Use resistance band, wide grip, open shoulders"
-            },
-            {
-              "movement_id": "thoracic-rotation",
-              "name": "Thoracic Rotation",
-              "reps_or_duration": "10 each side",
-              "notes": "Quadruped position, hand behind head, rotate through mid-back"
-            },
-            {
-              "movement_id": "cat-cow",
-              "name": "Cat-Cow",
-              "reps_or_duration": "10 reps",
-              "notes": "Thoracic and lumbar mobility"
-            }
-          ]
-        },
-        "active_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "push-up",
-              "name": "Push-Up",
-              "reps_or_duration": "3 x 5 reps",
-              "notes": "Tempo: 3 sec down, 1 sec up"
-            },
-            {
-              "movement_id": "ring-row",
-              "name": "Ring Row",
-              "reps_or_duration": "3 x 8 reps",
-              "notes": "Body angle to allow controlled reps"
-            },
-            {
-              "movement_id": "bench-press",
-              "name": "Empty Bar Bench Press",
-              "reps_or_duration": "2 x 8 reps",
-              "notes": "Movement prep, touch chest, full lockout"
-            }
-          ]
-        },
-        "strength": {
-          "duration_minutes": 24,
-          "label": "Bench Press \u2014 E2MOM Build + Chest-to-Bar Skill",
-          "movements": [
-            {
-              "movement_id": "bench-press",
-              "name": "Bench Press",
-              "sets": 8,
-              "reps": "4 reps per round",
-              "loading": "E2MOM x 8: Build from 70% to 80% 1RM (or RPE 7\u21928)",
-              "rest": "Remainder of 2-min interval",
-              "notes": "Auto-regulated rest. If reps take 30 sec, you rest 90 sec. Build load across rounds: start 70%, finish 80%.",
-              "tempo": "Controlled eccentric, explosive concentric",
-              "equipment": [
-                "barbell",
-                "plates",
-                "bench"
-              ]
-            },
-            {
-              "movement_id": "chest-to-bar",
-              "name": "Chest-to-Bar Pull-Up Skill Work",
-              "sets": 4,
-              "reps": "3-5 reps (quality focus)",
-              "loading": "bodyweight or banded",
-              "rest": "90 sec between sets",
-              "notes": "Focus on pulling chest to bar, not just chin over. If cannot perform strict, use band assistance. Scaling: strict pull-up to chest height.",
-              "tempo": null,
-              "equipment": [
-                "pull-up bar"
-              ]
-            }
-          ]
-        },
-        "metcon": {
-          "duration_minutes": 14,
-          "format": "For Time",
-          "time_cap_minutes": 12,
-          "rounds_or_duration": "5 Rounds",
-          "movements": [
-            {
-              "movement_id": "push-up",
-              "name": "Push-Up",
-              "reps": 15,
-              "loading": "bodyweight",
-              "notes": "Full range, chest to deck",
-              "scaling": "Banded push-up or hand-release push-up"
-            },
-            {
-              "movement_id": "pull-up",
-              "name": "Pull-Up",
-              "reps": 10,
-              "loading": "bodyweight",
-              "notes": "Kipping or strict",
-              "scaling": "Banded pull-up or ring row x 15"
-            },
-            {
-              "movement_id": "row",
-              "name": "Row",
-              "reps": "200m",
-              "loading": "moderate pace",
-              "notes": "Damper 5-6, steady pull",
-              "scaling": "Reduce to 150m"
-            }
-          ],
-          "target_score": "8-11 minutes for experienced athletes",
-          "timer_config": {
-            "type": "For Time",
-            "duration_seconds": 720,
-            "interval_seconds": null
-          }
-        },
-        "cooldown": {
-          "duration_minutes": 7,
-          "movements": [
-            {
-              "movement_id": "foam-roll-lats",
-              "name": "Foam Roll \u2014 Lats",
-              "reps_or_duration": "90 sec each side",
-              "notes": "Armpit to mid-back"
-            },
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "90 sec each side",
-              "notes": "Hip external rotation stretch"
-            },
-            {
-              "movement_id": "banded-pull-apart",
-              "name": "Banded Pull-Apart",
-              "reps_or_duration": "2 x 20 reps",
-              "notes": "Light band, scapular retraction focus"
-            }
-          ]
-        }
-      },
-      "rationale": {
-        "session_why": {
-          "text": "Horizontal pressing (bench press) is a foundational upper-body strength pattern. The EMOM format maintains session flow and rewards efficient execution. Chest-to-bar skill work develops vertical pulling proficiency. The metcon uses bodyweight push/pull movements plus monostructural cardio, targeting glycolytic and oxidative systems with 5-round structure (~10 min duration).",
-          "source": "Bompa & Haff - Periodization 5th ed; Gastin 2001 - Energy System Interaction",
-          "url_or_ref": null
-        },
-        "movement_why": {
-          "text": "Bench press and chest-to-bar pull-up together provide balanced horizontal push and vertical pull volume. Push:pull ratio is 1:1 in strength block (4 sets bench, 4 sets C2B) and maintained in metcon. This prevents shoulder imbalance and supports long-term joint health.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed; CrossFit Level 2 Training Guide",
-          "url_or_ref": null
-        },
-        "loading_why": {
-          "text": "E2MOM format with progressive loading (70%\u219280%) builds work capacity at moderate-heavy intensity while maintaining pacing discipline. The 2-minute interval provides adequate phosphocreatine recovery for 4-rep sets at these intensities. Metcon kept to bodyweight movements to avoid excessive loading after heavy bench work.",
-          "source": "Bompa & Haff - Periodization 5th ed; Haff & Triplett - NSCA Essentials 4th ed",
-          "url_or_ref": null
-        }
-      }
-    },
-    {
-      "id": "wod-ub-003",
-      "title": "Ring Strength Progression",
-      "category": [
-        "upper-body"
-      ],
-      "equipment": [
-        "rings",
-        "pull-up bar",
-        "rowing machine"
-      ],
-      "duration_minutes": 60,
-      "blocks": {
-        "static_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "10 each direction",
-              "notes": "Controlled articular rotations - prepare shoulder for ring instability"
-            },
-            {
-              "movement_id": "banded-pull-apart",
-              "name": "Banded Pull-Apart",
-              "reps_or_duration": "2 x 15 reps",
-              "notes": "Posterior shoulder and scapular activation"
-            },
-            {
-              "movement_id": "cat-cow",
-              "name": "Cat-Cow",
-              "reps_or_duration": "10 reps",
-              "notes": "Spinal mobility"
-            }
-          ]
-        },
-        "active_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "push-up",
-              "name": "Push-Up",
-              "reps_or_duration": "10 reps",
-              "notes": "Controlled tempo"
-            },
-            {
-              "movement_id": "ring-row",
-              "name": "Ring Row",
-              "reps_or_duration": "3 x 8 reps",
-              "notes": "Body angle progression: start easy, finish challenging"
-            },
-            {
-              "movement_id": "ring-dip",
-              "name": "Ring Support Hold",
-              "reps_or_duration": "3 x 20 sec",
-              "notes": "Active shoulders, stable rings, hollow body tension"
-            }
-          ]
-        },
-        "strength": {
-          "duration_minutes": 22,
-          "label": "Ring Dip Strength + Hollow Body Foundation",
-          "movements": [
-            {
-              "movement_id": "ring-dip",
-              "name": "Ring Dip",
-              "sets": 5,
-              "reps": "5 reps",
-              "loading": "Straight sets at RPE 7-8 (or 70-75% max reps)",
-              "rest": "2 min between sets",
-              "notes": "If cannot perform 5 strict ring dips, scale to parallel bar dip or box dip. Maintain ring stability throughout.",
-              "tempo": "3 sec eccentric, 1 sec pause at bottom, explosive up",
-              "equipment": [
-                "rings"
-              ]
-            },
             {
               "movement_id": "hollow-body-hold",
-              "name": "Hollow Body Hold",
-              "sets": 4,
-              "reps": "30 sec",
+              "movement_name": "Hollow Body Hold",
+              "sets": 3,
+              "reps": "30 seconds",
               "loading": "bodyweight",
-              "rest": "60 sec between sets",
-              "notes": "Lower back pressed to floor, arms overhead, legs straight and low. If form breaks, bend knees to maintain position.",
+              "rest": "60 seconds",
               "tempo": null,
-              "equipment": []
+              "notes": "Foundational tension work - non-negotiable in gymnastics sessions. Maintain lower back contact with floor, arms overhead.",
+              "rpe": null,
+              "progression_scheme": null
             },
             {
               "movement_id": "arch-body-hold",
-              "name": "Arch Body Hold",
-              "sets": 4,
-              "reps": "30 sec",
+              "movement_name": "Arch Body Hold",
+              "sets": 3,
+              "reps": "30 seconds",
               "loading": "bodyweight",
-              "rest": "60 sec between sets",
-              "notes": "Opposite of hollow - chest and thighs off ground, arms and legs extended. Alternate with hollow holds.",
+              "rest": "60 seconds",
               "tempo": null,
-              "equipment": []
+              "notes": "Complement to hollow hold. Squeeze glutes, lift chest and thighs.",
+              "rpe": null,
+              "progression_scheme": null
+            },
+            {
+              "movement_id": "hspu",
+              "movement_name": "Handstand Push-Up (or progression)",
+              "sets": 5,
+              "reps": "3-5",
+              "loading": "bodyweight",
+              "rest": "90-120 seconds",
+              "tempo": "controlled descent, explosive press",
+              "notes": "Skill work - quality over quantity. Scale to deficit pike push-ups or box pike push-ups if strict HSPU not yet available. Full rest between sets to preserve technique. Prerequisite: athlete should have 5+ strict push-ups and stable handstand hold.",
+              "rpe": "7-8",
+              "progression_scheme": null
             }
           ]
         },
         "metcon": {
           "duration_minutes": 12,
-          "format": "EMOM",
+          "format": "For Time",
           "time_cap_minutes": 12,
-          "rounds_or_duration": "12 min (4 movements x 3 rounds)",
+          "rounds_or_duration": "For Time",
           "movements": [
             {
               "movement_id": "pull-up",
-              "name": "Pull-Up",
-              "reps": 8,
+              "movement_name": "Pull-Up",
+              "reps": 30,
               "loading": "bodyweight",
-              "notes": "Min 1, 5, 9: Strict or kipping",
-              "scaling": "Banded pull-up or ring row x 12"
+              "notes": "Break into manageable sets. Kipping allowed.",
+              "scaling": "banded pull-up, ring row"
+            },
+            {
+              "movement_id": "ring-dip",
+              "movement_name": "Ring Dip",
+              "reps": 20,
+              "loading": "bodyweight",
+              "notes": "Strict or kipping. Scale to box dips if needed.",
+              "scaling": "box dip, parallel bar dip"
+            },
+            {
+              "movement_id": "kb-swing",
+              "movement_name": "Kettlebell Swing (Russian)",
+              "reps": 40,
+              "loading": "53/35 lbs",
+              "notes": "Eye level swings, hip hinge pattern",
+              "scaling": "reduce weight"
             },
             {
               "movement_id": "push-up",
-              "name": "Push-Up",
-              "reps": 12,
+              "movement_name": "Push-Up",
+              "reps": 50,
               "loading": "bodyweight",
-              "notes": "Min 2, 6, 10: Unbroken if possible",
-              "scaling": "Knee push-up or hand-release push-up"
-            },
-            {
-              "movement_id": "row",
-              "name": "Row",
-              "reps": "12/10 cal",
-              "loading": "moderate-high pace",
-              "notes": "Min 3, 7, 11: Target 80-85% effort",
-              "scaling": "Reduce to 10/8 cal"
-            },
-            {
-              "movement_id": "burpee",
-              "name": "Burpee",
-              "reps": 10,
-              "loading": "bodyweight",
-              "notes": "Min 4, 8, 12: Fast singles or small sets",
-              "scaling": "Step-back burpee"
+              "notes": "Partition as needed. Maintain quality form.",
+              "scaling": "knee push-up"
             }
           ],
-          "target_score": "Complete all reps within each minute with 10-15 sec rest",
+          "target_score": "Target sub-10 minutes",
           "timer_config": {
-            "type": "EMOM",
+            "type": "For Time",
             "duration_seconds": 720,
-            "interval_seconds": 60
+            "interval_seconds": null
           }
         },
         "cooldown": {
           "duration_minutes": 8,
           "movements": [
             {
-              "movement_id": "foam-roll-lats",
-              "name": "Foam Roll \u2014 Lats",
-              "reps_or_duration": "90 sec each side",
-              "notes": "Target latissimus and teres major"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each direction, slow",
-              "notes": "End-range exploration, no pain"
-            },
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "2 min each side",
-              "notes": "Hip external rotation and hip flexor stretch"
-            }
-          ]
-        }
-      },
-      "rationale": {
-        "session_why": {
-          "text": "Ring dips require high shoulder stability and are foundational for ring muscle-up progression. Hollow and arch body holds develop the body tension prerequisite for all gymnastics movements. The EMOM metcon maintains intensity while allowing brief recovery each minute, targeting the glycolytic system with 12-minute duration.",
-          "source": "Sommer - Building the Gymnastic Body; CrossFit Gymnastics Specialty Course; Gastin 2001 - Energy System Interaction",
-          "url_or_ref": null
-        },
-        "movement_why": {
-          "text": "Ring dips develop vertical pushing strength under unstable conditions, requiring greater stabilizer recruitment than parallel bar dips. Hollow and arch holds are non-negotiable foundations per Sommer's gymnastics progression model. The metcon balances push (push-ups, burpees) and pull (pull-ups, row) at 1:1 ratio.",
-          "source": "Sommer - Building the Gymnastic Body; CrossFit Gymnastics Specialty Course",
-          "url_or_ref": null
-        },
-        "loading_why": {
-          "text": "Straight sets at RPE 7-8 (5x5 ring dips) build baseline strength-endurance in the movement without excessive CNS fatigue. This loading is appropriate for Week 1-2 baseline phases or when introducing unstable surface work. Hollow/arch holds use fixed 30-sec duration to develop isometric endurance.",
-          "source": "Bompa & Haff - Periodization 5th ed; Sommer - Building the Gymnastic Body",
-          "url_or_ref": null
-        }
-      }
-    },
-    {
-      "id": "wod-ub-004",
-      "title": "Push Press Volume + Pulling Capacity",
-      "category": [
-        "upper-body"
-      ],
-      "equipment": [
-        "barbell",
-        "plates",
-        "rack",
-        "pull-up bar",
-        "assault bike"
-      ],
-      "duration_minutes": 60,
-      "blocks": {
-        "static_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "pass-through",
-              "name": "Band Pass-Through",
-              "reps_or_duration": "15 reps",
-              "notes": "Wide grip, open shoulders and chest"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "8 each direction",
-              "notes": "Slow, controlled, full range"
-            },
-            {
-              "movement_id": "hip-circle",
-              "name": "Hip Circles",
-              "reps_or_duration": "10 each direction",
-              "notes": "Leg extended, draw circles with foot"
-            }
-          ]
-        },
-        "active_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "air-squat",
-              "name": "Air Squat",
-              "reps_or_duration": "15 reps",
-              "notes": "Depth and hip extension focus"
-            },
-            {
-              "movement_id": "push-press",
-              "name": "Empty Bar Push Press",
-              "reps_or_duration": "3 x 5 reps",
-              "notes": "Dip, drive, press - establish bar path"
-            },
-            {
-              "movement_id": "pull-up",
-              "name": "Pull-Up or Ring Row",
-              "reps_or_duration": "2 x 5 reps",
-              "notes": "Prime pulling musculature"
-            }
-          ]
-        },
-        "strength": {
-          "duration_minutes": 20,
-          "label": "Push Press \u2014 Top Set + Back-Off Volume",
-          "movements": [
-            {
-              "movement_id": "push-press",
-              "name": "Push Press",
-              "sets": 5,
-              "reps": "1 x 3 @ heavy, then 4 x 6 @ moderate",
-              "loading": "Top set: 3 reps @ 85% 1RM (or RPE 8-9). Back-off: 4 x 6 @ 70% 1RM",
-              "rest": "3 min after top set, then 90 sec between back-off sets",
-              "notes": "Top set + back-off scheme: neural stimulation (heavy triple) followed by hypertrophy volume (4x6 at lighter load). If 1RM unknown, build to RPE 8-9 on triple, then reduce ~15-20% for back-off sets.",
-              "tempo": "Explosive drive, controlled catch",
-              "equipment": [
-                "barbell",
-                "plates",
-                "rack"
-              ]
-            }
-          ]
-        },
-        "metcon": {
-          "duration_minutes": 15,
-          "format": "For Time",
-          "time_cap_minutes": 15,
-          "rounds_or_duration": "4 Rounds",
-          "movements": [
-            {
-              "movement_id": "chest-to-bar",
-              "name": "Chest-to-Bar Pull-Up",
-              "reps": 12,
-              "loading": "bodyweight",
-              "notes": "Kipping or strict, chest must touch bar",
-              "scaling": "Regular pull-up x 15 or banded C2B x 12"
-            },
-            {
-              "movement_id": "push-up",
-              "name": "Push-Up",
-              "reps": 20,
-              "loading": "bodyweight",
-              "notes": "Chest to deck, full lockout",
-              "scaling": "Banded push-up or hand-release push-up"
-            },
-            {
-              "movement_id": "assault-bike",
-              "name": "Assault Bike",
-              "reps": "15/12 cal",
-              "loading": "high effort",
-              "notes": "Target 85%+ effort, recover on pull-ups",
-              "scaling": "Reduce to 12/10 cal or row 200m"
-            }
-          ],
-          "target_score": "10-14 minutes for experienced athletes",
-          "timer_config": {
-            "type": "For Time",
-            "duration_seconds": 900,
-            "interval_seconds": null
-          }
-        },
-        "cooldown": {
-          "duration_minutes": 10,
-          "movements": [
-            {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Hip flexor, hamstring, thoracic rotation combo"
-            },
-            {
-              "movement_id": "foam-roll-lats",
-              "name": "Foam Roll \u2014 Lats",
-              "reps_or_duration": "2 min each side",
-              "notes": "Armpit to mid-back, pause on tender spots"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each direction, very slow",
-              "notes": "Post-workout end-range work"
-            },
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "90 sec each side",
-              "notes": "Hip external rotation stretch"
-            }
-          ]
-        }
-      },
-      "rationale": {
-        "session_why": {
-          "text": "Push press combines pressing strength with lower body drive, developing power and work capacity. The top set + back-off volume scheme allows peak intensity exposure without excessive CNS fatigue, followed by structural hypertrophy work. The metcon emphasizes vertical pulling capacity (C2B) balanced against horizontal pushing (push-ups) with monostructural cardio intervals.",
-          "source": "Bompa & Haff - Periodization 5th ed, Ch. 9; Glassman 2002 - CrossFit Journal",
-          "url_or_ref": null
-        },
-        "movement_why": {
-          "text": "Push press is a hybrid movement training the press pattern with explosive leg drive. C2B pull-ups develop vertical pulling strength beyond standard pull-ups. Push:pull ratio in metcon is 1:1 (20 push-ups : 12 C2B adjusted for difficulty). Assault bike provides glycolytic stress without additional upper-body loading.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed; CrossFit Level 2 Training Guide",
-          "url_or_ref": null
-        },
-        "loading_why": {
-          "text": "Top set + back-off volume scheme (1x3@85%, 4x6@70%) exploits neural priming from heavy loading (post-activation potentiation) while accumulating hypertrophy volume at moderate intensity. This is efficient for concurrent training and appropriate for Week 3 peak intensity sessions. The heavy top set happens fresh; volume work follows with reduced load.",
-          "source": "Bompa & Haff - Periodization 5th ed, Ch. 9; Robbins 2005 - Post-Activation Potentiation",
-          "url_or_ref": null
-        }
-      }
-    },
-    {
-      "id": "wod-ub-005",
-      "title": "Barbell Row Foundation + HSPU Skill",
-      "category": [
-        "upper-body"
-      ],
-      "equipment": [
-        "barbell",
-        "plates",
-        "wall",
-        "rowing machine"
-      ],
-      "duration_minutes": 60,
-      "blocks": {
-        "static_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "thoracic-rotation",
-              "name": "Thoracic Rotation",
-              "reps_or_duration": "10 each side",
-              "notes": "Quadruped, hand behind head, rotate through mid-back"
-            },
-            {
-              "movement_id": "cat-cow",
-              "name": "Cat-Cow",
-              "reps_or_duration": "10 reps",
-              "notes": "Spinal articulation"
-            },
-            {
-              "movement_id": "pass-through",
-              "name": "Band Pass-Through",
-              "reps_or_duration": "15 reps",
-              "notes": "Shoulder flexion and extension mobility"
-            }
-          ]
-        },
-        "active_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "inchworm",
-              "name": "Inchworm",
-              "reps_or_duration": "5 reps",
-              "notes": "Walk out to plank, walk feet to hands"
-            },
-            {
-              "movement_id": "good-morning",
-              "name": "Good Morning (empty bar)",
-              "reps_or_duration": "10 reps",
-              "notes": "Hip hinge pattern, posterior chain activation"
-            },
-            {
-              "movement_id": "barbell-row",
-              "name": "Empty Bar Barbell Row",
-              "reps_or_duration": "2 x 8 reps",
-              "notes": "Hip hinge position, pull to sternum"
-            }
-          ]
-        },
-        "strength": {
-          "duration_minutes": 23,
-          "label": "Barbell Row \u2014 Wave Loading + HSPU Progression",
-          "movements": [
-            {
-              "movement_id": "barbell-row",
-              "name": "Barbell Row (Bent Over)",
-              "sets": 6,
-              "reps": "5, 5, 5, 5, 5, 5",
-              "loading": "Wave: 72%, 77%, 82%, 72%, 80%, 85% of 1RM (or RPE 7\u21927\u21928\u21927\u21928\u21929)",
-              "rest": "2 min between sets",
-              "notes": "Wave loading: oscillate between moderate and heavy loads. Maintain hip hinge position throughout. Pull to lower sternum, elbows back. If 1RM unknown, use RPE and build waves.",
-              "tempo": "1 sec pull, 2 sec lower",
-              "equipment": [
-                "barbell",
-                "plates"
-              ]
-            },
-            {
-              "movement_id": "hspu",
-              "name": "Handstand Push-Up (or progression)",
-              "sets": 4,
-              "reps": "3-5 reps (quality focus)",
-              "loading": "bodyweight or scaled",
-              "rest": "90 sec between sets",
-              "notes": "If cannot perform strict HSPU, scale to: deficit pike push-up, box pike push-up, or wall-facing HSPU with abmat. Focus on vertical torso and full lockout.",
-              "tempo": null,
-              "equipment": [
-                "wall"
-              ]
-            }
-          ]
-        },
-        "metcon": {
-          "duration_minutes": 13,
-          "format": "AMRAP",
-          "time_cap_minutes": 10,
-          "rounds_or_duration": "10 minutes",
-          "movements": [
-            {
-              "movement_id": "push-up",
-              "name": "Push-Up",
-              "reps": 10,
-              "loading": "bodyweight",
-              "notes": "Chest to deck, controlled tempo",
-              "scaling": "Banded or knee push-up"
-            },
-            {
-              "movement_id": "ring-row",
-              "name": "Ring Row",
-              "reps": 15,
-              "loading": "bodyweight",
-              "notes": "Body angle challenging but sustainable, pull chest to rings",
-              "scaling": "Adjust body angle (more upright = easier)"
-            },
-            {
-              "movement_id": "row",
-              "name": "Row",
-              "reps": "150m",
-              "loading": "moderate-high pace",
-              "notes": "Target 80% effort, focus on pull through legs and back",
-              "scaling": "Reduce to 125m"
-            }
-          ],
-          "target_score": "7-9 rounds for experienced athletes",
-          "timer_config": {
-            "type": "AMRAP",
-            "duration_seconds": 600,
-            "interval_seconds": null
-          }
-        },
-        "cooldown": {
-          "duration_minutes": 9,
-          "movements": [
-            {
-              "movement_id": "foam-roll-lats",
-              "name": "Foam Roll \u2014 Lats",
-              "reps_or_duration": "90 sec each side",
-              "notes": "Target latissimus and teres major"
-            },
-            {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Hip flexor, hamstring, T-spine rotation"
-            },
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "2 min each side",
-              "notes": "Hip external rotation stretch"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each direction",
-              "notes": "Slow, end-range, pain-free"
-            }
-          ]
-        }
-      },
-      "rationale": {
-        "session_why": {
-          "text": "Barbell rows develop horizontal pulling strength, often undertrained relative to vertical pulling. HSPU skill work addresses vertical pressing in an inverted position. The metcon maintains push:pull balance (10 push-ups : 15 ring rows, adjusted for difficulty) and includes monostructural rowing to target oxidative system.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed; CrossFit Gymnastics Specialty Course",
-          "url_or_ref": null
-        },
-        "movement_why": {
-          "text": "Barbell rows target the posterior chain (lats, rhomboids, traps) with heavy loading potential. Wave loading exploits post-activation potentiation by alternating heavy and moderate loads. HSPU (or progressions) develop vertical pressing in a gymnastics context, requiring shoulder stability and core tension.",
-          "source": "Robbins 2005 - Post-Activation Potentiation; Sommer - Building the Gymnastic Body",
-          "url_or_ref": null
-        },
-        "loading_why": {
-          "text": "Wave loading (72%\u219277%\u219282%\u219272%\u219280%\u219285%) allows volume accumulation at high intensity by oscillating load. Heavy sets prime the nervous system for subsequent performance. This scheme is appropriate for Week 2-3 strength emphasis with experienced athletes. The waves prevent linear fatigue accumulation while maintaining intensity.",
-          "source": "Robbins 2005 - Post-Activation Potentiation; Bompa & Haff - Periodization 5th ed",
-          "url_or_ref": null
-        }
-      }
-    },
-    {
-      "id": "wod-ub-006",
-      "title": "Gymnastics Capacity + Upper Body Endurance",
-      "category": [
-        "upper-body"
-      ],
-      "equipment": [
-        "pull-up bar",
-        "rings",
-        "jump rope"
-      ],
-      "duration_minutes": 60,
-      "blocks": {
-        "static_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "10 each direction",
-              "notes": "Prepare shoulders for high-volume gymnastics"
-            },
-            {
               "movement_id": "banded-pull-apart",
-              "name": "Banded Pull-Apart",
-              "reps_or_duration": "2 x 20 reps",
-              "notes": "Posterior shoulder activation"
-            },
-            {
-              "movement_id": "cat-cow",
-              "name": "Cat-Cow",
-              "reps_or_duration": "10 reps",
-              "notes": "Spinal mobility"
-            }
-          ]
-        },
-        "active_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "push-up",
-              "name": "Push-Up",
-              "reps_or_duration": "3 x 8 reps",
-              "notes": "Controlled tempo, full range"
-            },
-            {
-              "movement_id": "ring-row",
-              "name": "Ring Row",
-              "reps_or_duration": "3 x 10 reps",
-              "notes": "Progressive body angle"
-            },
-            {
-              "movement_id": "pull-up",
-              "name": "Pull-Up",
-              "reps_or_duration": "2 x 3 reps",
-              "notes": "Strict, prime CNS"
-            }
-          ]
-        },
-        "strength": {
-          "duration_minutes": 22,
-          "label": "Hollow/Arch Foundation + Pull-Up Volume",
-          "movements": [
-            {
-              "movement_id": "hollow-body-hold",
-              "name": "Hollow Body Hold",
-              "sets": 5,
-              "reps": "30 sec",
-              "loading": "bodyweight",
-              "rest": "45 sec, alternate with arch hold",
-              "notes": "Lower back pressed to floor, arms overhead, legs straight and low. Non-negotiable gymnastics foundation. Scale: bend knees if form breaks.",
-              "tempo": null,
-              "equipment": []
-            },
-            {
-              "movement_id": "arch-body-hold",
-              "name": "Arch Body Hold",
-              "sets": 5,
-              "reps": "30 sec",
-              "loading": "bodyweight",
-              "rest": "45 sec, alternate with hollow hold",
-              "notes": "Chest and thighs off ground, arms and legs extended. Build to 30 sec without compensation.",
-              "tempo": null,
-              "equipment": []
-            },
-            {
-              "movement_id": "pull-up",
-              "name": "Pull-Up (strict or kipping)",
-              "sets": 5,
-              "reps": "Max reps in 30 sec",
-              "loading": "bodyweight",
-              "rest": "90 sec between sets",
-              "notes": "Work:rest ratio ~1:3. Goal is total volume, not singles. If strict, aim for 3-8 reps. If kipping, 8-15 reps per set. Scale: banded pull-up or ring row.",
-              "tempo": null,
-              "equipment": [
-                "pull-up bar"
-              ]
-            }
-          ]
-        },
-        "metcon": {
-          "duration_minutes": 14,
-          "format": "AMRAP",
-          "time_cap_minutes": 12,
-          "rounds_or_duration": "12 minutes",
-          "movements": [
-            {
-              "movement_id": "burpee",
-              "name": "Burpee",
-              "reps": 8,
-              "loading": "bodyweight",
-              "notes": "Chest and hips to ground, jump at top",
-              "scaling": "Step-back burpee"
-            },
-            {
-              "movement_id": "ring-row",
-              "name": "Ring Row",
-              "reps": 12,
-              "loading": "bodyweight",
-              "notes": "Body angle sustainable for 12 reps unbroken",
-              "scaling": "Adjust angle (more upright = easier)"
-            },
-            {
-              "movement_id": "double-under",
-              "name": "Double-Under",
-              "reps": 30,
-              "loading": "bodyweight",
-              "notes": "Singles x 90 if cannot perform double-unders",
-              "scaling": "Single-under x 90"
-            },
-            {
-              "movement_id": "push-up",
-              "name": "Push-Up",
-              "reps": 10,
-              "loading": "bodyweight",
-              "notes": "Full range, chest to deck",
-              "scaling": "Banded or knee push-up"
-            }
-          ],
-          "target_score": "6-8 rounds for experienced athletes",
-          "timer_config": {
-            "type": "AMRAP",
-            "duration_seconds": 720,
-            "interval_seconds": null
-          }
-        },
-        "cooldown": {
-          "duration_minutes": 9,
-          "movements": [
-            {
-              "movement_id": "foam-roll-lats",
-              "name": "Foam Roll \u2014 Lats",
-              "reps_or_duration": "2 min each side",
-              "notes": "Armpit to mid-back, pause on tender areas"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each direction, very slow",
-              "notes": "End-range exploration, no pain"
+              "movement_name": "Banded Pull-Apart",
+              "reps_or_duration": "3 sets of 20",
+              "notes": "Scapular health and posterior shoulder activation"
             },
             {
               "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "2 min each side",
-              "notes": "Hip external rotation stretch"
+              "movement_name": "Pigeon Pose",
+              "reps_or_duration": "90 seconds each side",
+              "notes": "Hip mobility restoration"
             },
             {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Full-body mobility sequence"
+              "movement_id": "shoulder-car",
+              "movement_name": "Shoulder CARs",
+              "reps_or_duration": "5 slow circles each direction",
+              "notes": "Restore shoulder range of motion post-overhead work"
             }
           ]
         }
       },
       "rationale": {
         "session_why": {
-          "text": "Hollow and arch body holds are foundational for all gymnastics movements per Sommer's progression model. High-volume pull-up work (5x30sec max effort sets) develops muscular endurance and work capacity. The metcon uses bodyweight movements only, targeting muscular endurance and glycolytic system with 12-minute AMRAP.",
-          "source": "Sommer - Building the Gymnastic Body; CrossFit Gymnastics Specialty Course; Gastin 2001 - Energy System Interaction",
-          "url_or_ref": null
+          "text": "Gymnastics skill session emphasizing vertical pressing in the handstand position, a fundamental bodyweight strength skill. Hollow and arch holds are mandatory foundational tension work. The For Time metcon creates upper body stamina through high-volume pulling, pushing, and posterior chain work. This session develops coordination, balance, and body control (3 of the 10 physical skills) while building upper body work capacity.",
+          "source": "Glassman 2002 - CrossFit Journal",
+          "url_or_ref": "What is Fitness? - 10 Physical Skills"
         },
         "movement_why": {
-          "text": "Hollow and arch holds are non-negotiable prerequisites for kipping, muscle-ups, and handstand work. Pull-up volume builds pulling capacity. Metcon maintains push:pull balance (10 push-ups + 8 burpees : 12 ring rows, ~1:1 ratio). Double-unders add monostructural conditioning without upper-body load.",
-          "source": "Sommer - Building the Gymnastic Body; Glassman 2002 - CrossFit Journal",
-          "url_or_ref": null
+          "text": "Handstand push-ups require integration of vertical pressing strength, balance, and midline stability. Hollow and arch holds develop active body tension, the foundation of all gymnastics movements. Without the ability to maintain rigid body position, gymnastics skills cannot be performed safely or efficiently. The metcon combines vertical pull (pull-ups), vertical push (ring dips), and horizontal push (push-ups) for balanced upper body development.",
+          "source": "Sommer - Building the Gymnastic Body",
+          "url_or_ref": "Chapter on body tension as prerequisite for advanced skills"
         },
         "loading_why": {
-          "text": "Max rep sets in fixed time (30 sec work, 90 sec rest) create a 1:3 work:rest ratio appropriate for strength-endurance. This develops work capacity without compromising movement quality. Straight sets at bodyweight for hollow/arch holds build isometric endurance progressively (5x30 sec).",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed; Sommer - Building the Gymnastic Body",
-          "url_or_ref": null
-        }
-      }
-    },
-    {
-      "id": "wod-ub-007",
-      "title": "Overhead Strength Complex + Mixed Modal",
-      "category": [
-        "upper-body"
-      ],
-      "equipment": [
-        "barbell",
-        "plates",
-        "rack",
-        "pull-up bar",
-        "ski erg"
-      ],
-      "duration_minutes": 60,
-      "blocks": {
-        "static_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "pass-through",
-              "name": "Band Pass-Through",
-              "reps_or_duration": "15 reps",
-              "notes": "Wide grip, open shoulders"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "10 each direction",
-              "notes": "Controlled articular rotations"
-            },
-            {
-              "movement_id": "thoracic-rotation",
-              "name": "Thoracic Rotation",
-              "reps_or_duration": "10 each side",
-              "notes": "Quadruped, hand behind head"
-            }
-          ]
-        },
-        "active_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "air-squat",
-              "name": "Air Squat",
-              "reps_or_duration": "15 reps",
-              "notes": "Full depth, hip extension"
-            },
-            {
-              "movement_id": "strict-press",
-              "name": "Empty Bar Strict Press",
-              "reps_or_duration": "10 reps",
-              "notes": "Vertical bar path"
-            },
-            {
-              "movement_id": "push-jerk",
-              "name": "Empty Bar Push Jerk",
-              "reps_or_duration": "3 x 3 reps",
-              "notes": "Dip-drive-catch pattern"
-            }
-          ]
-        },
-        "strength": {
-          "duration_minutes": 24,
-          "label": "Press + Push Jerk Complex \u2014 E3MOM Build",
-          "movements": [
-            {
-              "movement_id": "strict-press",
-              "name": "Strict Press + Push Jerk Complex",
-              "sets": 7,
-              "reps": "2 Strict Press + 1 Push Jerk per round",
-              "loading": "E3MOM x 7: Build from 65% to 80% 1RM (or RPE 7\u21928)",
-              "rest": "Remainder of 3-min interval",
-              "notes": "Perform 2 strict presses, then 1 push jerk without dropping the bar. Build load across rounds. E3MOM provides full PCr recovery for each complex. If 1RM unknown, start at RPE 6-7 and build to RPE 8.",
-              "tempo": "Controlled press, explosive jerk",
-              "equipment": [
-                "barbell",
-                "plates",
-                "rack"
-              ]
-            }
-          ]
-        },
-        "metcon": {
-          "duration_minutes": 14,
-          "format": "For Time",
-          "time_cap_minutes": 14,
-          "rounds_or_duration": "21-15-9",
-          "movements": [
-            {
-              "movement_id": "push-jerk",
-              "name": "Push Jerk",
-              "reps": "21-15-9",
-              "loading": "95/65 lb (moderate)",
-              "notes": "Use leg drive, catch in partial squat. Should be unbroken or small sets.",
-              "scaling": "Reduce to 75/55 lb or push press"
-            },
-            {
-              "movement_id": "pull-up",
-              "name": "Pull-Up",
-              "reps": "21-15-9",
-              "loading": "bodyweight",
-              "notes": "Kipping or strict, chin over bar",
-              "scaling": "Banded pull-up or ring row (add 6 reps: 27-21-15)"
-            },
-            {
-              "movement_id": "ski-erg",
-              "name": "Ski Erg",
-              "reps": "21-15-9 cal",
-              "loading": "high effort",
-              "notes": "Pull through lats and core, hinge at hips",
-              "scaling": "Reduce to 18-12-6 cal or row same calories"
-            }
-          ],
-          "target_score": "8-12 minutes for experienced athletes",
-          "timer_config": {
-            "type": "For Time",
-            "duration_seconds": 840,
-            "interval_seconds": null
-          }
-        },
-        "cooldown": {
-          "duration_minutes": 7,
-          "movements": [
-            {
-              "movement_id": "foam-roll-lats",
-              "name": "Foam Roll \u2014 Lats",
-              "reps_or_duration": "90 sec each side",
-              "notes": "Target latissimus and teres major"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each direction, slow",
-              "notes": "Post-workout shoulder mobility"
-            },
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "90 sec each side",
-              "notes": "Hip external rotation stretch"
-            },
-            {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "3 each side",
-              "notes": "Full-body mobility sequence"
-            }
-          ]
-        }
-      },
-      "rationale": {
-        "session_why": {
-          "text": "Combining strict press with push jerk in a complex taxes the pressing musculature under different loading conditions (grinding strength vs. explosive power). The E3MOM format provides full phosphocreatine recovery (3 min) appropriate for heavy complexes. The 21-15-9 metcon structure creates a descending rep scheme targeting glycolytic system with ~10 min duration.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed; Glassman 2002 - CrossFit Journal",
-          "url_or_ref": null
-        },
-        "movement_why": {
-          "text": "Strict press develops pure pressing strength; push jerk adds explosive power and leg drive. Pairing them without dropping the bar increases time under tension. Metcon maintains push:pull ratio (push jerk : pull-up 1:1) and includes ski erg for upper-body dominant monostructural work.",
-          "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training; CrossFit Level 2 Training Guide",
-          "url_or_ref": null
-        },
-        "loading_why": {
-          "text": "E3MOM with progressive loading (65%\u219280%) allows gradual intensity increase while maintaining quality. The 3-minute interval is necessary for complex work requiring multiple reps per round. Building across 7 rounds accumulates volume (14 presses + 7 jerks) at increasing intensity. This is appropriate for Week 2 baseline building or complex movement introduction.",
-          "source": "Bompa & Haff - Periodization 5th ed; Haff & Triplett - NSCA Essentials 4th ed",
-          "url_or_ref": null
+          "text": "Gymnastics skill work is prescribed at RPE 7-8 with full rest (90-120 sec) between sets to preserve movement quality. Volume is kept moderate (5 sets \u00d7 3-5 reps) to prevent technical degradation under fatigue. This is not conditioning - it is skill acquisition. Quality of movement execution matters more than total rep count. Athletes scale to appropriate progression level (pike push-ups if needed) to maintain perfect form throughout all sets.",
+          "source": "CrossFit Gymnastics Specialty Course",
+          "url_or_ref": "Skill development methodology"
         }
       }
     }

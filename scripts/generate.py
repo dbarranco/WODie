@@ -232,15 +232,29 @@ def call_claude(prompt: str) -> dict:
     """Call Claude API and parse JSON response."""
     client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from env
 
-    print("→ Calling Claude API...")
+    print("→ Calling Claude API with prompt caching...")
     response = client.messages.create(
         model="claude-sonnet-4-5-20250929",  # Sonnet 4.5
         max_tokens=16000,
-        system=SYSTEM_PROMPT,
+        system=[
+            {
+                "type": "text",
+                "text": SYSTEM_PROMPT,
+            },
+            {
+                "type": "text",
+                "text": "KNOWLEDGE BASE AND HARD RULES BELOW — CACHED FOR EFFICIENCY\n(This content is cached and reused across multiple generations)",
+                "cache_control": {"type": "ephemeral"}
+            }
+        ],
         messages=[{"role": "user", "content": prompt}]
     )
 
     raw = response.content[0].text.strip()
+
+    # Log cache performance
+    usage = response.usage
+    print(f"   Input tokens: {usage.input_tokens} | Cache write: {getattr(usage, 'cache_creation_input_tokens', 0)} | Cache read: {getattr(usage, 'cache_read_input_tokens', 0)}")
 
     # Strip markdown fences if present
     if raw.startswith("```"):

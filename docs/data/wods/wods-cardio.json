@@ -9,7 +9,7 @@
       "equipment": [
         "rowing machine",
         "assault bike",
-        "pull-up bar"
+        "jump rope"
       ],
       "duration_minutes": 60,
       "blocks": {
@@ -17,28 +17,24 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "hip-circle",
               "name": "Hip Circles",
               "reps_or_duration": "10 each direction",
               "notes": "Dynamic hip mobility drill"
             },
             {
-              "movement_id": "shoulder-car",
               "name": "Shoulder CARs",
-              "reps_or_duration": "5 each arm",
-              "notes": "Controlled articular rotations for shoulder health"
+              "reps_or_duration": "5 each direction",
+              "notes": "Controlled Articular Rotations for shoulder mobility"
             },
             {
-              "movement_id": "cat-cow",
               "name": "Cat-Cow",
               "reps_or_duration": "10 reps",
-              "notes": "Spinal mobility drill"
+              "notes": "Thoracic and lumbar spine mobility"
             },
             {
-              "movement_id": "world-greatest-stretch",
               "name": "World's Greatest Stretch",
               "reps_or_duration": "5 each side",
-              "notes": "Full-body dynamic mobility sequence"
+              "notes": "Multi-planar hip and thoracic mobility"
             }
           ]
         },
@@ -46,241 +42,69 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "run",
-              "name": "Easy Run",
-              "reps_or_duration": "400m",
-              "notes": "Conversational pace to elevate heart rate"
+              "name": "Row",
+              "reps_or_duration": "2 minutes easy pace",
+              "notes": "Elevate heart rate, prime aerobic system"
             },
             {
-              "movement_id": "air-squat",
               "name": "Air Squat",
-              "reps_or_duration": "10 reps",
-              "notes": "Full depth, controlled tempo"
+              "reps_or_duration": "15 reps",
+              "notes": "Movement-specific warmup"
             },
             {
-              "movement_id": "inchworm",
               "name": "Inchworm",
               "reps_or_duration": "5 reps",
-              "notes": "Hamstring and shoulder warmup"
+              "notes": "Dynamic posterior chain warmup"
             },
             {
-              "movement_id": "row",
-              "name": "Row",
-              "reps_or_duration": "200m easy pace",
-              "notes": "Activate posterior chain and cardiovascular system"
+              "name": "Jump Rope (single-under)",
+              "reps_or_duration": "50 reps",
+              "notes": "Prep for jumping mechanics"
             }
           ]
         },
         "strength": {
           "duration_minutes": 22,
-          "label": "Aerobic Power Development",
+          "label": "Aerobic Pacing Development",
           "movements": [
             {
-              "movement_id": "row",
-              "name": "Row Intervals",
-              "sets": 6,
+              "name": "Row",
+              "sets": 4,
               "reps_or_duration": "500m",
-              "load": "moderate pace (70-75% max effort)",
-              "rest": "90 seconds between intervals",
-              "notes": "Target consistent split times. Focus on powerful leg drive and full recovery between efforts."
+              "load": "moderate consistent pace",
+              "rest": "90 seconds between rounds",
+              "notes": "Target same split time all 4 rounds. Focus: sustainable pace at 70-75% max effort."
             }
           ]
         },
         "metcon": {
           "duration_minutes": 20,
           "format": "AMRAP",
-          "time_cap_minutes": 20,
-          "rounds_or_duration": "20 minutes",
-          "movements": [
-            {
-              "movement_id": "assault-bike",
-              "name": "Assault Bike",
-              "reps_or_duration": "15 calories",
-              "load": "bodyweight",
-              "notes": "Moderate steady pace, avoid going to failure"
-            },
-            {
-              "movement_id": "run",
-              "name": "Run",
-              "reps_or_duration": "200m",
-              "load": "bodyweight",
-              "notes": "Conversational pace, sustainable rhythm"
-            },
-            {
-              "movement_id": "pull-up",
-              "name": "Pull-Up",
-              "reps_or_duration": "10 reps",
-              "load": "bodyweight",
-              "scaling": "banded pull-up or ring row",
-              "notes": "Break into small sets to maintain aerobic stimulus"
-            }
-          ],
-          "target_score": "Complete as many rounds as possible. Target 6-8 rounds for trained athletes.",
-          "timer_config": {
-            "type": "stopwatch",
-            "duration_seconds": 1200,
-            "interval_seconds": null
-          }
-        },
-        "cooldown": {
-          "duration_minutes": 8,
-          "movements": [
-            {
-              "movement_id": "run",
-              "name": "Easy Walk/Jog",
-              "reps_or_duration": "3 minutes",
-              "notes": "Bring heart rate down gradually"
-            },
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Hip opener stretch, breathe deeply"
-            },
-            {
-              "movement_id": "hip-flexor-stretch",
-              "name": "Hip Flexor Stretch",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "90/90 position, focus on anterior hip opening"
-            },
-            {
-              "movement_id": "foam-roll-quads",
-              "name": "Foam Roll - Quads",
-              "reps_or_duration": "90 seconds",
-              "notes": "Slow passes, pause on tender areas"
-            }
-          ]
-        }
-      },
-      "rationale": {
-        "session_why": {
-          "text": "This session targets the oxidative energy system through sustained aerobic intervals and a long AMRAP. The rowing intervals develop aerobic power at sub-maximal intensity, while the 20-minute AMRAP maintains heart rate in the aerobic zone (65-75% max HR) to improve cardiovascular endurance. Gastin (2001) identifies the oxidative system as dominant beyond 3-4 minutes of effort, making this time domain ideal for aerobic base development.",
-          "source": "Gastin 2001 - Energy System Interaction",
-          "url_or_ref": "Sports Medicine 31(10)"
-        },
-        "movement_why": {
-          "text": "Monostructural movements (row, run, bike) are selected to minimize technical failure and keep intensity in the aerobic zone. Pull-ups are included in small sets to maintain work capacity without creating excessive muscular fatigue. This mixed-modal approach develops general physical preparedness across Glassman's cardiovascular endurance and stamina domains while preventing the monotony of single-modality cardio.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness?"
-        },
-        "loading_why": {
-          "text": "The 500m row intervals at 70-75% effort allow sufficient recovery (90 seconds) to repeat quality efforts without entering the glycolytic system. The 20-minute AMRAP is designed for sustainable pacing - athletes should never reach failure on any movement. This polarized approach (80% of volume at low intensity) aligns with concurrent training principles to avoid interference with strength adaptations.",
-          "source": "Wilson et al 2012 - Concurrent Training Meta-Analysis",
-          "url_or_ref": "Journal of Strength and Conditioning Research 26(8)"
-        }
-      }
-    },
-    {
-      "id": "wod-cardio-002",
-      "title": "Glycolytic Threshold Work",
-      "category": [
-        "cardio"
-      ],
-      "equipment": [
-        "barbell",
-        "plates",
-        "assault bike"
-      ],
-      "duration_minutes": 60,
-      "blocks": {
-        "static_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "thoracic-rotation",
-              "name": "Thoracic Rotation",
-              "reps_or_duration": "10 each side",
-              "notes": "Improve thoracic spine mobility for overhead position"
-            },
-            {
-              "movement_id": "hip-flexor-stretch",
-              "name": "Hip Flexor Stretch",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "Open anterior hip for better squat mechanics"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each arm",
-              "notes": "Shoulder joint preparation"
-            },
-            {
-              "movement_id": "cat-cow",
-              "name": "Cat-Cow",
-              "reps_or_duration": "10 reps",
-              "notes": "Spinal warmup"
-            }
-          ]
-        },
-        "active_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "assault-bike",
-              "name": "Assault Bike",
-              "reps_or_duration": "2 minutes easy",
-              "notes": "Gradual heart rate elevation"
-            },
-            {
-              "movement_id": "air-squat",
-              "name": "Air Squat",
-              "reps_or_duration": "15 reps",
-              "notes": "Full range of motion"
-            },
-            {
-              "movement_id": "good-morning",
-              "name": "Good Morning",
-              "reps_or_duration": "10 reps with empty barbell",
-              "notes": "Hinge pattern activation"
-            },
-            {
-              "movement_id": "push-press",
-              "name": "Push Press",
-              "reps_or_duration": "10 reps with empty barbell",
-              "notes": "Movement-specific preparation"
-            }
-          ]
-        },
-        "strength": {
-          "duration_minutes": 24,
-          "label": "E2MOM Thruster Build",
-          "movements": [
-            {
-              "movement_id": "front-squat",
-              "name": "Thruster (Front Squat + Push Press)",
-              "sets": 10,
-              "reps_or_duration": "3 reps",
-              "load": "70% 1RM Front Squat (or RPE 7-8)",
-              "rest": "Remainder of 2 minutes",
-              "format": "E2MOM x 10 rounds",
-              "notes": "Build to a moderate load that can be moved with speed. Focus on explosive hip drive from bottom of squat into overhead press. This is technique work at moderate intensity, not max effort."
-            }
-          ]
-        },
-        "metcon": {
-          "duration_minutes": 15,
-          "format": "For Time",
           "time_cap_minutes": 15,
-          "rounds_or_duration": "5 rounds for time",
+          "rounds_or_duration": "15 minutes",
           "movements": [
             {
-              "movement_id": "front-squat",
-              "name": "Thruster",
-              "reps_or_duration": "15 reps",
-              "load": "95/65 lbs (or 50% of strength block load)",
-              "notes": "Lighter load than strength block. Manage sets to avoid complete failure."
-            },
-            {
-              "movement_id": "assault-bike",
               "name": "Assault Bike",
               "reps_or_duration": "12 calories",
               "load": "bodyweight",
-              "notes": "High effort, maintain consistent pace across rounds"
+              "notes": "Steady consistent pace"
+            },
+            {
+              "name": "Row",
+              "reps_or_duration": "15 calories",
+              "load": "bodyweight",
+              "notes": "Match bike intensity"
+            },
+            {
+              "name": "Jump Rope (single-under)",
+              "reps_or_duration": "60 reps",
+              "load": "bodyweight",
+              "notes": "Unbroken sets preferred"
             }
           ],
-          "target_score": "Target time: 10-13 minutes. This should be sustainable high effort, not all-out sprint.",
+          "target_score": "6-8 rounds",
           "timer_config": {
-            "type": "stopwatch",
+            "type": "amrap",
             "duration_seconds": 900,
             "interval_seconds": null
           }
@@ -289,53 +113,44 @@
           "duration_minutes": 8,
           "movements": [
             {
-              "movement_id": "assault-bike",
-              "name": "Assault Bike Easy",
-              "reps_or_duration": "3 minutes",
-              "notes": "Very low effort, active recovery pace"
+              "name": "Row",
+              "reps_or_duration": "3 minutes easy pace",
+              "notes": "Active recovery, flush metabolites"
             },
             {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
+              "name": "Hip Flexor Stretch (90/90)",
               "reps_or_duration": "90 seconds each side",
-              "notes": "Deep hip opener"
+              "notes": "Static hip opener"
             },
             {
-              "movement_id": "thoracic-rotation",
-              "name": "Thoracic Rotation",
-              "reps_or_duration": "10 each side",
-              "notes": "Release thoracic tension from overhead work"
-            },
-            {
-              "movement_id": "foam-roll-quads",
-              "name": "Foam Roll - Quads",
-              "reps_or_duration": "90 seconds",
-              "notes": "Address quad fatigue from thrusters"
+              "name": "Foam Roll \u2014 Quads",
+              "reps_or_duration": "2 minutes",
+              "notes": "Reduce muscle tension post-workout"
             }
           ]
         }
       },
       "rationale": {
         "session_why": {
-          "text": "This session targets the glycolytic energy system through repeated high-intensity efforts in the 10-15 minute time domain. The thruster-bike couplet creates sustained muscular and cardiovascular demand, training the body's ability to clear lactate and maintain power output under fatigue. The medium time domain (7-15 min) ensures glycolytic system dominance while avoiding excessive volume that would interfere with strength adaptation.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed",
-          "url_or_ref": "Ch. 3 - Bioenergetics"
+          "text": "This session targets the oxidative energy system through sustained moderate-intensity work across three monostructural modalities. The 15-minute AMRAP keeps effort in the aerobic-dominant zone (>3-4 minutes per movement cycle), developing cardiovascular endurance and stamina. The strength block uses interval rows to build pacing discipline and aerobic power.",
+          "source": "Gastin 2001 - Energy System Interaction",
+          "url_or_ref": "Sports Medicine 31(10)"
         },
         "movement_why": {
-          "text": "Thrusters combine squat and vertical push patterns, creating high metabolic demand through large muscle recruitment. The assault bike provides additional cardiovascular stress without technical complexity. This pairing develops stamina - the ability to process, deliver, store, and use energy - across Glassman's ten physical skills framework.",
+          "text": "Monostructural movements (row, bike, jump rope) were selected to develop cardiovascular endurance without the technical complexity of barbell or gymnastics movements. This allows the athlete to focus purely on pacing and aerobic capacity. Rotating between three modalities prevents local muscular fatigue while maintaining cardiovascular demand.",
           "source": "Glassman 2002 - CrossFit Journal",
           "url_or_ref": "What is Fitness?"
         },
         "loading_why": {
-          "text": "The E2MOM strength format at 70% 1RM builds technique and speed at moderate loads, exploiting the 2-minute interval for phosphocreatine recovery between sets. The metcon uses 50% of this load to allow sustainable effort across 5 rounds without technical breakdown. The 1:3 work:rest ratio within each round (thruster sets + bike) aligns with glycolytic system recovery demands.",
-          "source": "Bompa & Haff - Periodization 5th ed",
-          "url_or_ref": "Ch. 9 - Concurrent Training Methods"
+          "text": "The interval rows in the strength block use 90-second rest to partially recover the phosphocreatine system while keeping the aerobic system engaged. The AMRAP uses bodyweight-only monostructural work to ensure intensity stays in the aerobic zone (70-75% max effort) rather than spiking into glycolytic overdrive. This polarized approach dedicates 80% of aerobic volume to low-moderate intensity.",
+          "source": "Haff & Triplett - NSCA Essentials 4th ed",
+          "url_or_ref": "Chapter 3: Energy Systems"
         }
       }
     },
     {
-      "id": "wod-cardio-003",
-      "title": "Mixed-Modal Endurance",
+      "id": "wod-cardio-002",
+      "title": "Mixed Modal Endurance",
       "category": [
         "cardio"
       ],
@@ -350,28 +165,24 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "hip-circle",
-              "name": "Hip Circles",
-              "reps_or_duration": "10 each direction",
-              "notes": "Hip joint preparation"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each arm",
-              "notes": "Shoulder mobility for pulling movements"
-            },
-            {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Full-body dynamic preparation"
-            },
-            {
-              "movement_id": "thoracic-rotation",
               "name": "Thoracic Rotation",
               "reps_or_duration": "10 each side",
-              "notes": "Thoracic mobility for rowing mechanics"
+              "notes": "Seated or quadruped thoracic mobility"
+            },
+            {
+              "name": "Hip Circles",
+              "reps_or_duration": "10 each direction",
+              "notes": "Hip joint mobility prep"
+            },
+            {
+              "name": "Shoulder CARs",
+              "reps_or_duration": "5 each direction",
+              "notes": "Controlled shoulder rotations"
+            },
+            {
+              "name": "Cat-Cow",
+              "reps_or_duration": "10 reps",
+              "notes": "Spinal articulation"
             }
           ]
         },
@@ -379,78 +190,69 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "row",
               "name": "Row",
-              "reps_or_duration": "500m easy",
-              "notes": "Establish rowing mechanics at low intensity"
+              "reps_or_duration": "2 minutes easy",
+              "notes": "Cardiovascular activation"
             },
             {
-              "movement_id": "kb-swing",
-              "name": "Kettlebell Swing (Russian)",
-              "reps_or_duration": "10 reps light",
-              "notes": "Hip hinge activation"
-            },
-            {
-              "movement_id": "ring-row",
-              "name": "Ring Row",
-              "reps_or_duration": "10 reps",
-              "notes": "Scapular activation for pull-ups"
-            },
-            {
-              "movement_id": "air-squat",
               "name": "Air Squat",
               "reps_or_duration": "10 reps",
-              "notes": "Lower body warmup"
+              "notes": "Lower body movement prep"
+            },
+            {
+              "name": "Kettlebell Swing (Russian)",
+              "reps_or_duration": "10 reps light weight",
+              "notes": "Hinge pattern activation"
+            },
+            {
+              "name": "Ring Row",
+              "reps_or_duration": "8 reps",
+              "notes": "Pulling pattern warmup"
             }
           ]
         },
         "strength": {
-          "duration_minutes": 22,
+          "duration_minutes": 20,
           "label": "Kettlebell Swing Volume",
           "movements": [
             {
-              "movement_id": "kb-swing",
               "name": "Kettlebell Swing (Russian)",
               "sets": 5,
               "reps_or_duration": "20 reps",
-              "load": "24/16 kg (moderate)",
-              "rest": "90 seconds",
-              "notes": "Focus on powerful hip extension, swing to eye level. This builds posterior chain endurance and power output. Maintain crisp hip snap on every rep."
+              "load": "24kg/16kg (moderate)",
+              "rest": "60 seconds",
+              "notes": "Consistent hip snap, chest-height finish. Focus: cardiovascular demand with hinge pattern endurance."
             }
           ]
         },
         "metcon": {
-          "duration_minutes": 18,
-          "format": "AMRAP",
+          "duration_minutes": 22,
+          "format": "For Time",
           "time_cap_minutes": 18,
-          "rounds_or_duration": "18 minutes",
+          "rounds_or_duration": "5 Rounds",
           "movements": [
             {
-              "movement_id": "row",
               "name": "Row",
               "reps_or_duration": "250m",
               "load": "bodyweight",
-              "notes": "Moderate steady pace, focus on efficient stroke rate"
+              "notes": "Moderate-hard pace, sustainable across rounds"
             },
             {
-              "movement_id": "kb-swing",
               "name": "Kettlebell Swing (American)",
               "reps_or_duration": "15 reps",
-              "load": "24/16 kg",
-              "notes": "Full overhead extension, control descent"
+              "load": "24kg/16kg",
+              "notes": "Overhead swing, explosive hip extension"
             },
             {
-              "movement_id": "pull-up",
               "name": "Pull-Up",
               "reps_or_duration": "10 reps",
               "load": "bodyweight",
-              "scaling": "banded pull-up or ring row",
-              "notes": "Small sets to preserve shoulder health and maintain aerobic pace"
+              "notes": "Kipping or strict, unbroken preferred"
             }
           ],
-          "target_score": "Target 7-9 rounds. Pace should be consistent across all rounds - this is aerobic capacity work, not max effort sprinting.",
+          "target_score": "12-15 minutes",
           "timer_config": {
-            "type": "stopwatch",
+            "type": "for_time",
             "duration_seconds": 1080,
             "interval_seconds": null
           }
@@ -459,59 +261,50 @@
           "duration_minutes": 8,
           "movements": [
             {
-              "movement_id": "row",
-              "name": "Row Easy",
-              "reps_or_duration": "3 minutes",
-              "notes": "Recovery pace, focus on breathing"
+              "name": "Row",
+              "reps_or_duration": "3 minutes easy pace",
+              "notes": "Active cool-down"
             },
             {
-              "movement_id": "pigeon-pose",
               "name": "Pigeon Pose",
               "reps_or_duration": "90 seconds each side",
-              "notes": "Hip mobility and recovery"
+              "notes": "Hip external rotation stretch"
             },
             {
-              "movement_id": "foam-roll-lats",
-              "name": "Foam Roll - Lats",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Address pulling muscle tightness"
-            },
-            {
-              "movement_id": "thoracic-rotation",
-              "name": "Thoracic Rotation",
-              "reps_or_duration": "10 each side",
-              "notes": "Restore thoracic mobility"
+              "name": "Foam Roll \u2014 Lats",
+              "reps_or_duration": "2 minutes",
+              "notes": "Upper back soft tissue release"
             }
           ]
         }
       },
       "rationale": {
         "session_why": {
-          "text": "This session develops oxidative capacity through an 18-minute mixed-modal AMRAP that maintains heart rate in the aerobic zone. The combination of rowing, kettlebell swings, and pull-ups creates sustained cardiovascular demand while distributing muscular load across multiple movement patterns. The time domain (15-20 min) places primary stress on the oxidative energy system as identified by Gastin (2001).",
-          "source": "Gastin 2001 - Energy System Interaction",
-          "url_or_ref": "Sports Medicine 31(10)"
+          "text": "This session combines monostructural cardio (rowing) with mixed-modal functional movements (kettlebell swings, pull-ups) to develop stamina \u2014 the ability to process, deliver, store, and utilize energy across different movement domains. The 12-15 minute time domain targets the oxidative system while maintaining moderate glycolytic contribution.",
+          "source": "Glassman 2002 - CrossFit Journal",
+          "url_or_ref": "What is Fitness? \u2014 10 Physical Skills"
         },
         "movement_why": {
-          "text": "The movement selection balances monostructural cardio (row) with functional weightlifting (KB swing) and gymnastics (pull-up), embodying CrossFit's mixed-modal approach to GPP. The posterior chain emphasis (rowing, swings) develops the hinge pattern under sustained volume, while pull-ups maintain pulling strength capacity. This variety prevents local muscular failure while sustaining cardiovascular stress.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness?"
+          "text": "The kettlebell swing provides a posterior chain hinge pattern under cardiovascular stress. Pull-ups add an upper body pulling component, creating full-body muscular endurance demand. Rowing intervals maintain aerobic base while the swing and pull-up create brief glycolytic spikes. This mixed-modal approach develops GPP \u2014 general physical preparedness across time domains and movement patterns.",
+          "source": "CrossFit Level 2 Training Guide",
+          "url_or_ref": "2022 edition"
         },
         "loading_why": {
-          "text": "The strength block uses straight sets at moderate load (5x20) to build kettlebell swing volume and work capacity. The metcon uses the same load but with American swings (overhead) and lower reps per round to manage fatigue across the 18-minute time domain. This concurrent approach - volume work followed by sustained conditioning - minimizes interference between strength and endurance adaptations when kept at moderate intensity.",
-          "source": "Wilson et al 2012 - Concurrent Training Meta-Analysis",
-          "url_or_ref": "Journal of Strength and Conditioning Research 26(8)"
+          "text": "The strength block uses 60-second rest intervals to develop strength-endurance rather than maximal strength. Five sets of 20 swings builds work capacity in the hinge pattern. The metcon uses moderate loading (24kg/16kg) and time cap of 18 minutes to keep intensity sustainable \u2014 this prevents excessive glycolytic buildup and keeps the athlete in the aerobic-dominant zone for the majority of the workout.",
+          "source": "Haff & Triplett - NSCA Essentials 4th ed",
+          "url_or_ref": "Chapter 3: Energy System Interaction"
         }
       }
     },
     {
-      "id": "wod-cardio-004",
-      "title": "Interval Power Development",
+      "id": "wod-cardio-003",
+      "title": "Interval Capacity Development",
       "category": [
         "cardio"
       ],
       "equipment": [
         "ski erg",
-        "box",
+        "assault bike",
         "jump rope"
       ],
       "duration_minutes": 60,
@@ -520,28 +313,24 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "shoulder-car",
               "name": "Shoulder CARs",
-              "reps_or_duration": "5 each arm",
-              "notes": "Shoulder preparation for ski erg pulling"
+              "reps_or_duration": "5 each direction",
+              "notes": "Shoulder joint prep for ski erg"
             },
             {
-              "movement_id": "cat-cow",
               "name": "Cat-Cow",
               "reps_or_duration": "10 reps",
               "notes": "Spinal mobility"
             },
             {
-              "movement_id": "hip-circle",
               "name": "Hip Circles",
               "reps_or_duration": "10 each direction",
-              "notes": "Hip joint warmup for jumping"
+              "notes": "Hip mobility activation"
             },
             {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Dynamic full-body preparation"
+              "name": "Thoracic Rotation",
+              "reps_or_duration": "10 each side",
+              "notes": "Upper back mobility"
             }
           ]
         },
@@ -549,147 +338,120 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "ski-erg",
               "name": "Ski Erg",
-              "reps_or_duration": "2 minutes easy",
-              "notes": "Establish pulling mechanics at low intensity"
+              "reps_or_duration": "2 minutes easy pace",
+              "notes": "Movement-specific warmup"
             },
             {
-              "movement_id": "air-squat",
               "name": "Air Squat",
               "reps_or_duration": "15 reps",
               "notes": "Lower body activation"
             },
             {
-              "movement_id": "box-jump",
-              "name": "Box Jump (low box)",
+              "name": "Inchworm",
               "reps_or_duration": "5 reps",
-              "notes": "Plyometric primer, focus on soft landing"
+              "notes": "Dynamic posterior chain prep"
             },
             {
-              "movement_id": "jump-rope",
-              "name": "Jump Rope",
-              "reps_or_duration": "50 single-unders",
-              "notes": "Ankle and calf activation"
+              "name": "Jump Rope (single-under)",
+              "reps_or_duration": "40 reps",
+              "notes": "Footwork and coordination activation"
             }
           ]
         },
         "strength": {
-          "duration_minutes": 20,
+          "duration_minutes": 24,
           "label": "Ski Erg Intervals",
           "movements": [
             {
-              "movement_id": "ski-erg",
-              "name": "Ski Erg Intervals",
-              "sets": 8,
-              "reps_or_duration": "200m",
-              "load": "high effort (85-90% max)",
+              "name": "Ski Erg",
+              "sets": 6,
+              "reps_or_duration": "90 seconds work",
+              "load": "moderate-hard effort (RPE 7-8)",
               "rest": "90 seconds",
-              "notes": "Each interval should be near-maximal effort. Focus on powerful arm pull and full hip hinge. This develops anaerobic capacity and upper body pulling power."
+              "notes": "Target consistent calories each round. 1:1 work:rest develops aerobic power."
             }
           ]
         },
         "metcon": {
           "duration_minutes": 18,
           "format": "EMOM",
-          "time_cap_minutes": 18,
-          "rounds_or_duration": "18 minutes (6 rounds of 3-movement sequence)",
+          "time_cap_minutes": 15,
+          "rounds_or_duration": "15 minutes (5 rounds of 3-movement cycle)",
           "movements": [
             {
-              "movement_id": "box-jump",
-              "name": "Box Jump",
-              "reps_or_duration": "10 reps",
-              "load": "24/20 inch box",
-              "notes": "Minute 1, 4, 7, 10, 13, 16: Fast reps, step down for safety"
-            },
-            {
-              "movement_id": "double-under",
-              "name": "Double-Under",
-              "reps_or_duration": "30 reps",
+              "name": "Assault Bike",
+              "reps_or_duration": "10 calories",
               "load": "bodyweight",
-              "scaling": "90 single-unders",
-              "notes": "Minute 2, 5, 8, 11, 14, 17: Quick, efficient rhythm"
+              "notes": "Minute 1"
             },
             {
-              "movement_id": "ski-erg",
               "name": "Ski Erg",
               "reps_or_duration": "12 calories",
               "load": "bodyweight",
-              "notes": "Minute 3, 6, 9, 12, 15, 18: Moderate-high effort, finish with time to spare"
+              "notes": "Minute 2"
+            },
+            {
+              "name": "Double-Under",
+              "reps_or_duration": "40 reps",
+              "load": "bodyweight",
+              "notes": "Minute 3 (scale: 120 single-unders)"
             }
           ],
-          "target_score": "Complete all reps within each minute. Rest is the remainder of the minute. Target 15-30 seconds rest per movement.",
+          "target_score": "Complete all reps with 15-20 seconds rest each minute",
           "timer_config": {
             "type": "emom",
-            "duration_seconds": 1080,
+            "duration_seconds": 900,
             "interval_seconds": 60
           }
         },
         "cooldown": {
-          "duration_minutes": 10,
+          "duration_minutes": 8,
           "movements": [
             {
-              "movement_id": "ski-erg",
-              "name": "Ski Erg Easy",
-              "reps_or_duration": "3 minutes",
-              "notes": "Very low effort, active recovery"
+              "name": "Ski Erg",
+              "reps_or_duration": "3 minutes easy pace",
+              "notes": "Active recovery"
             },
             {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
+              "name": "Hip Flexor Stretch (90/90)",
               "reps_or_duration": "90 seconds each side",
-              "notes": "Hip mobility after jumping volume"
+              "notes": "Hip opener post-cycling"
             },
             {
-              "movement_id": "hip-flexor-stretch",
-              "name": "Hip Flexor Stretch",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "Address hip flexor tightness"
-            },
-            {
-              "movement_id": "foam-roll-lats",
-              "name": "Foam Roll - Lats",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Release lat tension from ski erg"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each arm",
-              "notes": "Restore shoulder range of motion"
+              "name": "Foam Roll \u2014 Quads",
+              "reps_or_duration": "2 minutes",
+              "notes": "Lower body soft tissue work"
             }
           ]
         }
       },
       "rationale": {
         "session_why": {
-          "text": "This session targets the glycolytic energy system through high-intensity intervals in the strength block and sustained power output in the EMOM metcon. The ski erg intervals (200m at 85-90% effort) create repeated bouts of anaerobic work with incomplete recovery, training lactate clearance capacity. The EMOM format maintains elevated heart rate while allowing brief recovery between movements, sustaining effort in the 10-20 minute glycolytic-dominant time domain.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed",
-          "url_or_ref": "Ch. 3 - Energy System Interaction and Exercise"
+          "text": "This session uses interval training to develop aerobic power \u2014 the ability to sustain high output in the oxidative energy system. The 90-second ski erg intervals with 1:1 work:rest ratio train the upper threshold of aerobic capacity. The EMOM metcon maintains cardiovascular demand across three monostructural modalities, developing the ability to recover quickly between efforts.",
+          "source": "Gastin 2001 - Energy System Interaction",
+          "url_or_ref": "Sports Medicine 31(10)"
         },
         "movement_why": {
-          "text": "The movement selection emphasizes power development across multiple modalities. Box jumps develop lower body explosive power, double-unders train speed and coordination under fatigue, and ski erg intervals build upper body pulling power and cardiovascular capacity. This combination addresses Glassman's power (maximum force in minimum time) and speed (minimizing cycle time) physical skills while maintaining cardiovascular stress.",
+          "text": "Monostructural movements (ski erg, bike, double-unders) remove technical barriers and allow the athlete to focus purely on cardiovascular output and pacing. The ski erg emphasizes upper body pulling endurance, the bike targets lower body, and double-unders add a coordination element under fatigue. This develops cardiovascular endurance \u2014 one of Glassman's 10 physical skills \u2014 through varied modalities.",
           "source": "Glassman 2002 - CrossFit Journal",
           "url_or_ref": "What is Fitness?"
         },
         "loading_why": {
-          "text": "The 200m ski erg intervals with 90-second rest create a 1:1 to 1:2 work:rest ratio appropriate for glycolytic system training. The EMOM metcon uses 60-second intervals to auto-regulate intensity - athletes must complete work efficiently to earn rest. This format prevents sandbagging while ensuring adequate recovery to maintain power output across all 18 minutes. The progression from high-intensity intervals to sustained EMOM work follows sound session sequencing.",
-          "source": "Bompa & Haff - Periodization 5th ed",
-          "url_or_ref": "Ch. 6 - Training Methods"
+          "text": "The strength block uses 1:1 work:rest intervals (90 seconds on, 90 seconds off) to train aerobic power without full recovery. This ratio keeps the oxidative system engaged while allowing partial phosphocreatine replenishment. The EMOM format in the metcon forces pacing discipline \u2014 athletes must complete work quickly enough to earn rest, training efficiency and recovery management under cardiovascular stress.",
+          "source": "Haff & Triplett - NSCA Essentials 4th ed",
+          "url_or_ref": "Chapter 3: Energy Systems and Work:Rest Ratios"
         }
       }
     },
     {
-      "id": "wod-cardio-005",
-      "title": "Engine Builder",
+      "id": "wod-cardio-004",
+      "title": "Running Endurance Base",
       "category": [
         "cardio"
       ],
       "equipment": [
-        "assault bike",
-        "rowing machine",
-        "barbell",
-        "plates"
+        "none"
       ],
       "duration_minutes": 60,
       "blocks": {
@@ -697,28 +459,24 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "hip-circle",
               "name": "Hip Circles",
               "reps_or_duration": "10 each direction",
-              "notes": "Hip mobility preparation"
+              "notes": "Hip mobility for running"
             },
             {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each arm",
-              "notes": "Shoulder joint preparation"
-            },
-            {
-              "movement_id": "cat-cow",
-              "name": "Cat-Cow",
-              "reps_or_duration": "10 reps",
-              "notes": "Spinal mobility"
-            },
-            {
-              "movement_id": "world-greatest-stretch",
               "name": "World's Greatest Stretch",
               "reps_or_duration": "5 each side",
-              "notes": "Dynamic full-body warmup"
+              "notes": "Hip flexor and thoracic mobility"
+            },
+            {
+              "name": "Cat-Cow",
+              "reps_or_duration": "10 reps",
+              "notes": "Spinal articulation"
+            },
+            {
+              "name": "Glute Bridge",
+              "reps_or_duration": "15 reps",
+              "notes": "Glute activation for running mechanics"
             }
           ]
         },
@@ -726,321 +484,122 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "assault-bike",
-              "name": "Assault Bike",
-              "reps_or_duration": "2 minutes easy",
-              "notes": "Gradual cardiovascular elevation"
+              "name": "Run",
+              "reps_or_duration": "3 minutes easy jog",
+              "notes": "Gradual heart rate elevation"
             },
             {
-              "movement_id": "air-squat",
               "name": "Air Squat",
-              "reps_or_duration": "15 reps",
-              "notes": "Squat pattern warmup"
-            },
-            {
-              "movement_id": "good-morning",
-              "name": "Good Morning",
-              "reps_or_duration": "10 reps with empty barbell",
-              "notes": "Hinge pattern activation"
-            },
-            {
-              "movement_id": "sumo-deadlift-high-pull",
-              "name": "Sumo Deadlift High Pull",
-              "reps_or_duration": "8 reps with empty barbell",
-              "notes": "Movement-specific preparation"
-            }
-          ]
-        },
-        "strength": {
-          "duration_minutes": 22,
-          "label": "Ramp to Moderate SDHP",
-          "movements": [
-            {
-              "movement_id": "sumo-deadlift-high-pull",
-              "name": "Sumo Deadlift High Pull",
-              "sets": 5,
-              "reps_or_duration": "Sets of 8-8-8-6-6",
-              "load": "Build from 45 lbs to 95/65 lbs across sets",
-              "rest": "90 seconds between sets",
-              "notes": "Ramp/buildup progression scheme. Start light to establish mechanics: wide stance, vertical torso, elbows high. Build to a moderate working weight that allows crisp hip extension and high pull on every rep. This is not max effort - focus on speed and technique."
-            }
-          ]
-        },
-        "metcon": {
-          "duration_minutes": 16,
-          "format": "For Time",
-          "time_cap_minutes": 16,
-          "rounds_or_duration": "4 rounds for time",
-          "movements": [
-            {
-              "movement_id": "assault-bike",
-              "name": "Assault Bike",
-              "reps_or_duration": "20 calories",
-              "load": "bodyweight",
-              "notes": "High effort, push the pace"
-            },
-            {
-              "movement_id": "row",
-              "name": "Row",
-              "reps_or_duration": "20 calories",
-              "load": "bodyweight",
-              "notes": "Maintain strong pace, match bike effort"
-            },
-            {
-              "movement_id": "sumo-deadlift-high-pull",
-              "name": "Sumo Deadlift High Pull",
-              "reps_or_duration": "15 reps",
-              "load": "75/55 lbs",
-              "notes": "Unbroken or quick singles, lighter than strength block load"
-            }
-          ],
-          "target_score": "Target time: 12-15 minutes. This should be sustained high effort with brief transitions between movements.",
-          "timer_config": {
-            "type": "stopwatch",
-            "duration_seconds": 960,
-            "interval_seconds": null
-          }
-        },
-        "cooldown": {
-          "duration_minutes": 10,
-          "movements": [
-            {
-              "movement_id": "row",
-              "name": "Row Easy",
-              "reps_or_duration": "3 minutes",
-              "notes": "Very low effort, recovery pace"
-            },
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Hip mobility and recovery"
-            },
-            {
-              "movement_id": "hip-flexor-stretch",
-              "name": "Hip Flexor Stretch",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "Release hip flexors from cycling volume"
-            },
-            {
-              "movement_id": "foam-roll-quads",
-              "name": "Foam Roll - Quads",
-              "reps_or_duration": "90 seconds",
-              "notes": "Address quad fatigue"
-            },
-            {
-              "movement_id": "thoracic-rotation",
-              "name": "Thoracic Rotation",
-              "reps_or_duration": "10 each side",
-              "notes": "Restore thoracic mobility"
-            }
-          ]
-        }
-      },
-      "rationale": {
-        "session_why": {
-          "text": "This session develops mixed oxidative-glycolytic capacity through sustained monostructural work and moderate-load SDHP. The 12-16 minute For Time format creates continuous cardiovascular demand while the movement rotation prevents local muscular failure. The combination of bike and row cardio with the hinge+pull pattern (SDHP) trains the body's ability to sustain power output across multiple energy pathways, characteristic of the medium time domain (7-15 min).",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed",
-          "url_or_ref": "Ch. 3 - Bioenergetics of Exercise"
-        },
-        "movement_why": {
-          "text": "The monostructural cardio pieces (bike, row) provide high cardiovascular stress without technical complexity, allowing athletes to focus on output rather than movement quality. SDHP adds a functional weightlifting component that develops the posterior chain under fatigue. This mixed-modal approach embodies CrossFit GPP principles while keeping technical demand manageable under cardiovascular stress.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness?"
-        },
-        "loading_why": {
-          "text": "The ramp/buildup progression scheme in the strength block (8-8-8-6-6 building load) provides neural preparation and technical refinement before the metcon. Starting light allows perfect mechanics; building across sets prepares the pattern under increasing load. Zatsiorsky & Kraemer identify progressive warm-up sets as essential for neural preparation and technique refinement. The metcon uses lighter load (75/55 vs 95/65) to maintain movement speed and prevent technical breakdown across 4 rounds.",
-          "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training",
-          "url_or_ref": "Ch. 3 - Adaptation to Strength Training"
-        }
-      }
-    },
-    {
-      "id": "wod-cardio-006",
-      "title": "Aerobic Base Development",
-      "category": [
-        "cardio"
-      ],
-      "equipment": [
-        "rowing machine",
-        "jump rope",
-        "pull-up bar"
-      ],
-      "duration_minutes": 60,
-      "blocks": {
-        "static_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each arm",
-              "notes": "Shoulder preparation for rowing and pull-ups"
-            },
-            {
-              "movement_id": "cat-cow",
-              "name": "Cat-Cow",
               "reps_or_duration": "10 reps",
-              "notes": "Spinal mobility"
+              "notes": "Lower body activation"
             },
             {
-              "movement_id": "hip-circle",
-              "name": "Hip Circles",
-              "reps_or_duration": "10 each direction",
-              "notes": "Hip joint warmup"
+              "name": "Inchworm",
+              "reps_or_duration": "5 reps",
+              "notes": "Dynamic hamstring prep"
             },
             {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Dynamic full-body preparation"
-            }
-          ]
-        },
-        "active_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "row",
-              "name": "Row",
-              "reps_or_duration": "500m easy",
-              "notes": "Establish rowing mechanics"
-            },
-            {
-              "movement_id": "jump-rope",
-              "name": "Jump Rope",
-              "reps_or_duration": "100 single-unders",
-              "notes": "Ankle and calf activation"
-            },
-            {
-              "movement_id": "ring-row",
-              "name": "Ring Row",
-              "reps_or_duration": "10 reps",
-              "notes": "Scapular activation"
-            },
-            {
-              "movement_id": "air-squat",
-              "name": "Air Squat",
-              "reps_or_duration": "15 reps",
-              "notes": "Lower body warmup"
+              "name": "High Knees",
+              "reps_or_duration": "20 steps",
+              "notes": "Running mechanics activation (movement not in library but common warmup drill)"
             }
           ]
         },
         "strength": {
           "duration_minutes": 20,
-          "label": "Aerobic Row Intervals",
+          "label": "Tempo Run Intervals",
           "movements": [
             {
-              "movement_id": "row",
-              "name": "Row Intervals",
-              "sets": 5,
-              "reps_or_duration": "3 minutes",
-              "load": "moderate pace (2:00-2:10/500m split, conversational effort)",
-              "rest": "2 minutes between intervals",
-              "notes": "Maintain consistent split time across all 5 intervals. This is aerobic base work - you should be able to hold a conversation. Focus on efficient stroke mechanics and breathing rhythm."
+              "name": "Run",
+              "sets": 4,
+              "reps_or_duration": "800m",
+              "load": "moderate pace (70-75% effort)",
+              "rest": "2 minutes walk/jog recovery",
+              "notes": "Target same pace all 4 rounds. Focus: aerobic threshold development."
             }
           ]
         },
         "metcon": {
-          "duration_minutes": 18,
-          "format": "AMRAP",
+          "duration_minutes": 22,
+          "format": "For Time",
           "time_cap_minutes": 18,
-          "rounds_or_duration": "18 minutes",
+          "rounds_or_duration": "3 Rounds",
           "movements": [
             {
-              "movement_id": "row",
-              "name": "Row",
-              "reps_or_duration": "15 calories",
+              "name": "Run",
+              "reps_or_duration": "800m",
               "load": "bodyweight",
-              "notes": "Steady sustainable pace, not max effort"
+              "notes": "Moderate-hard pace, sustainable across rounds"
             },
             {
-              "movement_id": "jump-rope",
-              "name": "Jump Rope",
-              "reps_or_duration": "60 single-unders",
+              "name": "Air Squat",
+              "reps_or_duration": "30 reps",
               "load": "bodyweight",
-              "notes": "Relaxed rhythm, avoid going to failure"
+              "notes": "Consistent tempo, maintain quality"
             },
             {
-              "movement_id": "pull-up",
-              "name": "Pull-Up",
-              "reps_or_duration": "8 reps",
+              "name": "Burpee",
+              "reps_or_duration": "15 reps",
               "load": "bodyweight",
-              "scaling": "banded pull-up or ring row",
-              "notes": "Small sets (2-3 reps) to preserve shoulders and maintain aerobic pace"
+              "notes": "Controlled pace, full hip extension at top"
             }
           ],
-          "target_score": "Target 8-10 rounds. Pace should be very consistent - this is long aerobic work, not sprint intervals.",
+          "target_score": "15-18 minutes",
           "timer_config": {
-            "type": "stopwatch",
+            "type": "for_time",
             "duration_seconds": 1080,
             "interval_seconds": null
           }
         },
         "cooldown": {
-          "duration_minutes": 10,
+          "duration_minutes": 8,
           "movements": [
             {
-              "movement_id": "row",
-              "name": "Row Easy",
-              "reps_or_duration": "3 minutes",
-              "notes": "Very low effort, focus on deep breathing"
+              "name": "Run",
+              "reps_or_duration": "3 minutes easy jog",
+              "notes": "Active cool-down"
             },
             {
-              "movement_id": "pigeon-pose",
+              "name": "Hip Flexor Stretch (90/90)",
+              "reps_or_duration": "90 seconds each side",
+              "notes": "Hip flexor release post-running"
+            },
+            {
               "name": "Pigeon Pose",
               "reps_or_duration": "90 seconds each side",
-              "notes": "Hip mobility"
-            },
-            {
-              "movement_id": "foam-roll-lats",
-              "name": "Foam Roll - Lats",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Release pulling muscle tension"
-            },
-            {
-              "movement_id": "thoracic-rotation",
-              "name": "Thoracic Rotation",
-              "reps_or_duration": "10 each side",
-              "notes": "Restore thoracic mobility"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each arm",
-              "notes": "Shoulder range of motion restoration"
+              "notes": "Hip external rotation stretch"
             }
           ]
         }
       },
       "rationale": {
         "session_why": {
-          "text": "This session prioritizes aerobic base development through sustained low-to-moderate intensity work. The 3-minute row intervals with 2-minute rest build aerobic capacity without entering the glycolytic system, while the 18-minute AMRAP maintains heart rate in the aerobic zone (65-75% max HR). This session represents the ~80% low-intensity volume recommended in polarized training models to support concurrent strength and endurance adaptation.",
-          "source": "Wilson et al 2012 - Concurrent Training Meta-Analysis",
-          "url_or_ref": "Journal of Strength and Conditioning Research 26(8)"
+          "text": "This running-focused session develops cardiovascular endurance and stamina through sustained aerobic work. The 800m intervals in the strength block target aerobic threshold \u2014 the upper limit of purely oxidative metabolism. The For Time metcon combines running with bodyweight movements to develop the ability to maintain output under cumulative fatigue across 15-18 minutes (oxidative system dominant).",
+          "source": "Gastin 2001 - Energy System Interaction",
+          "url_or_ref": "Sports Medicine 31(10): oxidative system dominant beyond 3-4 minutes"
         },
         "movement_why": {
-          "text": "Rowing provides low-impact cardiovascular stress with full-body engagement. Single-unders add rhythmic coordination work without high impact, and pull-ups maintain pulling strength in small manageable sets. This combination develops cardiovascular endurance (oxygen delivery capacity) and stamina (energy processing and utilization) across Glassman's ten physical skills while avoiding excessive muscular fatigue.",
+          "text": "Running is a foundational monostructural movement that develops cardiovascular endurance without equipment. Air squats and burpees add functional movement patterns under cardiovascular stress, training the ability to maintain motor control and power output when the oxidative system is taxed. This session balances pure aerobic development (running) with mixed-modal GPP (air squats, burpees).",
           "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness?"
+          "url_or_ref": "What is Fitness? \u2014 GPP across broad time and modal domains"
         },
         "loading_why": {
-          "text": "The 3-minute intervals with 2-minute rest provide a 3:2 work:rest ratio appropriate for aerobic development - sufficient recovery to maintain quality without full phosphocreatine restoration. The conversational pace prescription ensures athletes stay below anaerobic threshold. The AMRAP uses moderate volume per movement (15 cal, 60 singles, 8 pull-ups) to prevent local failure and maintain sustainable aerobic output for the full 18 minutes, aligning with oxidative system dominance beyond 10+ minutes of continuous work.",
-          "source": "Gastin 2001 - Energy System Interaction",
-          "url_or_ref": "Sports Medicine 31(10)"
+          "text": "The 800m intervals use 2-minute rest to allow partial recovery while keeping the aerobic system engaged \u2014 this is threshold training. The For Time metcon uses bodyweight-only movements at a pace sustainable across 3 rounds, preventing excessive glycolytic buildup. The 18-minute time cap ensures the workout remains in the oxidative-dominant zone rather than becoming a glycolytic sprint.",
+          "source": "Haff & Triplett - NSCA Essentials 4th ed",
+          "url_or_ref": "Chapter 3: Energy Systems \u2014 oxidative dominance >10 minutes"
         }
       }
     },
     {
-      "id": "wod-cardio-007",
-      "title": "Lactate Threshold Challenge",
+      "id": "wod-cardio-005",
+      "title": "Bike-Pull Endurance Complex",
       "category": [
         "cardio"
       ],
       "equipment": [
         "assault bike",
-        "barbell",
-        "plates"
+        "pull-up bar",
+        "kettlebell"
       ],
       "duration_minutes": 60,
       "blocks": {
@@ -1048,28 +607,24 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "hip-circle",
-              "name": "Hip Circles",
-              "reps_or_duration": "10 each direction",
-              "notes": "Hip mobility for cycling and squatting"
-            },
-            {
-              "movement_id": "shoulder-car",
               "name": "Shoulder CARs",
-              "reps_or_duration": "5 each arm",
-              "notes": "Shoulder preparation"
+              "reps_or_duration": "5 each direction",
+              "notes": "Shoulder prep for pulling"
             },
             {
-              "movement_id": "cat-cow",
               "name": "Cat-Cow",
               "reps_or_duration": "10 reps",
               "notes": "Spinal mobility"
             },
             {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Dynamic full-body warmup"
+              "name": "Hip Circles",
+              "reps_or_duration": "10 each direction",
+              "notes": "Hip joint mobility"
+            },
+            {
+              "name": "Banded Pull-Apart",
+              "reps_or_duration": "20 reps",
+              "notes": "Scapular activation for pulling movements"
             }
           ]
         },
@@ -1077,126 +632,117 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "assault-bike",
               "name": "Assault Bike",
-              "reps_or_duration": "2 minutes easy",
-              "notes": "Cardiovascular warmup"
+              "reps_or_duration": "2 minutes easy pace",
+              "notes": "Cardiovascular activation"
             },
             {
-              "movement_id": "air-squat",
               "name": "Air Squat",
               "reps_or_duration": "15 reps",
-              "notes": "Squat pattern activation"
+              "notes": "Lower body warmup"
             },
             {
-              "movement_id": "good-morning",
-              "name": "Good Morning",
-              "reps_or_duration": "10 reps with empty barbell",
-              "notes": "Hinge pattern warmup"
+              "name": "Ring Row",
+              "reps_or_duration": "10 reps",
+              "notes": "Pulling pattern activation"
             },
             {
-              "movement_id": "front-squat",
-              "name": "Front Squat",
-              "reps_or_duration": "8 reps with empty barbell",
-              "notes": "Movement-specific preparation"
+              "name": "Inchworm",
+              "reps_or_duration": "5 reps",
+              "notes": "Dynamic full-body warmup"
             }
           ]
         },
         "strength": {
-          "duration_minutes": 24,
-          "label": "E3MOM Front Squat Strength",
+          "duration_minutes": 20,
+          "label": "Bike + Pull Complex",
           "movements": [
             {
-              "movement_id": "front-squat",
-              "name": "Front Squat",
-              "sets": 6,
-              "reps_or_duration": "3 reps",
-              "load": "80% 1RM (or RPE 8)",
-              "rest": "Remainder of 3 minutes",
-              "format": "E3MOM x 6 rounds (18 min total)",
-              "notes": "Heavy loading requires full recovery between sets. E3MOM format provides adequate phosphocreatine restoration. Focus on upright torso, elbows high, full depth. This is strength work - move with control and precision."
+              "name": "Assault Bike",
+              "sets": 5,
+              "reps_or_duration": "20 calories",
+              "load": "moderate-hard effort",
+              "rest": "immediately into pull-ups",
+              "notes": "Consistent pace across all rounds"
+            },
+            {
+              "name": "Pull-Up",
+              "sets": 5,
+              "reps_or_duration": "8 reps",
+              "load": "bodyweight",
+              "rest": "90 seconds after pull-ups before next bike",
+              "notes": "Kipping or strict. Maintain quality under cardiovascular fatigue."
             }
           ]
         },
         "metcon": {
-          "duration_minutes": 14,
-          "format": "For Time",
-          "time_cap_minutes": 14,
-          "rounds_or_duration": "21-15-9 for time",
+          "duration_minutes": 22,
+          "format": "AMRAP",
+          "time_cap_minutes": 18,
+          "rounds_or_duration": "18 minutes",
           "movements": [
             {
-              "movement_id": "assault-bike",
               "name": "Assault Bike",
-              "reps_or_duration": "21/15/9 calories",
+              "reps_or_duration": "15 calories",
               "load": "bodyweight",
-              "notes": "High intensity, push hard on each set"
+              "notes": "Moderate sustainable pace"
             },
             {
-              "movement_id": "front-squat",
-              "name": "Front Squat",
-              "reps_or_duration": "21/15/9 reps",
-              "load": "95/65 lbs",
-              "notes": "Significantly lighter than strength block. Quick singles or small sets to manage fatigue."
+              "name": "Kettlebell Swing (Russian)",
+              "reps_or_duration": "20 reps",
+              "load": "24kg/16kg",
+              "notes": "Hip-height finish, explosive"
+            },
+            {
+              "name": "Burpee",
+              "reps_or_duration": "10 reps",
+              "load": "bodyweight",
+              "notes": "Full chest-to-deck, full hip extension"
             }
           ],
-          "target_score": "Target time: 8-12 minutes. This is a glycolytic burn - expect high heart rate and leg fatigue. Pace the bike to leave gas for the squats.",
+          "target_score": "7-9 rounds",
           "timer_config": {
-            "type": "stopwatch",
-            "duration_seconds": 840,
+            "type": "amrap",
+            "duration_seconds": 1080,
             "interval_seconds": null
           }
         },
         "cooldown": {
-          "duration_minutes": 10,
+          "duration_minutes": 8,
           "movements": [
             {
-              "movement_id": "assault-bike",
-              "name": "Assault Bike Easy",
-              "reps_or_duration": "3 minutes",
-              "notes": "Very low effort, active recovery to clear lactate"
+              "name": "Assault Bike",
+              "reps_or_duration": "3 minutes easy pace",
+              "notes": "Active recovery"
             },
             {
-              "movement_id": "pigeon-pose",
               "name": "Pigeon Pose",
               "reps_or_duration": "90 seconds each side",
-              "notes": "Deep hip stretch"
+              "notes": "Hip mobility restoration"
             },
             {
-              "movement_id": "hip-flexor-stretch",
-              "name": "Hip Flexor Stretch",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "Release hip flexors from squat and bike volume"
-            },
-            {
-              "movement_id": "foam-roll-quads",
-              "name": "Foam Roll - Quads",
+              "name": "Foam Roll \u2014 Lats",
               "reps_or_duration": "2 minutes",
-              "notes": "Address quad fatigue, slow deliberate passes"
-            },
-            {
-              "movement_id": "thoracic-rotation",
-              "name": "Thoracic Rotation",
-              "reps_or_duration": "10 each side",
-              "notes": "Restore thoracic mobility"
+              "notes": "Upper back soft tissue work post-pulling"
             }
           ]
         }
       },
       "rationale": {
         "session_why": {
-          "text": "This session targets lactate threshold through a descending-rep scheme (21-15-9) that maintains high intensity across 8-12 minutes. The bike-squat couplet creates continuous lower body demand with incomplete recovery between sets, training the body's ability to buffer hydrogen ions and maintain power output under accumulating fatigue. The medium time domain ensures glycolytic system dominance while the descending reps create psychological momentum as fatigue increases.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed",
-          "url_or_ref": "Ch. 3 - Energy Substrates and Metabolic Systems"
+          "text": "This session develops stamina and cardiovascular endurance by pairing monostructural cardio (assault bike) with upper body pulling under fatigue. The 18-minute AMRAP keeps the athlete in the oxidative-dominant zone while the strength complex trains the ability to execute pulling movements when the cardiovascular system is taxed. This builds the capacity to process and utilize energy across multiple movement domains.",
+          "source": "Glassman 2002 - CrossFit Journal",
+          "url_or_ref": "What is Fitness? \u2014 Stamina definition"
         },
         "movement_why": {
-          "text": "Front squats and assault bike both heavily tax the lower body, creating metabolic stress in the quadriceps and hip flexors. This intentional movement redundancy drives lactate accumulation and tests the athlete's ability to sustain power output when local muscular fatigue is high. The combination develops stamina (energy processing under fatigue) while maintaining the squat movement pattern under cardiovascular stress.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness?"
+          "text": "The assault bike provides consistent cardiovascular demand without technical complexity. Pull-ups add a vertical pulling component that challenges upper body muscular endurance under aerobic stress. Kettlebell swings in the metcon maintain posterior chain engagement while burpees add a full-body movement pattern. This mixed-modal approach develops GPP while maintaining aerobic emphasis through sustained duration.",
+          "source": "CrossFit Level 2 Training Guide",
+          "url_or_ref": "2022 edition \u2014 GPP through varied modalities"
         },
         "loading_why": {
-          "text": "The E3MOM format in the strength block provides full phosphocreatine recovery for heavy front squats at 80% 1RM, allowing quality neural adaptation without systemic fatigue. The metcon uses light load (95/65 lbs, approximately 40-50% of strength load) to allow fast cycling and prevent technical breakdown under fatigue. The descending rep scheme (21-15-9) manages volume while maintaining intensity - total of 45 reps per movement keeps time domain in the glycolytic window (8-12 min target).",
-          "source": "Bompa & Haff - Periodization 5th ed",
-          "url_or_ref": "Ch. 9 - Methods of Strength Training"
+          "text": "The strength complex uses 90-second rest after pull-ups to allow partial upper body recovery while keeping the cardiovascular system engaged from the bike calories. The AMRAP uses moderate loading (24kg/16kg kettlebell, bodyweight movements) and 18-minute duration to ensure oxidative system dominance. Pacing is key \u2014 athletes must resist the urge to sprint early rounds and instead maintain sustainable output across the full time domain.",
+          "source": "Haff & Triplett - NSCA Essentials 4th ed",
+          "url_or_ref": "Chapter 3: Oxidative system dominant beyond 10 minutes sustained effort"
         }
       }
     }

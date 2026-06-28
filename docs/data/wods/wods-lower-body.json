@@ -2,7 +2,7 @@
   "wods": [
     {
       "id": "wod-lb-001",
-      "title": "Lower Body Power Development",
+      "title": "Front Squat Foundation + Glycolytic Leg Burner",
       "category": [
         "lower-body"
       ],
@@ -10,7 +10,8 @@
         "barbell",
         "plates",
         "rack",
-        "box"
+        "box",
+        "pull-up bar"
       ],
       "duration_minutes": 60,
       "blocks": {
@@ -18,22 +19,28 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "hip-circle",
+              "id": "hip-circle",
               "name": "Hip Circles",
-              "reps_or_duration": "10 each direction",
-              "notes": "Standing hip mobility - circles in both directions"
+              "reps": "10 each direction",
+              "notes": "Mobilize hip joint in all planes"
             },
             {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "Deep hip external rotation stretch"
+              "id": "world-greatest-stretch",
+              "name": "World's Greatest Stretch",
+              "reps": "5 each side",
+              "notes": "Hip flexor and thoracic rotation opener"
             },
             {
-              "movement_id": "hip-flexor-stretch",
-              "name": "Hip Flexor Stretch",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "90/90 lunge position, stretch front of hip"
+              "id": "cat-cow",
+              "name": "Cat-Cow",
+              "reps": "10 reps",
+              "notes": "Spinal flexion and extension prep"
+            },
+            {
+              "id": "air-squat",
+              "name": "Air Squat",
+              "reps": "15 reps",
+              "notes": "Bodyweight squat pattern activation"
             }
           ]
         },
@@ -41,45 +48,79 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "air-squat",
-              "name": "Air Squat",
-              "reps_or_duration": "15 reps",
-              "notes": "Bodyweight squat, full depth"
+              "id": "good-morning",
+              "name": "Good Morning (empty barbell)",
+              "reps": "10 reps",
+              "notes": "Hip hinge activation with posterior chain engagement"
             },
             {
-              "movement_id": "inchworm",
-              "name": "Inchworm",
-              "reps_or_duration": "8 reps",
-              "notes": "Walk hands out to plank, walk feet to hands"
+              "id": "front-squat",
+              "name": "Front Squat (empty barbell)",
+              "reps": "8 reps",
+              "notes": "Movement-specific prep for working sets"
             },
             {
-              "movement_id": "box-jump",
-              "name": "Box Jump (low height)",
-              "reps_or_duration": "8 reps",
-              "notes": "Submaximal height, focus on landing mechanics"
+              "id": "front-squat",
+              "name": "Front Squat",
+              "reps": "5 reps @ 40% 1RM",
+              "notes": "First build-up set"
             },
             {
-              "movement_id": "good-morning",
-              "name": "Good Morning",
-              "reps_or_duration": "10 reps",
-              "notes": "Empty barbell, hinge pattern activation"
+              "id": "front-squat",
+              "name": "Front Squat",
+              "reps": "3 reps @ 55% 1RM",
+              "notes": "Second build-up set"
             }
           ]
         },
         "strength": {
           "duration_minutes": 22,
-          "label": "Back Squat - Ramp to Heavy Double",
+          "label": "Front Squat (Ramp to Heavy)",
           "movements": [
             {
-              "movement_id": "back-squat",
-              "name": "Back Squat",
-              "sets": 5,
-              "reps": "5, 4, 3, 2, 2",
-              "loading": "65%, 72%, 78%, 83%, 85% 1RM",
-              "rest": "180 seconds between sets",
-              "notes": "Ramp progression - progressively heavier loads with decreasing reps. Final two sets are working sets at 83-85%.",
-              "tempo": "Controlled descent, explosive ascent",
-              "scaling": "Goblet squat or dumbbell squat"
+              "id": "front-squat",
+              "name": "Front Squat",
+              "sets": 1,
+              "reps": 5,
+              "load": "70% 1RM or RPE 7",
+              "rest": "90 seconds",
+              "notes": "First working set - establish baseline"
+            },
+            {
+              "id": "front-squat",
+              "name": "Front Squat",
+              "sets": 1,
+              "reps": 4,
+              "load": "75% 1RM or RPE 7-8",
+              "rest": "2 minutes",
+              "notes": "Second working set - moderate increase"
+            },
+            {
+              "id": "front-squat",
+              "name": "Front Squat",
+              "sets": 1,
+              "reps": 3,
+              "load": "78% 1RM or RPE 8",
+              "rest": "2 minutes",
+              "notes": "Third working set - technique focus under load"
+            },
+            {
+              "id": "front-squat",
+              "name": "Front Squat",
+              "sets": 1,
+              "reps": 2,
+              "load": "82% 1RM or RPE 8-9",
+              "rest": "3 minutes",
+              "notes": "Top set - neural preparation for heavy loading"
+            },
+            {
+              "id": "glute-bridge",
+              "name": "Glute Bridge",
+              "sets": 3,
+              "reps": 15,
+              "load": "bodyweight",
+              "rest": "60 seconds",
+              "notes": "Accessory posterior chain activation"
             }
           ]
         },
@@ -90,33 +131,30 @@
           "rounds_or_duration": "12 minutes",
           "movements": [
             {
-              "movement_id": "box-jump",
+              "id": "box-jump",
               "name": "Box Jump",
-              "reps": 10,
-              "loading": "24/20 inch box",
-              "notes": "Step down each rep, prioritize safe landing mechanics",
-              "scaling": "Step-up or reduce height"
+              "reps": 12,
+              "load": "24/20 inch box",
+              "notes": "Step down to preserve Achilles - power output focus"
             },
             {
-              "movement_id": "kb-swing",
+              "id": "kb-swing",
               "name": "Kettlebell Swing (Russian)",
               "reps": 15,
-              "loading": "53/35 lbs",
-              "notes": "Hip hinge pattern, swing to eye level",
-              "scaling": "Reduce weight"
+              "load": "53/35 lb",
+              "notes": "Hip extension power - swing to eye level"
             },
             {
-              "movement_id": "air-squat",
-              "name": "Air Squat",
-              "reps": 20,
-              "loading": "Bodyweight",
-              "notes": "Full depth, maintain quality under fatigue",
-              "scaling": "Reduce reps to maintain form"
+              "id": "burpee",
+              "name": "Burpee",
+              "reps": 18,
+              "load": "bodyweight",
+              "notes": "Full chest-to-deck, jump and clap at top"
             }
           ],
-          "target_score": "7-10 rounds",
+          "target_score": "8-12 rounds",
           "timer_config": {
-            "type": "AMRAP",
+            "type": "amrap",
             "duration_seconds": 720,
             "interval_seconds": null
           }
@@ -125,54 +163,61 @@
           "duration_minutes": 8,
           "movements": [
             {
-              "movement_id": "foam-roll-quads",
-              "name": "Foam Roll - Quads",
-              "reps_or_duration": "90 seconds each leg",
-              "notes": "Slow passes, pause on tender spots"
-            },
-            {
-              "movement_id": "pigeon-pose",
+              "id": "pigeon-pose",
               "name": "Pigeon Pose",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Deeper hold than warmup, relax into stretch"
+              "reps": "90 seconds each side",
+              "notes": "Deep hip external rotator stretch"
             },
             {
-              "movement_id": "glute-bridge",
-              "name": "Glute Bridge",
-              "reps_or_duration": "2x15 reps",
-              "notes": "Bodyweight, hold contraction for 2 seconds at top"
+              "id": "hip-flexor-stretch",
+              "name": "Hip Flexor Stretch (90/90)",
+              "reps": "90 seconds each side",
+              "notes": "Address hip flexor tightness from squatting"
+            },
+            {
+              "id": "foam-roll-quads",
+              "name": "Foam Roll \u2014 Quads",
+              "reps": "2 minutes total",
+              "notes": "Reduce quad tension and perceived soreness"
+            },
+            {
+              "id": "air-squat",
+              "name": "Air Squat (slow tempo)",
+              "reps": "10 reps",
+              "notes": "Active recovery - move blood through legs"
             }
           ]
         }
       },
       "rationale": {
         "session_why": {
-          "text": "This session targets lower body power development through the combination of heavy back squat work (ATP-PC system, neural adaptation) followed by a glycolytic metcon emphasizing explosive lower body movements. The squat-first sequencing ensures CNS freshness for maximal force production. The 12-minute AMRAP keeps the time domain in the glycolytic zone (10 sec - 2 min high-intensity efforts) without excessive oxidative demand that would interfere with strength adaptation.",
-          "source": "Wilson et al 2012 - Concurrent Training Meta-Analysis",
-          "url_or_ref": "Journal of Strength and Conditioning Research 26(8)"
+          "text": "This session targets lower body strength with anterior chain emphasis (front squat), followed by a glycolytic-dominant metcon in the 10-15 minute time domain. The front squat builds quadriceps and core strength while demanding upright torso position and thoracic mobility. The metcon uses triple extension movements (box jump, KB swing, burpee) to maintain the lower body focus while training the glycolytic energy system. This session is appropriate for Week 1 baseline establishment in a mesocycle.",
+          "source": "Haff & Triplett - NSCA Essentials 4th ed, Ch. 17",
+          "url_or_ref": "Chapter on resistance training program design and exercise selection"
         },
         "movement_why": {
-          "text": "Back squat is the primary lower body strength movement, developing force production in the squat pattern. Box jumps develop rate of force development (power), kettlebell swings train the hinge pattern with explosive hip extension, and air squats provide volume under fatigue. This combination addresses three of Glassman's ten physical skills: strength, power, and stamina.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness, October 2002"
+          "text": "Front squat was selected as the primary lower body strength movement because it emphasizes quadriceps development, requires greater core stabilization than back squat, and builds the receiving position for Olympic lifts. The ramp progression prepares the nervous system progressively for heavier loads while reinforcing technique. The metcon movements (box jump, KB swing, burpee) were chosen to maintain lower body emphasis through hip extension patterns while avoiding direct squatting under fatigue, which would compromise technique quality.",
+          "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training, Ch. 3",
+          "url_or_ref": "Chapter on exercise classification and neural preparation"
         },
         "loading_why": {
-          "text": "The ramp/build-up progression scheme (5@65%, 4@72%, 3@78%, 2@83%, 2@85%) is appropriate for Week 1 baseline establishment and neural preparation. This progressive loading prepares the nervous system for heavier loads while allowing technique refinement under progressively challenging weights. Zatsiorsky & Kraemer describe progressive warm-up sets as essential for neural preparation before maximal efforts. The 180-second rest intervals allow phosphocreatine replenishment for strength work above 80% 1RM.",
+          "text": "The ramp/build-up progression scheme (5@70%, 4@75%, 3@78%, 2@82%) is appropriate for Week 1 baseline establishment. This intra-session progression gradually increases neural demand while decreasing reps, preparing the CNS for heavier loads and allowing technique refinement under progressively challenging weights. Rest periods are auto-regulated between 90 seconds (lower intensity) and 3 minutes (top set) to ensure adequate phosphocreatine recovery for the ATP-PC system. RPE 7-8 targets are prescribed when 1RM is unknown, ensuring submaximal loading that allows for technique focus.",
           "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training",
-          "url_or_ref": "2nd ed., Ch. 3"
+          "url_or_ref": "Progressive warm-up sets as essential for neural preparation"
         }
       }
     },
     {
       "id": "wod-lb-002",
-      "title": "Hinge Pattern Strength",
+      "title": "Deadlift Wave Loading + Medium Metcon",
       "category": [
         "lower-body"
       ],
       "equipment": [
         "barbell",
         "plates",
-        "rowing machine"
+        "assault bike",
+        "pull-up bar"
       ],
       "duration_minutes": 60,
       "blocks": {
@@ -180,22 +225,28 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "cat-cow",
+              "id": "cat-cow",
               "name": "Cat-Cow",
-              "reps_or_duration": "15 reps",
-              "notes": "Spinal flexion/extension mobility drill"
+              "reps": "10 reps",
+              "notes": "Spinal mobility preparation"
             },
             {
-              "movement_id": "hip-flexor-stretch",
-              "name": "Hip Flexor Stretch",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "90/90 position hip opener"
-            },
-            {
-              "movement_id": "world-greatest-stretch",
+              "id": "world-greatest-stretch",
               "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Lunge with rotation, comprehensive lower body mobility"
+              "reps": "5 each side",
+              "notes": "Hip and thoracic opener"
+            },
+            {
+              "id": "glute-bridge",
+              "name": "Glute Bridge",
+              "reps": "15 reps",
+              "notes": "Glute activation for hip extension"
+            },
+            {
+              "id": "good-morning",
+              "name": "Good Morning (empty barbell)",
+              "reps": "10 reps",
+              "notes": "Hip hinge pattern activation"
             }
           ]
         },
@@ -203,45 +254,97 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "good-morning",
-              "name": "Good Morning",
-              "reps_or_duration": "12 reps",
-              "notes": "Empty barbell, hinge pattern primer"
+              "id": "deadlift",
+              "name": "Deadlift (empty barbell)",
+              "reps": "8 reps",
+              "notes": "Movement-specific prep with neutral spine focus"
             },
             {
-              "movement_id": "glute-bridge",
-              "name": "Glute Bridge",
-              "reps_or_duration": "15 reps",
-              "notes": "Posterior chain activation"
+              "id": "deadlift",
+              "name": "Deadlift",
+              "reps": "5 reps @ 50% 1RM",
+              "notes": "First build-up set"
             },
             {
-              "movement_id": "romanian-deadlift",
-              "name": "Romanian Deadlift (light)",
-              "reps_or_duration": "10 reps",
-              "notes": "45 lbs or empty bar, movement prep"
+              "id": "deadlift",
+              "name": "Deadlift",
+              "reps": "3 reps @ 65% 1RM",
+              "notes": "Second build-up set"
             },
             {
-              "movement_id": "inchworm",
-              "name": "Inchworm",
-              "reps_or_duration": "8 reps",
-              "notes": "Hamstring and shoulder mobility"
+              "id": "hollow-body-hold",
+              "name": "Hollow Body Hold",
+              "reps": "2 x 20 seconds",
+              "notes": "Core tension prep for heavy loading"
             }
           ]
         },
         "strength": {
           "duration_minutes": 24,
-          "label": "Deadlift - EMOM Strength",
+          "label": "Deadlift (Wave Loading)",
           "movements": [
             {
-              "movement_id": "deadlift",
+              "id": "deadlift",
               "name": "Deadlift",
-              "sets": 8,
-              "reps": "3 reps",
-              "loading": "E2MOM x 8 rounds: 3 Deadlifts @ 75% 1RM",
-              "rest": "Remainder of 2-minute interval",
-              "notes": "EMOM format: Perform 3 deadlifts at the start of every 2 minutes. Faster execution earns more rest. Focus on consistent technique across all 8 rounds. Total time: 16 minutes of strength work.",
-              "tempo": "Controlled setup, explosive lift, controlled descent",
-              "scaling": "Trap bar deadlift or reduce load"
+              "sets": 1,
+              "reps": 3,
+              "load": "75% 1RM or RPE 7-8",
+              "rest": "2 minutes",
+              "notes": "Wave 1 - First tier"
+            },
+            {
+              "id": "deadlift",
+              "name": "Deadlift",
+              "sets": 1,
+              "reps": 3,
+              "load": "80% 1RM or RPE 8",
+              "rest": "2 minutes",
+              "notes": "Wave 1 - Second tier"
+            },
+            {
+              "id": "deadlift",
+              "name": "Deadlift",
+              "sets": 1,
+              "reps": 3,
+              "load": "83% 1RM or RPE 8-9",
+              "rest": "3 minutes",
+              "notes": "Wave 1 - Peak tier"
+            },
+            {
+              "id": "deadlift",
+              "name": "Deadlift",
+              "sets": 1,
+              "reps": 3,
+              "load": "77% 1RM or RPE 8",
+              "rest": "2 minutes",
+              "notes": "Wave 2 - First tier (exploits PAP from Wave 1)"
+            },
+            {
+              "id": "deadlift",
+              "name": "Deadlift",
+              "sets": 1,
+              "reps": 3,
+              "load": "81% 1RM or RPE 8-9",
+              "rest": "2 minutes",
+              "notes": "Wave 2 - Second tier"
+            },
+            {
+              "id": "deadlift",
+              "name": "Deadlift",
+              "sets": 1,
+              "reps": 3,
+              "load": "85% 1RM or RPE 9",
+              "rest": "3 minutes",
+              "notes": "Wave 2 - Peak tier (highest load of session)"
+            },
+            {
+              "id": "romanian-deadlift",
+              "name": "Romanian Deadlift",
+              "sets": 3,
+              "reps": 8,
+              "load": "40% of deadlift 1RM",
+              "rest": "90 seconds",
+              "notes": "Accessory hamstring and glute volume"
             }
           ]
         },
@@ -249,28 +352,33 @@
           "duration_minutes": 14,
           "format": "For Time",
           "time_cap_minutes": 12,
-          "rounds_or_duration": "5 Rounds For Time",
+          "rounds_or_duration": "5 rounds",
           "movements": [
             {
-              "movement_id": "romanian-deadlift",
-              "name": "Romanian Deadlift",
-              "reps": 12,
-              "loading": "95/65 lbs",
-              "notes": "Moderate load, focus on eccentric control and hamstring stretch",
-              "scaling": "Dumbbell RDL or reduce weight"
+              "id": "assault-bike",
+              "name": "Assault Bike",
+              "reps": "15 calories",
+              "load": "moderate pace",
+              "notes": "Push legs but preserve capacity for wall balls"
             },
             {
-              "movement_id": "row",
-              "name": "Row",
-              "reps": "250/200 meters",
-              "loading": "Bodyweight",
-              "notes": "Moderate damper setting, consistent pace across rounds",
-              "scaling": "Reduce distance to 200/150m"
+              "id": "kb-goblet-squat",
+              "name": "Goblet Squat",
+              "reps": "20",
+              "load": "53/35 lb kettlebell",
+              "notes": "Squat pattern under moderate load post-deadlift"
+            },
+            {
+              "id": "toes-to-bar",
+              "name": "Toes-to-Bar",
+              "reps": "10",
+              "load": "bodyweight",
+              "notes": "Core endurance - scale to knees-to-chest if needed"
             }
           ],
-          "target_score": "9-12 minutes",
+          "target_score": "Complete in 8-12 minutes",
           "timer_config": {
-            "type": "For Time",
+            "type": "fortime",
             "duration_seconds": 720,
             "interval_seconds": null
           }
@@ -279,47 +387,53 @@
           "duration_minutes": 7,
           "movements": [
             {
-              "movement_id": "pigeon-pose",
+              "id": "pigeon-pose",
               "name": "Pigeon Pose",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Hip external rotation stretch"
+              "reps": "90 seconds each side",
+              "notes": "Hip external rotator stretch"
             },
             {
-              "movement_id": "foam-roll-quads",
-              "name": "Foam Roll - Quads",
-              "reps_or_duration": "60 seconds each leg",
-              "notes": "Post-hinge work recovery"
+              "id": "foam-roll-quads",
+              "name": "Foam Roll \u2014 Quads",
+              "reps": "90 seconds",
+              "notes": "Reduce quad tension"
             },
             {
-              "movement_id": "cat-cow",
+              "id": "foam-roll-lats",
+              "name": "Foam Roll \u2014 Lats",
+              "reps": "90 seconds",
+              "notes": "Address lat tightness from deadlift grip"
+            },
+            {
+              "id": "cat-cow",
               "name": "Cat-Cow",
-              "reps_or_duration": "20 reps slow",
-              "notes": "Spinal decompression after loaded hinge work"
+              "reps": "10 slow reps",
+              "notes": "Decompress spine post-deadlift"
             }
           ]
         }
       },
       "rationale": {
         "session_why": {
-          "text": "This session emphasizes the hinge pattern through deadlift strength work and Romanian deadlift volume in the metcon. The E2MOM strength format maintains session flow while providing adequate phosphocreatine recovery between sets. The For Time metcon stays in the medium time domain (7-15 min), targeting the glycolytic system without excessive aerobic volume that would interfere with strength adaptation. Rowing provides monostructural cardio to balance the hinge-dominant movements.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed",
-          "url_or_ref": "Ch. 17-18, 2016"
+          "text": "This session targets maximal strength development in the posterior chain through wave-loaded deadlifts, followed by a medium-duration metcon that maintains lower body emphasis without compromising recovery. The deadlift is the foundational hip hinge movement, recruiting the entire posterior chain (hamstrings, glutes, erectors, lats). The metcon is structured as a For Time format to drive glycolytic system development while managing volume - 5 rounds keeps total work manageable after heavy deadlifts. Appropriate for Week 2 of a mesocycle with increased intensity over Week 1.",
+          "source": "Haff & Triplett - NSCA Essentials 4th ed, Ch. 17",
+          "url_or_ref": "Resistance training exercise selection and posterior chain emphasis"
         },
         "movement_why": {
-          "text": "The deadlift is the foundational hinge pattern, developing posterior chain strength and total body force production. Romanian deadlift in the metcon provides eccentric loading and hamstring volume while reinforcing the hinge pattern under fatigue. This addresses movement balance requirements for weekly hinge pattern work. The rowing machine provides monostructural cardio while complementing the posterior chain emphasis through the pulling motion.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness, October 2002"
+          "text": "Deadlift is the primary hip hinge strength movement and recruits more total muscle mass than any other single exercise. Wave loading is used instead of straight sets to exploit post-activation potentiation - heavy sets prime the nervous system, making subsequent moderate loads feel lighter and allowing higher total volume at elevated intensities. The metcon movements (assault bike, goblet squat, toes-to-bar) maintain lower body loading through the legs and core without directly loading the posterior chain under fatigue, which would risk technique breakdown after heavy deadlifts.",
+          "source": "Robbins 2005 - Post-Activation Potentiation",
+          "url_or_ref": "PAP effects lasting 3-10 minutes after heavy loading; wave loading exploits neural priming"
         },
         "loading_why": {
-          "text": "The E2MOM format at 75% 1RM with 3 reps per round is appropriate for Week 2 building intensity while managing fatigue. The 2-minute interval allows sufficient phosphocreatine recovery for loads in the 70-85% range. This format creates auto-regulated rest - faster execution earns more recovery time, rewarding efficiency and maintaining engagement with the timer. Total volume of 8 sets x 3 reps = 24 reps falls within the 4-12 set range for hinge pattern weekly volume.",
-          "source": "Bompa & Haff - Periodization 5th ed",
-          "url_or_ref": "Ch. 9, 2009"
+          "text": "Wave loading (75-80-83%, then 77-81-85%) is appropriate for Week 2 strength development. This scheme oscillates between heavier and lighter loads to exploit post-activation potentiation - the heavy sets increase motor unit recruitment, temporarily enhancing force production for the next wave. Rest periods of 2-3 minutes ensure adequate phosphocreatine recovery between sets. The Romanian deadlift accessory work at 40% provides hypertrophy stimulus and technical practice of the hip hinge without further CNS fatigue. This progression scheme is more advanced than straight sets and requires intermediate+ athlete readiness.",
+          "source": "Robbins 2005 - Post-Activation Potentiation",
+          "url_or_ref": "Wave loading structure and PAP exploitation for strength emphasis"
         }
       }
     },
     {
       "id": "wod-lb-003",
-      "title": "Front Squat Volume Builder",
+      "title": "Back Squat EMOM + Short Glycolytic Metcon",
       "category": [
         "lower-body"
       ],
@@ -327,7 +441,7 @@
         "barbell",
         "plates",
         "rack",
-        "assault bike"
+        "rowing machine"
       ],
       "duration_minutes": 60,
       "blocks": {
@@ -335,22 +449,28 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each direction, each arm",
-              "notes": "Controlled articular rotations for shoulder mobility - important for front rack position"
-            },
-            {
-              "movement_id": "thoracic-rotation",
-              "name": "Thoracic Rotation",
-              "reps_or_duration": "10 each side",
-              "notes": "Seated or quadruped, improve thoracic extension for upright torso"
-            },
-            {
-              "movement_id": "hip-circle",
+              "id": "hip-circle",
               "name": "Hip Circles",
-              "reps_or_duration": "10 each direction",
-              "notes": "Hip joint mobility prep"
+              "reps": "10 each direction",
+              "notes": "Hip joint mobility in all planes"
+            },
+            {
+              "id": "air-squat",
+              "name": "Air Squat",
+              "reps": "15 reps",
+              "notes": "Squat pattern activation"
+            },
+            {
+              "id": "glute-bridge",
+              "name": "Glute Bridge",
+              "reps": "15 reps",
+              "notes": "Glute activation for hip extension"
+            },
+            {
+              "id": "world-greatest-stretch",
+              "name": "World's Greatest Stretch",
+              "reps": "5 each side",
+              "notes": "Hip flexor and thoracic opener"
             }
           ]
         },
@@ -358,45 +478,225 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "air-squat",
-              "name": "Air Squat",
-              "reps_or_duration": "15 reps",
-              "notes": "Focus on upright torso position"
+              "id": "back-squat",
+              "name": "Back Squat (empty barbell)",
+              "reps": "10 reps",
+              "notes": "Movement-specific prep with bar positioning"
             },
             {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Dynamic hip and thoracic mobility"
+              "id": "back-squat",
+              "name": "Back Squat",
+              "reps": "5 reps @ 45% 1RM",
+              "notes": "First build-up set"
             },
             {
-              "movement_id": "front-squat",
-              "name": "Front Squat (empty bar)",
-              "reps_or_duration": "10 reps",
-              "notes": "Front rack position practice, movement prep"
-            },
-            {
-              "movement_id": "inchworm",
-              "name": "Inchworm",
-              "reps_or_duration": "6 reps",
-              "notes": "Full body warmup"
+              "id": "back-squat",
+              "name": "Back Squat",
+              "reps": "3 reps @ 60% 1RM",
+              "notes": "Second build-up set - prepare for working weight"
             }
           ]
         },
         "strength": {
           "duration_minutes": 22,
-          "label": "Front Squat - Straight Sets",
+          "label": "Back Squat (E2MOM Strength)",
           "movements": [
             {
-              "movement_id": "front-squat",
-              "name": "Front Squat",
-              "sets": 5,
-              "reps": "5 reps",
-              "loading": "5x5 @ 72% 1RM",
-              "rest": "120 seconds between sets",
-              "notes": "Straight sets - same weight across all 5 sets. Focus on consistent depth and upright torso position. This is baseline strength development with moderate intensity and moderate volume.",
-              "tempo": "Controlled descent, explosive drive from bottom",
-              "scaling": "Goblet squat or dumbbell front squat"
+              "id": "back-squat",
+              "name": "Back Squat",
+              "sets": 8,
+              "reps": 3,
+              "load": "77% 1RM or RPE 8",
+              "rest": "E2MOM (every 2 minutes)",
+              "notes": "Complete 3 reps at top of each 2-minute window - rest remaining time. Auto-regulated pacing with consistent load. Week 2 intensity."
+            },
+            {
+              "id": "bulgarian-split-squat",
+              "name": "Bulgarian Split Squat (back foot elevated)",
+              "sets": 3,
+              "reps": "8 each leg",
+              "load": "dumbbells or bodyweight",
+              "rest": "90 seconds",
+              "notes": "Accessory single-leg work for balance and unilateral strength"
+            }
+          ]
+        },
+        "metcon": {
+          "duration_minutes": 13,
+          "format": "For Time",
+          "time_cap_minutes": 10,
+          "rounds_or_duration": "21-15-9 reps",
+          "movements": [
+            {
+              "id": "kb-swing-american",
+              "name": "Kettlebell Swing (American)",
+              "reps": "21-15-9",
+              "load": "53/35 lb",
+              "notes": "Full overhead swing - hip extension power"
+            },
+            {
+              "id": "row",
+              "name": "Row (Ergometer)",
+              "reps": "21-15-9 calories",
+              "load": "moderate-high intensity",
+              "notes": "Leg drive emphasis - drive through heels"
+            },
+            {
+              "id": "burpee-box-jump",
+              "name": "Burpee Box Jump Over",
+              "reps": "21-15-9",
+              "load": "24/20 inch box",
+              "notes": "Step down on far side - preserve Achilles and maintain pace"
+            }
+          ],
+          "target_score": "Complete in 6-10 minutes",
+          "timer_config": {
+            "type": "fortime",
+            "duration_seconds": 600,
+            "interval_seconds": null
+          }
+        },
+        "cooldown": {
+          "duration_minutes": 8,
+          "movements": [
+            {
+              "id": "pigeon-pose",
+              "name": "Pigeon Pose",
+              "reps": "90 seconds each side",
+              "notes": "Deep hip external rotator stretch"
+            },
+            {
+              "id": "hip-flexor-stretch",
+              "name": "Hip Flexor Stretch (90/90)",
+              "reps": "90 seconds each side",
+              "notes": "Address hip flexor tightness from squatting"
+            },
+            {
+              "id": "foam-roll-quads",
+              "name": "Foam Roll \u2014 Quads",
+              "reps": "2 minutes",
+              "notes": "Reduce quad tension"
+            },
+            {
+              "id": "cat-cow",
+              "name": "Cat-Cow",
+              "reps": "10 slow reps",
+              "notes": "Spinal decompression and parasympathetic activation"
+            }
+          ]
+        }
+      },
+      "rationale": {
+        "session_why": {
+          "text": "This session develops lower body maximal strength through back squats programmed in an EMOM format, followed by a short-duration glycolytic metcon. The back squat is the foundational lower body strength movement, recruiting quadriceps, glutes, hamstrings, and core musculature. The EMOM format creates structured pacing and auto-regulated rest while maintaining session flow. The metcon is kept to <10 minutes to target the glycolytic energy system without excessive volume post-squatting. This structure respects the concurrent training principle - strength work occurs first with full CNS availability.",
+          "source": "Glassman 2002 - CrossFit Journal, What is Fitness",
+          "url_or_ref": "Strength as foundational physical skill; concurrent training model"
+        },
+        "movement_why": {
+          "text": "Back squat was selected because it allows the highest absolute loading of any squat variation, making it ideal for maximal strength development. The E2MOM format provides consistent 2-minute intervals - athletes complete 3 reps then rest the remainder, earning more recovery if execution is faster. This builds pacing discipline and prevents sandbagging. The metcon movements (American KB swing, row, burpee box jump) maintain lower body emphasis through hip-dominant patterns while avoiding direct squatting under fatigue. The 21-15-9 rep scheme creates a glycolytic stimulus in the 6-10 minute time domain.",
+          "source": "Bompa & Haff - Periodization 5th ed",
+          "url_or_ref": "EMOM as alternative to timed rest; maintains session flow and auto-regulates recovery"
+        },
+        "loading_why": {
+          "text": "The E2MOM format at 77% 1RM (RPE 8) for 8 rounds provides 24 total working reps at Week 2 intensity. The 2-minute interval ensures adequate phosphocreatine recovery - at 77% intensity, 3 reps take approximately 15-20 seconds, leaving 100-105 seconds rest. This interval is sufficient for the ATP-PC system to recover for heavy loading (>70% 1RM requires minimum E2MOM per hard rules). The EMOM format is used here to add variety from traditional rest periods and keep the strength block engaging. Straight sets would be equally valid, but EMOM adds timer integration and mental engagement.",
+          "source": "Bompa & Haff - Periodization 5th ed",
+          "url_or_ref": "EMOM strength format guidelines and rest adequacy for moderate-heavy loads"
+        }
+      }
+    },
+    {
+      "id": "wod-lb-004",
+      "title": "Power Clean Complex + EMOM Leg Conditioning",
+      "category": [
+        "lower-body"
+      ],
+      "equipment": [
+        "barbell",
+        "plates",
+        "ski erg",
+        "pull-up bar"
+      ],
+      "duration_minutes": 60,
+      "blocks": {
+        "static_warmup": {
+          "duration_minutes": 5,
+          "movements": [
+            {
+              "id": "shoulder-car",
+              "name": "Shoulder CARs",
+              "reps": "5 each direction",
+              "notes": "Shoulder joint preparation for catching position"
+            },
+            {
+              "id": "hip-circle",
+              "name": "Hip Circles",
+              "reps": "10 each direction",
+              "notes": "Hip mobility for triple extension"
+            },
+            {
+              "id": "world-greatest-stretch",
+              "name": "World's Greatest Stretch",
+              "reps": "5 each side",
+              "notes": "Hip and thoracic opener"
+            },
+            {
+              "id": "good-morning",
+              "name": "Good Morning (empty barbell)",
+              "reps": "10 reps",
+              "notes": "Hip hinge activation"
+            }
+          ]
+        },
+        "active_warmup": {
+          "duration_minutes": 5,
+          "movements": [
+            {
+              "id": "hang-power-clean",
+              "name": "Hang Power Clean (empty barbell)",
+              "reps": "8 reps",
+              "notes": "Movement-specific prep - focus on speed under bar"
+            },
+            {
+              "id": "power-clean",
+              "name": "Power Clean",
+              "reps": "5 reps @ 50% 1RM",
+              "notes": "First build-up from floor"
+            },
+            {
+              "id": "power-clean",
+              "name": "Power Clean",
+              "reps": "3 reps @ 60% 1RM",
+              "notes": "Second build-up - increase speed"
+            },
+            {
+              "id": "front-squat",
+              "name": "Front Squat (from rack)",
+              "reps": "5 reps @ 60% 1RM",
+              "notes": "Prep front rack and legs for complex"
+            }
+          ]
+        },
+        "strength": {
+          "duration_minutes": 23,
+          "label": "Power Clean + Front Squat Complex (E3MOM)",
+          "movements": [
+            {
+              "id": "complex",
+              "name": "Power Clean + Front Squat",
+              "sets": 6,
+              "reps": "1 Power Clean + 2 Front Squats",
+              "load": "72% of Power Clean 1RM or RPE 7-8",
+              "rest": "E3MOM (every 3 minutes)",
+              "notes": "Complete 1 power clean, then perform 2 front squats without dropping the bar. 3-minute interval ensures full CNS recovery for power work. Week 1 baseline intensity."
+            },
+            {
+              "id": "kb-goblet-squat",
+              "name": "Goblet Squat",
+              "sets": 3,
+              "reps": 12,
+              "load": "moderate kettlebell",
+              "rest": "60 seconds",
+              "notes": "Accessory squat volume - upright torso position"
             }
           ]
         },
@@ -407,416 +707,92 @@
           "rounds_or_duration": "15 minutes (5 rounds)",
           "movements": [
             {
-              "movement_id": "kb-goblet-squat",
-              "name": "Goblet Squat",
-              "reps": 12,
-              "loading": "53/35 lbs kettlebell",
-              "notes": "Minute 1: 12 goblet squats, hold KB at chest, full depth",
-              "scaling": "Reduce weight or reps"
+              "id": "ski-erg",
+              "name": "Ski Erg",
+              "reps": "12 calories",
+              "load": "high intensity",
+              "notes": "Minute 1 - hip hinge and lat engagement"
             },
             {
-              "movement_id": "assault-bike",
-              "name": "Assault Bike",
-              "reps": "12/10 calories",
-              "loading": "Bodyweight",
-              "notes": "Minute 2: Calories on bike, moderate-high effort",
-              "scaling": "Reduce calories to 10/8"
+              "id": "kb-swing",
+              "name": "Kettlebell Swing (Russian)",
+              "reps": "20",
+              "load": "53/35 lb",
+              "notes": "Minute 2 - explosive hip extension"
             },
             {
-              "movement_id": "burpee",
-              "name": "Burpee",
-              "reps": 10,
-              "loading": "Bodyweight",
-              "notes": "Minute 3: 10 burpees, consistent pace",
-              "scaling": "Step-down burpee or reduce reps"
+              "id": "box-jump",
+              "name": "Box Jump",
+              "reps": "10",
+              "load": "24/20 inch box",
+              "notes": "Minute 3 - triple extension power, step down"
             }
           ],
-          "target_score": "Complete all work with 10-20 seconds rest each minute",
+          "target_score": "Complete all reps within each minute with 10-15 seconds rest minimum",
           "timer_config": {
-            "type": "EMOM",
+            "type": "emom",
             "duration_seconds": 900,
             "interval_seconds": 60
           }
         },
         "cooldown": {
-          "duration_minutes": 8,
-          "movements": [
-            {
-              "movement_id": "foam-roll-quads",
-              "name": "Foam Roll - Quads",
-              "reps_or_duration": "90 seconds each leg",
-              "notes": "Focus on quad recovery after squat volume"
-            },
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Hip flexor and glute release"
-            },
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 slow reps each direction",
-              "notes": "Shoulder mobility restoration after front rack work"
-            }
-          ]
-        }
-      },
-      "rationale": {
-        "session_why": {
-          "text": "This session builds squat pattern volume through front squats, which emphasize quadriceps and require greater core stability than back squats due to the anterior load position. The straight-set format at moderate intensity (72%) allows accumulation of quality volume for hypertrophy and work capacity. The 3-station EMOM metcon provides a glycolytic stimulus with lower body emphasis (goblet squats) while incorporating monostructural cardio and full-body conditioning.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed",
-          "url_or_ref": "Ch. 3, 2016"
-        },
-        "movement_why": {
-          "text": "Front squat develops the squat pattern with greater emphasis on quadriceps and anterior core than back squat, providing movement variation within the squat pattern category. Goblet squats in the metcon reinforce the squat pattern under fatigue at lower loading. Assault bike provides monostructural cardio (required weekly), and burpees contribute to general physical preparedness through full-body, high-intensity movement.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness, October 2002"
-        },
-        "loading_why": {
-          "text": "Straight sets at 72% 1RM for 5x5 is classic hypertrophy and baseline strength programming, appropriate for Week 1-2 phases. This scheme is simple to execute, builds work capacity at a specific intensity, and has lower cognitive load than complex progression schemes. The 120-second rest intervals are appropriate for the hypertrophy zone (60-90 seconds is standard, but 120 seconds accommodates the compound nature of front squats). Total volume of 25 reps at 72% provides significant structural adaptation stimulus.",
-          "source": "Schoenfeld - Science and Development of Muscle Hypertrophy",
-          "url_or_ref": "2nd ed., 2020"
-        }
-      }
-    },
-    {
-      "id": "wod-lb-004",
-      "title": "Olympic Lift + Lower Power",
-      "category": [
-        "lower-body"
-      ],
-      "equipment": [
-        "barbell",
-        "plates",
-        "box",
-        "jump rope"
-      ],
-      "duration_minutes": 60,
-      "blocks": {
-        "static_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 each direction, each arm",
-              "notes": "Shoulder mobility for overhead receiving position"
-            },
-            {
-              "movement_id": "hip-circle",
-              "name": "Hip Circles",
-              "reps_or_duration": "10 each direction",
-              "notes": "Hip joint prep for explosive triple extension"
-            },
-            {
-              "movement_id": "thoracic-rotation",
-              "name": "Thoracic Rotation",
-              "reps_or_duration": "10 each side",
-              "notes": "Thoracic mobility for overhead stability"
-            }
-          ]
-        },
-        "active_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "good-morning",
-              "name": "Good Morning",
-              "reps_or_duration": "10 reps",
-              "notes": "Empty barbell, hinge activation"
-            },
-            {
-              "movement_id": "hang-power-clean",
-              "name": "Hang Power Clean (light)",
-              "reps_or_duration": "8 reps",
-              "notes": "Empty bar or 45 lbs, technique practice"
-            },
-            {
-              "movement_id": "pass-through",
-              "name": "Barbell Pass-Through",
-              "reps_or_duration": "10 reps",
-              "notes": "Empty barbell, shoulder mobility drill"
-            },
-            {
-              "movement_id": "box-jump",
-              "name": "Box Jump (submaximal)",
-              "reps_or_duration": "6 reps",
-              "notes": "Low height, explosive hip extension practice"
-            }
-          ]
-        },
-        "strength": {
-          "duration_minutes": 24,
-          "label": "Hang Power Clean - Wave Loading",
-          "movements": [
-            {
-              "movement_id": "hang-power-clean",
-              "name": "Hang Power Clean",
-              "sets": 6,
-              "reps": "3, 3, 3, 3, 3, 3",
-              "loading": "Wave: 3@72%, 3@77%, 3@82%, 3@72%, 3@78%, 3@83%",
-              "rest": "180 seconds between sets",
-              "notes": "Wave loading - oscillate between moderate and heavier loads to exploit post-activation potentiation. The heavier sets prime the nervous system, making the return to moderate weight feel lighter. Focus on explosive hip extension and fast elbows on each rep. Total time: ~18 minutes including rest.",
-              "tempo": "Explosive from hang position, controlled catch",
-              "scaling": "Dumbbell hang clean or reduce load"
-            }
-          ]
-        },
-        "metcon": {
-          "duration_minutes": 14,
-          "format": "AMRAP",
-          "time_cap_minutes": 10,
-          "rounds_or_duration": "10 minutes",
-          "movements": [
-            {
-              "movement_id": "power-clean",
-              "name": "Power Clean",
-              "reps": 5,
-              "loading": "135/95 lbs",
-              "notes": "Moderate load - should be unbroken sets under fatigue",
-              "scaling": "Reduce to 95/65 lbs or dumbbell power clean"
-            },
-            {
-              "movement_id": "box-jump",
-              "name": "Box Jump",
-              "reps": 8,
-              "loading": "24/20 inch",
-              "notes": "Explosive lower body power, step down",
-              "scaling": "Step-up or reduce height"
-            },
-            {
-              "movement_id": "double-under",
-              "name": "Double-Under",
-              "reps": 30,
-              "loading": "Bodyweight",
-              "notes": "Calf and ankle power endurance",
-              "scaling": "Single-unders x90 or reduce reps"
-            }
-          ],
-          "target_score": "5-7 rounds",
-          "timer_config": {
-            "type": "AMRAP",
-            "duration_seconds": 600,
-            "interval_seconds": null
-          }
-        },
-        "cooldown": {
           "duration_minutes": 7,
           "movements": [
             {
-              "movement_id": "foam-roll-quads",
-              "name": "Foam Roll - Quads",
-              "reps_or_duration": "60 seconds each leg",
-              "notes": "Recovery from Olympic lifting and jumping volume"
-            },
-            {
-              "movement_id": "pigeon-pose",
+              "id": "pigeon-pose",
               "name": "Pigeon Pose",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Hip external rotation and glute release"
+              "reps": "90 seconds each side",
+              "notes": "Hip external rotator stretch"
             },
             {
-              "movement_id": "shoulder-car",
-              "name": "Shoulder CARs",
-              "reps_or_duration": "5 slow reps each direction",
-              "notes": "Shoulder recovery after overhead work"
+              "id": "hip-flexor-stretch",
+              "name": "Hip Flexor Stretch (90/90)",
+              "reps": "90 seconds each side",
+              "notes": "Address hip flexor tightness"
+            },
+            {
+              "id": "foam-roll-lats",
+              "name": "Foam Roll \u2014 Lats",
+              "reps": "90 seconds",
+              "notes": "Release lat tension from catching position"
+            },
+            {
+              "id": "cat-cow",
+              "name": "Cat-Cow",
+              "reps": "10 slow reps",
+              "notes": "Spinal decompression"
             }
           ]
         }
       },
       "rationale": {
         "session_why": {
-          "text": "This session targets lower body power through Olympic lifting (hang power clean) and plyometrics (box jumps). The wave loading in the strength block exploits post-activation potentiation to increase neural output. The 10-minute AMRAP stays in the short-to-medium time domain, emphasizing the glycolytic system while maintaining power output quality. Olympic lifting is placed on a fresh CNS day, not following heavy squats or deadlifts, per recovery sequencing rules.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed",
-          "url_or_ref": "Ch. 3, 2016"
+          "text": "This session targets explosive lower body power through Olympic lifting complexes, followed by a structured EMOM metcon that maintains power output across multiple energy system pathways. The power clean + front squat complex develops the full pulling movement plus anterior chain strength under load immediately after the catch. Olympic lifting sessions must be capped at 3x per week and never placed after heavy lower body work - this session follows that sequencing rule. The EMOM metcon uses 3-movement rotation to manage fatigue while maintaining lower body emphasis through hip-dominant patterns.",
+          "source": "Haff & Triplett - NSCA Essentials 4th ed, Ch. 17",
+          "url_or_ref": "Olympic lifting for power development; complex training for concurrent strength-power adaptation"
         },
         "movement_why": {
-          "text": "Hang power clean is an Olympic lift variation emphasizing explosive hip extension and rate of force development - addressing the 'power' physical skill. Box jumps develop lower body power through plyometric training. Power cleans in the metcon reinforce the movement pattern under fatigue at moderate loading. Double-unders provide coordination and ankle/calf power endurance. This combination develops power, coordination, and cardiovascular endurance per Glassman's ten physical skills.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness, October 2002"
+          "text": "The power clean is the foundational Olympic pulling movement, developing explosive hip extension, speed under the bar, and coordination across multiple joints. Pairing it with front squats in a complex exploits post-activation potentiation - the explosive clean primes the nervous system for the squats that follow, while the squats add volume to reinforce the catch position. The E3MOM format is appropriate because Olympic lifting requires full CNS recovery between efforts - 3-minute intervals allow phosphocreatine replenishment and mental preparation. The metcon movements (ski erg, KB swing, box jump) are all hip-extension dominant, maintaining the lower body power theme without technical complexity under fatigue.",
+          "source": "Robbins 2005 - Post-Activation Potentiation",
+          "url_or_ref": "PAP effects in complex training; heavy loading enhances subsequent performance"
         },
         "loading_why": {
-          "text": "Wave loading (3@72%, 3@77%, 3@82%, 3@72%, 3@78%, 3@83%) is appropriate for Week 2-3 strength emphasis with experienced athletes. Robbins (2005) documents post-activation potentiation effects lasting 3-10 minutes after heavy loading - the heavier sets prime the nervous system for enhanced performance on subsequent moderate-load sets. This scheme allows higher total volume at elevated intensities while managing fatigue through the oscillating pattern. The 180-second rest ensures phosphocreatine recovery for power work.",
-          "source": "Robbins 2005 - Post-Activation Potentiation",
-          "url_or_ref": "Journal of Strength and Conditioning Research 19(2)"
+          "text": "The E3MOM format at 72% of power clean 1RM provides sufficient intensity for power development (30-70% range per loading parameters) while allowing technical precision. The 3-minute interval is mandatory for Olympic lifting - power movements require full neural recovery and cannot be rushed. This is Week 1 baseline loading, establishing technique quality before intensity increases in subsequent weeks. The complex (1 clean + 2 squats) keeps total reps low to preserve movement quality. The metcon EMOM format uses 1-minute intervals with staggered movements - each station gets 2 minutes rest before repeating, which is adequate for the power-endurance stimulus without full recovery.",
+          "source": "Bompa & Haff - Periodization 5th ed",
+          "url_or_ref": "E3MOM for Olympic lifting; rest adequacy for power development and technical quality"
         }
       }
     },
     {
       "id": "wod-lb-005",
-      "title": "Squat Pattern Stamina",
+      "title": "Overhead Squat Progression + Aerobic Lower Body Work",
       "category": [
         "lower-body"
       ],
       "equipment": [
         "barbell",
         "plates",
-        "rack",
-        "kettlebell",
-        "ski erg"
-      ],
-      "duration_minutes": 60,
-      "blocks": {
-        "static_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "hip-flexor-stretch",
-              "name": "Hip Flexor Stretch",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "90/90 position, open front of hip"
-            },
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "Deep hip external rotation stretch"
-            },
-            {
-              "movement_id": "cat-cow",
-              "name": "Cat-Cow",
-              "reps_or_duration": "15 reps",
-              "notes": "Spinal mobility for squat positioning"
-            }
-          ]
-        },
-        "active_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "air-squat",
-              "name": "Air Squat",
-              "reps_or_duration": "20 reps",
-              "notes": "Full depth, quality movement prep"
-            },
-            {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Dynamic hip and thoracic mobility"
-            },
-            {
-              "movement_id": "kb-goblet-squat",
-              "name": "Goblet Squat (light)",
-              "reps_or_duration": "12 reps",
-              "notes": "Light KB, movement pattern activation"
-            },
-            {
-              "movement_id": "inchworm",
-              "name": "Inchworm",
-              "reps_or_duration": "8 reps",
-              "notes": "Full body warmup"
-            }
-          ]
-        },
-        "strength": {
-          "duration_minutes": 20,
-          "label": "Back Squat - Top Set + Back-Off Volume",
-          "movements": [
-            {
-              "movement_id": "back-squat",
-              "name": "Back Squat",
-              "sets": 5,
-              "reps": "2, 5, 5, 5, 5",
-              "loading": "Top set: 2@85% 1RM, then 4x5@68% 1RM",
-              "rest": "180 seconds after top set, 90 seconds between volume sets",
-              "notes": "Top set + back-off volume scheme. First set is heavy top set of 2 reps at 85% for neural stimulation. Then drop to 68% for 4 sets of 5 reps to accumulate hypertrophy volume. This combines peak intensity exposure with structural adaptation work in one efficient session.",
-              "tempo": "Top set: controlled and precise. Volume sets: consistent quality",
-              "scaling": "Goblet squat or dumbbell squat"
-            }
-          ]
-        },
-        "metcon": {
-          "duration_minutes": 18,
-          "format": "For Time",
-          "time_cap_minutes": 15,
-          "rounds_or_duration": "4 Rounds For Time",
-          "movements": [
-            {
-              "movement_id": "kb-goblet-squat",
-              "name": "Goblet Squat",
-              "reps": 20,
-              "loading": "53/35 lbs",
-              "notes": "High rep squat stamina, hold KB at chest",
-              "scaling": "Reduce weight or reps"
-            },
-            {
-              "movement_id": "ski-erg",
-              "name": "Ski Erg",
-              "reps": "300/250 meters",
-              "loading": "Bodyweight",
-              "notes": "Monostructural cardio, consistent pace",
-              "scaling": "Reduce to 250/200m"
-            },
-            {
-              "movement_id": "kb-swing",
-              "name": "Kettlebell Swing (Russian)",
-              "reps": 20,
-              "loading": "53/35 lbs",
-              "notes": "Hip hinge power endurance",
-              "scaling": "Reduce weight"
-            }
-          ],
-          "target_score": "11-15 minutes",
-          "timer_config": {
-            "type": "For Time",
-            "duration_seconds": 900,
-            "interval_seconds": null
-          }
-        },
-        "cooldown": {
-          "duration_minutes": 7,
-          "movements": [
-            {
-              "movement_id": "foam-roll-quads",
-              "name": "Foam Roll - Quads",
-              "reps_or_duration": "90 seconds each leg",
-              "notes": "Recovery from high-rep squat volume"
-            },
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Deep hip release"
-            },
-            {
-              "movement_id": "glute-bridge",
-              "name": "Glute Bridge",
-              "reps_or_duration": "15 reps slow",
-              "notes": "Gentle glute activation and hip extension"
-            }
-          ]
-        }
-      },
-      "rationale": {
-        "session_why": {
-          "text": "This session develops squat pattern stamina through the combination of strength work and high-rep metcon squatting. The top set + back-off volume scheme efficiently combines neural (heavy top set) and structural (volume work) adaptations. The medium time domain metcon (11-15 min target) emphasizes the glycolytic-to-oxidative transition zone, building muscular endurance in the squat pattern while maintaining intensity below the aerobic threshold that would excessively interfere with strength gains.",
-          "source": "Wilson et al 2012 - Concurrent Training Meta-Analysis",
-          "url_or_ref": "Journal of Strength and Conditioning Research 26(8)"
-        },
-        "movement_why": {
-          "text": "Back squat is the primary lower body strength movement. Goblet squats in the metcon provide high-rep squat pattern work under fatigue, developing the 'stamina' physical skill - the ability to process, deliver, store and use energy in repeated efforts. Ski erg provides monostructural cardio (required weekly) and complements the lower body emphasis. Kettlebell swings add hinge pattern work to balance the squat-dominant session.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness, October 2002"
-        },
-        "loading_why": {
-          "text": "The top set + back-off volume scheme is appropriate for Week 3 peak intensity sessions with intermediate athletes. The heavy top set (2@85%) provides neural stimulation and peak intensity exposure while the athlete is fresh. Back-off sets at 68% (4x5) accumulate 20 reps of quality volume for hypertrophy without excessive CNS fatigue. Bompa & Haff describe this concurrent approach as maximizing adaptation diversity within a single session - neural work followed by structural work minimizes interference while addressing multiple training goals efficiently.",
-          "source": "Bompa & Haff - Periodization 5th ed",
-          "url_or_ref": "Ch. 9, 2009"
-        }
-      }
-    },
-    {
-      "id": "wod-lb-006",
-      "title": "Unilateral Lower Body Focus",
-      "category": [
-        "lower-body"
-      ],
-      "equipment": [
-        "dumbbells",
-        "kettlebell",
-        "box",
+        "assault bike",
         "rowing machine"
       ],
       "duration_minutes": 60,
@@ -825,22 +801,28 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "hip-circle",
+              "id": "shoulder-car",
+              "name": "Shoulder CARs",
+              "reps": "5 each direction",
+              "notes": "Shoulder mobility for overhead position"
+            },
+            {
+              "id": "pass-through",
+              "name": "Barbell Pass-Through (empty bar)",
+              "reps": "10 reps",
+              "notes": "Shoulder flexion and external rotation prep"
+            },
+            {
+              "id": "hip-circle",
               "name": "Hip Circles",
-              "reps_or_duration": "10 each direction",
-              "notes": "Single leg balance and hip mobility"
+              "reps": "10 each direction",
+              "notes": "Hip joint mobility"
             },
             {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "Hip external rotation prep"
-            },
-            {
-              "movement_id": "hip-flexor-stretch",
-              "name": "Hip Flexor Stretch",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "Lunge position hip opener"
+              "id": "world-greatest-stretch",
+              "name": "World's Greatest Stretch",
+              "reps": "5 each side",
+              "notes": "Hip and thoracic opener"
             }
           ]
         },
@@ -848,56 +830,61 @@
           "duration_minutes": 5,
           "movements": [
             {
-              "movement_id": "air-squat",
+              "id": "overhead-squat",
+              "name": "Overhead Squat (empty barbell)",
+              "reps": "10 reps",
+              "notes": "Movement-specific prep - focus on overhead stability"
+            },
+            {
+              "id": "overhead-squat",
+              "name": "Overhead Squat",
+              "reps": "5 reps @ 40% 1RM",
+              "notes": "First build-up set"
+            },
+            {
+              "id": "overhead-squat",
+              "name": "Overhead Squat",
+              "reps": "3 reps @ 55% 1RM",
+              "notes": "Second build-up set - increase control demand"
+            },
+            {
+              "id": "air-squat",
               "name": "Air Squat",
-              "reps_or_duration": "15 reps",
-              "notes": "Bilateral squat pattern warmup"
-            },
-            {
-              "movement_id": "world-greatest-stretch",
-              "name": "World's Greatest Stretch",
-              "reps_or_duration": "5 each side",
-              "notes": "Dynamic lunge with rotation"
-            },
-            {
-              "movement_id": "glute-bridge",
-              "name": "Glute Bridge (single leg)",
-              "reps_or_duration": "8 each leg",
-              "notes": "Unilateral glute activation"
-            },
-            {
-              "movement_id": "inchworm",
-              "name": "Inchworm",
-              "reps_or_duration": "8 reps",
-              "notes": "Full body prep"
+              "reps": "15 reps",
+              "notes": "Squat pattern reinforcement"
             }
           ]
         },
         "strength": {
           "duration_minutes": 22,
-          "label": "Dumbbell Work - Single Leg Focus",
+          "label": "Overhead Squat (Straight Sets + Accessory)",
           "movements": [
             {
-              "movement_id": "romanian-deadlift",
-              "name": "Single-Leg Romanian Deadlift",
-              "sets": 4,
-              "reps": "8 each leg",
-              "loading": "RPE 7-8 (moderate dumbbells)",
-              "rest": "90 seconds between sets",
-              "notes": "Unilateral hinge pattern. Hold dumbbell in opposite hand from working leg. Focus on balance and eccentric control. Addresses asymmetries and develops single-leg stability.",
-              "tempo": "Slow eccentric (3 sec), controlled return",
-              "scaling": "Use lighter weight or hold support for balance"
+              "id": "overhead-squat",
+              "name": "Overhead Squat",
+              "sets": 5,
+              "reps": 3,
+              "load": "70% 1RM or RPE 7",
+              "rest": "2 minutes",
+              "notes": "Week 1 baseline - technical focus. OHS demands shoulder mobility, midline stability, and balance. Keep load moderate to preserve form."
             },
             {
-              "movement_id": "kb-goblet-squat",
-              "name": "Bulgarian Split Squat",
+              "id": "strict-press",
+              "name": "Strict Press",
               "sets": 4,
-              "reps": "10 each leg",
-              "loading": "Dumbbells at sides, RPE 7",
-              "rest": "90 seconds between sets",
-              "notes": "Rear foot elevated on box or bench. Unilateral squat pattern - builds single-leg strength and addresses imbalances. Front leg does majority of work.",
-              "tempo": "Controlled descent, explosive drive",
-              "scaling": "Bodyweight or reduce elevation height"
+              "reps": 5,
+              "load": "65% 1RM or RPE 7",
+              "rest": "90 seconds",
+              "notes": "Accessory overhead strength - builds shoulder stability for OHS"
+            },
+            {
+              "id": "hollow-body-hold",
+              "name": "Hollow Body Hold",
+              "sets": 3,
+              "reps": "30 seconds",
+              "load": "bodyweight",
+              "rest": "60 seconds",
+              "notes": "Core tension practice - prerequisite for overhead stability"
             }
           ]
         },
@@ -908,33 +895,30 @@
           "rounds_or_duration": "14 minutes",
           "movements": [
             {
-              "movement_id": "box-jump",
-              "name": "Box Step-Up (alternating)",
-              "reps": "20 total (10 each leg)",
-              "loading": "24/20 inch box, bodyweight or light dumbbells",
-              "notes": "Alternating legs, focus on explosive drive from working leg",
-              "scaling": "Reduce height or remove weight"
+              "id": "row",
+              "name": "Row (Ergometer)",
+              "reps": "20 calories",
+              "load": "moderate pace (conversational)",
+              "notes": "Aerobic base - leg drive emphasis, sustainable pace"
             },
             {
-              "movement_id": "kb-swing",
-              "name": "Kettlebell Swing (single arm)",
-              "reps": "10 each arm",
-              "loading": "35/26 lbs",
-              "notes": "Single-arm KB swing - anti-rotation core demand",
-              "scaling": "Two-hand swing or lighter weight"
+              "id": "assault-bike",
+              "name": "Assault Bike",
+              "reps": "15 calories",
+              "load": "moderate pace",
+              "notes": "Aerobic output - maintain consistent pace"
             },
             {
-              "movement_id": "row",
-              "name": "Row",
-              "reps": "250/200 meters",
-              "loading": "Bodyweight",
-              "notes": "Monostructural cardio break between unilateral efforts",
-              "scaling": "Reduce to 200/150m"
+              "id": "air-squat",
+              "name": "Air Squat",
+              "reps": "30",
+              "load": "bodyweight",
+              "notes": "High-rep squat volume under fatigue - movement quality over speed"
             }
           ],
-          "target_score": "5-7 rounds",
+          "target_score": "6-9 rounds",
           "timer_config": {
-            "type": "AMRAP",
+            "type": "amrap",
             "duration_seconds": 840,
             "interval_seconds": null
           }
@@ -943,196 +927,47 @@
           "duration_minutes": 7,
           "movements": [
             {
-              "movement_id": "pigeon-pose",
+              "id": "pigeon-pose",
               "name": "Pigeon Pose",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Deep hip release after unilateral work"
+              "reps": "90 seconds each side",
+              "notes": "Hip external rotator stretch"
             },
             {
-              "movement_id": "foam-roll-quads",
-              "name": "Foam Roll - Quads",
-              "reps_or_duration": "60 seconds each leg",
-              "notes": "Individual leg attention post-unilateral volume"
+              "id": "thoracic-rotation",
+              "name": "Thoracic Rotation",
+              "reps": "10 each side",
+              "notes": "Address thoracic stiffness from overhead work"
             },
             {
-              "movement_id": "glute-bridge",
-              "name": "Glute Bridge",
-              "reps_or_duration": "15 reps slow",
-              "notes": "Bilateral glute activation and recovery"
+              "id": "foam-roll-lats",
+              "name": "Foam Roll \u2014 Lats",
+              "reps": "2 minutes",
+              "notes": "Release lat tension from overhead position"
+            },
+            {
+              "id": "cat-cow",
+              "name": "Cat-Cow",
+              "reps": "10 slow reps",
+              "notes": "Spinal decompression"
             }
           ]
         }
       },
       "rationale": {
         "session_why": {
-          "text": "This session emphasizes unilateral (single-leg) lower body work to address asymmetries and develop balance and stability - two of Glassman's ten physical skills. Unilateral training reduces load on the spine while maintaining high muscular demand, provides variety from bilateral movements, and identifies strength imbalances between limbs. The 14-minute AMRAP stays in the medium time domain, targeting the glycolytic system while accumulating unilateral movement volume.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness, October 2002"
+          "text": "This session develops overhead squat proficiency and shoulder stability while building aerobic capacity through monostructural cardio. The overhead squat is the most technically demanding squat variation, requiring full-body coordination, thoracic extension, shoulder mobility, and core stability. The metcon is intentionally aerobic (14-minute AMRAP at moderate pace) to provide active recovery stimulus after the technical overhead work and to fulfill the minimum 1 aerobic session per week requirement. This session fits into a weekly structure where heavy posterior chain work occurred 48+ hours prior, respecting CNS recovery timelines.",
+          "source": "Glassman 2002 - CrossFit Journal, What is Fitness",
+          "url_or_ref": "CrossFit's 10 physical skills - OHS develops multiple skills concurrently (strength, flexibility, coordination, balance)"
         },
         "movement_why": {
-          "text": "Single-leg Romanian deadlift develops unilateral hinge pattern strength and balance. Bulgarian split squats target the squat pattern unilaterally with significant quad and glute demand. Box step-ups in the metcon provide explosive unilateral work. Single-arm KB swings add anti-rotation core demand while maintaining the hinge pattern. Rowing provides monostructural cardio (weekly requirement) and allows recovery between unilateral efforts. This session addresses balance, coordination, and strength skills concurrently.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness, October 2002"
+          "text": "The overhead squat was selected because it is the most comprehensive lower body + midline + shoulder stability movement in CrossFit, serving as both a strength exercise and a diagnostic tool for mobility restrictions. Straight sets at moderate intensity (70% 1RM, 5x3) allow technical focus without excessive neural fatigue. The accessory strict press builds overhead strength that directly transfers to OHS stability. The metcon movements (row, bike, air squat) are all lower-body dominant but kept at aerobic pace - this maintains the category focus while training the oxidative energy system, which is distinct from the glycolytic metcons in other sessions this week.",
+          "source": "Haff & Triplett - NSCA Essentials 4th ed, Ch. 3",
+          "url_or_ref": "Energy systems - oxidative system dominant beyond 3-4 minutes; aerobic base development requires sustained low-moderate intensity"
         },
         "loading_why": {
-          "text": "RPE 7-8 prescription is appropriate when training 1RM is unknown for accessory/unilateral movements. Unilateral work typically uses 50-70% of the load used for bilateral movements due to balance and stability demands. The 90-second rest between sets falls in the hypertrophy rest range, appropriate for the 8-10 rep schemes used. Four sets per movement provides 8 total working sets per leg across both exercises, which falls within weekly volume guidelines for lower body patterns while accounting for the unilateral nature reducing systemic fatigue compared to heavy bilateral work.",
-          "source": "Haff & Triplett - NSCA Essentials 4th ed",
-          "url_or_ref": "Ch. 17, 2016"
-        }
-      }
-    },
-    {
-      "id": "wod-lb-007",
-      "title": "Posterior Chain Power + Volume",
-      "category": [
-        "lower-body"
-      ],
-      "equipment": [
-        "barbell",
-        "plates",
-        "kettlebell",
-        "assault bike"
-      ],
-      "duration_minutes": 60,
-      "blocks": {
-        "static_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "cat-cow",
-              "name": "Cat-Cow",
-              "reps_or_duration": "15 reps",
-              "notes": "Spinal mobility for hinge pattern"
-            },
-            {
-              "movement_id": "hip-flexor-stretch",
-              "name": "Hip Flexor Stretch",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "Hip extension range prep"
-            },
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "60 seconds each side",
-              "notes": "Hip external rotation and glute prep"
-            }
-          ]
-        },
-        "active_warmup": {
-          "duration_minutes": 5,
-          "movements": [
-            {
-              "movement_id": "glute-bridge",
-              "name": "Glute Bridge",
-              "reps_or_duration": "15 reps",
-              "notes": "Posterior chain activation"
-            },
-            {
-              "movement_id": "good-morning",
-              "name": "Good Morning",
-              "reps_or_duration": "12 reps",
-              "notes": "Empty barbell, hinge pattern prep"
-            },
-            {
-              "movement_id": "kb-swing",
-              "name": "Kettlebell Swing (light)",
-              "reps_or_duration": "15 reps",
-              "notes": "Light KB, explosive hip extension practice"
-            },
-            {
-              "movement_id": "inchworm",
-              "name": "Inchworm",
-              "reps_or_duration": "8 reps",
-              "notes": "Hamstring and full body warmup"
-            }
-          ]
-        },
-        "strength": {
-          "duration_minutes": 24,
-          "label": "Sumo Deadlift High Pull - EMOM Power",
-          "movements": [
-            {
-              "movement_id": "sumo-deadlift-high-pull",
-              "name": "Sumo Deadlift High Pull",
-              "sets": 10,
-              "reps": "5 reps",
-              "loading": "E90s x 10 rounds: 5 SDHP @ moderate load (65-70% of deadlift 1RM or RPE 7)",
-              "rest": "Remainder of 90-second interval",
-              "notes": "Every 90 seconds for 10 rounds. SDHP emphasizes explosive hip extension and vertical pull - power development for posterior chain. Moderate load allows quality speed of movement. Total time: 15 minutes of work.",
-              "tempo": "Explosive from floor, fast pull to chest height",
-              "scaling": "Kettlebell SDHP or reduce load"
-            }
-          ]
-        },
-        "metcon": {
-          "duration_minutes": 14,
-          "format": "For Time",
-          "time_cap_minutes": 12,
-          "rounds_or_duration": "21-15-9 For Time",
-          "movements": [
-            {
-              "movement_id": "kb-swing-american",
-              "name": "Kettlebell Swing (American)",
-              "reps": "21-15-9",
-              "loading": "53/35 lbs",
-              "notes": "Full overhead swing - explosive hip extension to overhead",
-              "scaling": "Russian swing (eye level) or reduce weight"
-            },
-            {
-              "movement_id": "assault-bike",
-              "name": "Assault Bike",
-              "reps": "15/12 - 12/9 - 9/6 calories",
-              "loading": "Bodyweight",
-              "notes": "Descending calories: 15/12 in round 1, 12/9 in round 2, 9/6 in round 3",
-              "scaling": "Reduce calories by 3 each round"
-            }
-          ],
-          "target_score": "7-10 minutes",
-          "timer_config": {
-            "type": "For Time",
-            "duration_seconds": 720,
-            "interval_seconds": null
-          }
-        },
-        "cooldown": {
-          "duration_minutes": 7,
-          "movements": [
-            {
-              "movement_id": "pigeon-pose",
-              "name": "Pigeon Pose",
-              "reps_or_duration": "90 seconds each side",
-              "notes": "Deep hip and glute release after posterior chain volume"
-            },
-            {
-              "movement_id": "cat-cow",
-              "name": "Cat-Cow",
-              "reps_or_duration": "20 reps slow",
-              "notes": "Spinal decompression after hinge work"
-            },
-            {
-              "movement_id": "glute-bridge",
-              "name": "Glute Bridge",
-              "reps_or_duration": "15 reps slow with pause",
-              "notes": "Gentle glute activation and hip extension"
-            }
-          ]
-        }
-      },
-      "rationale": {
-        "session_why": {
-          "text": "This session targets posterior chain power and endurance through explosive hip extension movements. SDHP in the strength block develops rate of force development in the hinge pattern at moderate loads with high velocity. The short metcon (7-10 min target) stays in the glycolytic time domain, emphasizing power endurance with American KB swings (full hip extension to overhead). The descending rep scheme (21-15-9) maintains intensity as fatigue accumulates.",
-          "source": "Gastin 2001 - Energy System Interaction",
-          "url_or_ref": "Sports Medicine 31(10)"
-        },
-        "movement_why": {
-          "text": "Sumo deadlift high pull is a ballistic hinge movement emphasizing explosive hip extension and vertical pulling - developing power and speed (two of the ten physical skills). American kettlebell swings reinforce explosive hip extension with overhead stability demand. Assault bike provides monostructural cardio (weekly requirement) and complements the hip-dominant movements. This session addresses power, speed, and cardiovascular endurance concurrently.",
-          "source": "Glassman 2002 - CrossFit Journal",
-          "url_or_ref": "What is Fitness, October 2002"
-        },
-        "loading_why": {
-          "text": "The E90s (every 90 seconds) EMOM format for 10 rounds with 5 reps of SDHP is appropriate for power development. The interval is short enough to maintain work density but provides adequate recovery between explosive sets. Load at 65-70% of deadlift 1RM or RPE 7 allows maximal velocity of movement - critical for power development. Zatsiorsky & Kraemer identify that power training requires moderate loads (30-70%) moved at maximal speed. The 90-second interval allows phosphocreatine recovery between power efforts. Total volume of 50 reps across 10 sets provides significant posterior chain stimulation without excessive loading that would compromise speed.",
-          "source": "Zatsiorsky & Kraemer - Science and Practice of Strength Training",
-          "url_or_ref": "2nd ed., 2006"
+          "text": "Straight sets at 70% 1RM (RPE 7) with 2-minute rest intervals are appropriate for Week 1 baseline establishment on a complex movement like the overhead squat. Unlike wave loading or ramp progressions, straight sets provide consistent exposure to the same load across all 5 sets, which is ideal when technical mastery is the priority. The 5x3 scheme balances volume (15 total reps) with quality - sets of 3 prevent excessive fatigue that would degrade form. This is the simplest progression scheme, making it appropriate for the most complex movement. The metcon is not programmed for intensity but for aerobic volume, fulfilling the recovery and energy system diversity principles.",
+          "source": "Bompa & Haff - Periodization 5th ed",
+          "url_or_ref": "Straight sets for baseline strength and hypertrophy phases; moderate intensity with moderate volume"
         }
       }
     }
