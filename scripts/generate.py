@@ -52,8 +52,11 @@ CRITICAL CONSTRAINTS — you must follow all of these:
 4. If a concept is not in the knowledge base, you do not use it.
 5. All session durations must respect the hard rules (full session ≤60 min, skill session ≤30 min).
 6. Weekly structure must respect all frequency limits, sequencing rules, and movement balance rules.
-7. Your output must be valid JSON matching the schema exactly. No prose, no markdown, no explanation outside the JSON fields.
+7. Your output must be PERFECTLY VALID JSON matching the schema exactly. No prose, no markdown, no explanation outside the JSON fields.
 8. If you cannot fill a required field from the knowledge base, set it to null — never guess.
+9. CRITICAL: All strings in your JSON must be properly quoted with double quotes. Check for unterminated strings.
+10. CRITICAL: All objects and arrays must have matching braces and brackets. Your JSON must be 100% syntactically valid.
+11. If generating multiple items (like WODs), ensure the outer JSON structure is an object with a single top-level key ("program", "wods", etc).
 
 You are assembling from a foundation of verified knowledge. You are not inventing."""
 
@@ -228,49 +231,121 @@ Return this JSON structure, nothing else:
 
 # ── API call ───────────────────────────────────────────────────────────────────
 
-def call_claude(prompt: str) -> dict:
-    """Call Claude API and parse JSON response."""
+def call_claude(prompt: str, retries: int = 2) -> dict:
+    """Call Claude API and parse JSON response. Retries on JSON parse failure."""
     client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from env
 
-    print("→ Calling Claude API with prompt caching...")
-    response = client.messages.create(
-        model="claude-sonnet-4-5-20250929",  # Sonnet 4.5
-        max_tokens=16000,
-        system=[
-            {
-                "type": "text",
-                "text": SYSTEM_PROMPT,
-            },
-            {
-                "type": "text",
-                "text": "KNOWLEDGE BASE AND HARD RULES BELOW — CACHED FOR EFFICIENCY\n(This content is cached and reused across multiple generations)",
-                "cache_control": {"type": "ephemeral"}
-            }
-        ],
-        messages=[{"role": "user", "content": prompt}]
-    )
+    for attempt in range(1, retries + 1):
+        print(f"→ Calling Claude API with prompt caching... (attempt {attempt}/{retries})")
+        response = client.messages.create(
+            model="claude-sonnet-4-5-20250929",  # Sonnet 4.5
+            max_tokens=16000,
+            system=[
+                {
+                    "type": "text",
+                    "text": SYSTEM_PROMPT,
+                },
+                {
+                    "type": "text",
+                    "text": "KNOWLEDGE BASE AND HARD RULES BELOW — CACHED FOR EFFICIENCY\n(This content is cached and reused across multiple generations)",
+                    "cache_control": {"type": "ephemeral"}
+                }
+            ],
+            messages=[{"role": "user", "content": prompt}]
+        )
 
-    raw = response.content[0].text.strip()
+        raw = response.content[0].text.strip()
 
-    # Log cache performance
-    usage = response.usage
-    print(f"   Input tokens: {usage.input_tokens} | Cache write: {getattr(usage, 'cache_creation_input_tokens', 0)} | Cache read: {getattr(usage, 'cache_read_input_tokens', 0)}")
+        # Log cache performance
+        usage = response.usage
+        print(f"   Input tokens: {usage.input_tokens} | Cache write: {getattr(usage, 'cache_creation_input_tokens', 0)} | Cache read: {getattr(usage, 'cache_read_input_tokens', 0)}")
 
-    # Strip markdown fences if present
-    if raw.startswith("```"):
-        raw = raw.split("\n", 1)[1]
-        raw = raw.rsplit("```", 1)[0]
+        # Strip markdown fences if present
+        if raw.startswith("```"):
+            raw = raw.split("\n", 1)[1]
+            raw = raw.rsplit("```", 1)[0]
 
-    try:
-        return json.loads(raw)
-    except json.JSONDecodeError as e:
-        print(f"ERROR: Failed to parse JSON response: {e}")
-        print("Raw response saved to output/debug-last-response.txt")
-        (OUTPUT_DIR / "debug-last-response.txt").write_text(raw)
-        raise
+        try:
+            result = json.loads(raw)
+            print(f"   ✅ JSON parsed successfully")
+            return result
+        except json.JSONDecodeError as e:
+            if attempt < retries:
+                print(f"   ❌ JSON parse error (attempt {attempt}): {e}")
+                print(f"   Retrying with same prompt...")
+                continue
+            else:
+                print(f"ERROR: Failed to parse JSON after {retries} attempts: {e}")
+                print("Raw response saved to output/debug-last-response.txt")
+                (OUTPUT_DIR / "debug-last-response.txt").write_text(raw)
+                raise
 
 
 # ── Validation ─────────────────────────────────────────────────────────────────
+
+def validate_schema_structure(data: dict, content_type: str) -> list[str]:
+    """Validate that the generated JSON matches the expected structure. Returns list of violations."""
+    violations = []
+
+    if content_type == "program":
+        # Check top-level structure
+        if "program" not in data:
+            violations.append("Missing top-level 'program' key")
+            return violations
+
+        program = data["program"]
+        if not isinstance(program.get("sessions"), list):
+            violations.append("'program.sessions' must be a list")
+            return violations
+
+        if len(program.get("sessions", [])) == 0:
+            violations.append("'program.sessions' must not be empty")
+            return violations
+
+        # Spot-check first session structure
+        first_session = program["sessions"][0]
+        required_fields = ["id", "title", "blocks", "rationale"]
+        for field in required_fields:
+            if field not in first_session:
+                violations.append(f"Session missing required field: '{field}'")
+
+        # Check blocks structure
+        if "blocks" in first_session:
+            blocks = first_session["blocks"]
+            required_blocks = ["static_warmup", "active_warmup", "strength", "metcon", "cooldown"]
+            for block in required_blocks:
+                if block not in blocks:
+                    violations.append(f"Session missing required block: '{block}'")
+                elif not isinstance(blocks[block].get("movements"), list):
+                    violations.append(f"Block '{block}.movements' must be a list")
+
+        # Check rationale structure
+        if "rationale" in first_session:
+            rationale = first_session["rationale"]
+            required_rationale = ["session_why", "movement_why", "loading_why"]
+            for field in required_rationale:
+                if field not in rationale:
+                    violations.append(f"Rationale missing required field: '{field}'")
+                elif not isinstance(rationale[field], dict) or "text" not in rationale[field]:
+                    violations.append(f"Rationale.{field} must be an object with 'text' field")
+
+    elif content_type == "wod":
+        # Check top-level structure
+        if "wods" not in data:
+            violations.append("Missing top-level 'wods' key")
+            return violations
+
+        wods = data["wods"]
+        if not isinstance(wods, list):
+            violations.append("'wods' must be a list")
+            return violations
+
+        if len(wods) == 0:
+            violations.append("'wods' must not be empty")
+            return violations
+
+    return violations
+
 
 def validate_program(program: dict, rules: dict) -> list[str]:
     """Basic validation of generated program against hard rules. Returns list of violations."""
@@ -438,7 +513,15 @@ def main():
         prompt = build_program_prompt(args.name, args.weeks, kb, movements, rules)
         data = call_claude(prompt)
 
-        print("Validating output...")
+        print("Validating structure...")
+        schema_violations = validate_schema_structure(data, "program")
+        if schema_violations:
+            print(f"❌ Schema validation failed:")
+            for v in schema_violations:
+                print(f"   - {v}")
+            raise ValueError(f"Generated JSON does not match expected schema")
+
+        print("Validating against hard rules...")
         violations = validate_program(data, rules)
         if violations:
             print(f"⚠️  {len(violations)} validation issues:")
@@ -461,6 +544,14 @@ def main():
         print(f"\nGenerating {args.count} WODs — category: {args.category}")
         prompt = build_wod_prompt(args.count, args.category, kb, movements, rules)
         data = call_claude(prompt)
+
+        print("Validating structure...")
+        schema_violations = validate_schema_structure(data, "wod")
+        if schema_violations:
+            print(f"❌ Schema validation failed:")
+            for v in schema_violations:
+                print(f"   - {v}")
+            raise ValueError(f"Generated JSON does not match expected schema")
 
         json_path = OUTPUT_DIR / f"wods-{args.category}.json"
         json_path.write_text(json.dumps(data, indent=2))
