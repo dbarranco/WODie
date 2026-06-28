@@ -59,6 +59,58 @@ function expandAcronyms(text) {
   return expanded;
 }
 
+//=== Internationalization ===
+const i18n = {
+  language: localStorage.getItem('language') || 'en',
+  strings: {},
+};
+
+function detectBrowserLanguage() {
+  const browserLang = navigator.language.split('-')[0];
+  return ['es', 'en'].includes(browserLang) ? browserLang : 'en';
+}
+
+async function loadTranslations(language) {
+  try {
+    const response = await fetch(`./i18n/${language}.json`);
+    if (!response.ok) throw new Error(`Failed to load ${language}.json`);
+    i18n.strings = await response.json();
+  } catch (e) {
+    console.error('Failed to load translations:', e);
+    i18n.language = 'en';
+    if (language !== 'en') {
+      return loadTranslations('en');
+    }
+  }
+}
+
+function applyTranslations() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (i18n.strings[key]) {
+      el.textContent = i18n.strings[key];
+    }
+  });
+}
+
+function getDataPath(type, filename) {
+  const dir = i18n.language === 'es' ? 'data-es' : 'data';
+  return `./${dir}/${type}/${filename}.json`;
+}
+
+function setupLanguagePicker() {
+  const picker = document.getElementById('language-picker');
+  if (!picker) return;
+
+  picker.value = i18n.language;
+  picker.addEventListener('change', async (e) => {
+    i18n.language = e.target.value;
+    localStorage.setItem('language', i18n.language);
+    await loadTranslations(i18n.language);
+    applyTranslations();
+  });
+}
+
 //=== Service Worker ===
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js')
@@ -71,6 +123,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   console.log('🚀 App initializing...');
 
   try {
+    console.log('  Initializing i18n...');
+    if (!localStorage.getItem('language')) {
+      i18n.language = detectBrowserLanguage();
+      localStorage.setItem('language', i18n.language);
+    }
+    await loadTranslations(i18n.language);
+    applyTranslations();
+
     console.log('  Loading progress...');
     loadProgress();
 
@@ -91,6 +151,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     console.log('  Setting up WOD mode...');
     setupWodMode();
+
+    console.log('  Setting up language picker...');
+    setupLanguagePicker();
 
     console.log('✅ All setup complete');
 
