@@ -901,6 +901,9 @@ h3 {
   position: relative;
   min-width: 0;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #timer-display {
@@ -916,6 +919,7 @@ h3 {
   text-shadow: 0 0 10px rgba(201, 184, 157, 0.5);
   word-spacing: 0;
   white-space: nowrap;
+  margin: 0;
 }
 
 #timer-display.warning {
