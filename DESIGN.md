@@ -410,6 +410,48 @@ The AI returns only valid JSON matching the session schema. No prose, no markdow
 
 ---
 
+## Knowledge Base: Living Documentation
+
+The knowledge base (`knowledge-base/`) is the source of truth for all WOD generation. Unlike static documentation, it evolves quarterly as sports science advances and competitive trends emerge.
+
+### Knowledge Base Modules
+
+Every module is a focused markdown document grounded in cited sources (academic papers, competition data, coach methodologies). Modules are independent — the generator can handle partial updates.
+
+### Quarterly Refresh Cycle
+
+**Who:** Project curator (typically the person responsible for content quality)
+
+**When:** First month of each quarter (Jan, Apr, Jul, Oct)
+
+**Workload:** ~8–12 hours per quarter (~2 hours per week)
+
+**Process:**
+1. Research 1–2 peer-reviewed papers (sports science journals, NSCA, ACE)
+2. Document 10–15 recent competition WODs (CrossFit Games, Regionals)
+3. Review 3–5 coach blogs or YouTube channels for emerging trends
+4. Identify gaps or contradictions in current KB
+5. Update 1–2 KB modules with findings
+6. Add new citations to `hard-rules.json` if needed
+7. Generate sample WODs to validate improvements
+8. Tag commit as `KB-Q<year>-<quarter>` (e.g., `KB-Q2026-Q2`)
+9. Regenerate all programs to incorporate improvements
+
+### Expected Outcomes
+
+- **Month 1:** Curated sources identified; gaps documented
+- **Month 2:** KB modules written/updated; validated against generator
+- **Month 3:** Programs regenerated; users get improved WODs
+
+### Curator Resources
+
+- CrossFit Games website (free WOD archives)
+- NSCA Essentials (reference text)
+- Google Scholar (academic paper search)
+- YouTube: Mayhem Athletics, Sevan Matossian, local coaches (for trend analysis)
+
+---
+
 ## 8. Development Plan — Vertical Slices
 
 Each slice is independently deployable and useful on its own.
@@ -493,6 +535,8 @@ Each slice is independently deployable and useful on its own.
 - Runs `generate.py` to refresh WOD pool
 - Commits output to repo
 - GitHub Pages serves updated content automatically
+
+**Note:** The GitHub Actions regeneration workflow (`generate.yml`) runs on a schedule. To refresh programs based on KB updates, simply commit new KB files and run the workflow manually or wait for the scheduled run.
 
 **Deliverable:** Self-updating WOD pool without manual intervention.
 
