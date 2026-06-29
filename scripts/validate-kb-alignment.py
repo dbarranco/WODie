@@ -644,17 +644,40 @@ Flowcharts validated:
     if args.wod:
         try:
             with open(args.wod, "r") as f:
-                wod = json.load(f)
-            result = validator.validate_wod(wod)
-            status = "✓ PASS" if result.passed else "✗ FAIL"
-            print(f"\n{status} — WOD Validation: {result.wod_id}\n")
-            if args.verbose:
-                for check_name, passed, reason in result.checks:
-                    marker = "  ✓" if passed else "  ✗"
-                    print(f"{marker} {check_name}")
-                    print(f"      {reason}")
+                data = json.load(f)
+
+            # Handle both wrapped ({"wods": [...]}) and unwrapped WOD formats
+            if isinstance(data, dict) and "wods" in data:
+                wods_list = data["wods"]
+            elif isinstance(data, list):
+                wods_list = data
+            else:
+                wods_list = [data]
+
+            # Validate each WOD in the list
+            results = []
+            for wod in wods_list:
+                result = validator.validate_wod(wod)
+                results.append(result)
+
+            # Report aggregate
+            passed_count = sum(1 for r in results if r.passed)
+            total = len(results)
+            status = "✓ PASS" if passed_count == total else "⚠ PARTIAL"
+            print(f"\n{status} — WOD Validation: {passed_count}/{total} WODs\n")
+
+            # Show each result
+            for result in results:
+                marker = "✓" if result.passed else "✗"
+                print(f"{marker} {result.wod_id}")
+                if args.verbose:
+                    for check_name, passed, reason in result.checks:
+                        check_marker = "  ✓" if passed else "  ✗"
+                        print(f"{check_marker} {check_name}: {reason}")
                 print()
-            return 0 if result.passed else 1
+
+            # Return 0 only if all passed
+            return 0 if passed_count == total else 1
         except FileNotFoundError:
             print(f"Error: File not found: {args.wod}", file=sys.stderr)
             return 1
