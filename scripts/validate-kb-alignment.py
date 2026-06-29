@@ -323,6 +323,183 @@ class KBValidator:
 
         return (passed, checks)
 
+    def _has_olympic_lift(self, session: Dict) -> bool:
+        """Check if session contains Olympic lifting movements."""
+        strength = session.get("blocks", {}).get("strength", {})
+        movements = strength.get("movements", [])
+
+        olympic_keywords = ["snatch", "clean", "jerk", "power clean", "power snatch"]
+
+        for move in movements:
+            name = move.get("name", "").lower()
+            if any(kw in name for kw in olympic_keywords):
+                return True
+
+        return False
+
+    def _is_heavy_lower_body(self, session: Dict) -> bool:
+        """Check if session is heavy lower body work (intensity >75%)."""
+        strength = session.get("blocks", {}).get("strength", {})
+        movements = strength.get("movements", [])
+
+        lower_keywords = ["squat", "deadlift", "front squat", "back squat", "leg press"]
+
+        for move in movements:
+            name = move.get("name", "").lower()
+            if any(kw in name for kw in lower_keywords):
+                intensity = self._extract_intensity_percentage(move.get("load", ""))
+                if intensity and intensity > 75:
+                    return True
+
+        return False
+
+    def _is_high_cns_session(self, session: Dict) -> bool:
+        """Check if session is high CNS demand (heavy strength or olympic or high-intensity metcon)."""
+        if self._has_olympic_lift(session):
+            return True
+
+        if self._is_heavy_lower_body(session):
+            return True
+
+        # High-intensity metcon (For Time, heavy AMRAP)
+        metcon = session.get("blocks", {}).get("metcon", {})
+        if metcon:
+            fmt = metcon.get("format", "").upper()
+            if fmt == "FOR TIME":
+                return True
+
+        return False
+
+    def _count_aerobic_sessions(self, week_sessions: List[Dict]) -> int:
+        """Count sessions with aerobic/long-duration emphasis."""
+        count = 0
+
+        for session in week_sessions:
+            # Look for AMRAP 15-20 min or aerobic keywords in rationale
+            metcon = session.get("blocks", {}).get("metcon", {})
+            if metcon:
+                duration = metcon.get("time_cap_minutes", 0)
+                if duration >= 15:
+                    count += 1
+                    continue
+
+            # Check rationale for aerobic keywords
+            rationale = session.get("rationale", {})
+            session_why = rationale.get("session_why", {})
+            if isinstance(session_why, dict):
+                text = session_why.get("text", "").lower()
+            else:
+                text = str(session_why).lower()
+
+            if any(kw in text for kw in ["aerobic", "base", "endurance"]):
+                count += 1
+
+        return min(count, 5)  # Cap at 5 to avoid double-counting
+
+    def _check_weekly_sequencing_alignment(self, program: Dict) -> Tuple[bool, List[Tuple[str, bool, str]]]:
+        """Validate Flowchart 3: Weekly sequencing rules.
+
+        Returns: (passed: bool, checks: List[(check_name, passed, reason)])
+        """
+        checks = []
+        passed = True
+
+        sessions = program.get("sessions", [])
+        if not sessions:
+            checks.append(("sessions_exist", False, "No sessions in program"))
+            return (passed, checks)
+
+        # Group sessions by week
+        weeks = {}
+        for session in sessions:
+            week = session.get("week", 0)
+            if week not in weeks:
+                weeks[week] = []
+            weeks[week].append(session)
+
+        # Validate each week
+        for week_num in sorted(weeks.keys()):
+            week_sessions = weeks[week_num]
+
+            # Constraint 1: No consecutive Olympic lifting days
+            olympic_sessions = [(i, s) for i, s in enumerate(week_sessions) if self._has_olympic_lift(s)]
+            consecutive_olympic = False
+            for i in range(len(olympic_sessions) - 1):
+                day_i = olympic_sessions[i][0]
+                day_j = olympic_sessions[i + 1][0]
+                if day_j - day_i == 1:  # Consecutive days
+                    checks.append((
+                        f"no_consecutive_olympic_w{week_num}",
+                        False,
+                        f"Olympic lifting on consecutive days {day_i+1} and {day_j+1}"
+                    ))
+                    passed = False
+                    consecutive_olympic = True
+
+            if not consecutive_olympic and olympic_sessions:
+                checks.append((
+                    f"no_consecutive_olympic_w{week_num}",
+                    True,
+                    f"Olympic days properly separated"
+                ))
+
+            # Constraint 2: No consecutive heavy lower body
+            heavy_lower = [(i, s) for i, s in enumerate(week_sessions) if self._is_heavy_lower_body(s)]
+            consecutive_heavy_lower = False
+            for i in range(len(heavy_lower) - 1):
+                day_i = heavy_lower[i][0]
+                day_j = heavy_lower[i + 1][0]
+                if day_j - day_i == 1:
+                    checks.append((
+                        f"no_consecutive_heavy_lower_w{week_num}",
+                        False,
+                        f"Heavy lower body on consecutive days {day_i+1} and {day_j+1}"
+                    ))
+                    passed = False
+                    consecutive_heavy_lower = True
+
+            if not consecutive_heavy_lower and heavy_lower:
+                checks.append((
+                    f"no_consecutive_heavy_lower_w{week_num}",
+                    True,
+                    f"Heavy lower body days properly separated"
+                ))
+
+            # Constraint 3: No consecutive high-CNS sessions
+            high_cns = [(i, s) for i, s in enumerate(week_sessions) if self._is_high_cns_session(s)]
+            consecutive_high_cns = False
+            for i in range(len(high_cns) - 1):
+                day_i = high_cns[i][0]
+                day_j = high_cns[i + 1][0]
+                if day_j - day_i == 1:
+                    checks.append((
+                        f"no_consecutive_high_cns_w{week_num}",
+                        False,
+                        f"High-CNS sessions on consecutive days {day_i+1} and {day_j+1}"
+                    ))
+                    passed = False
+                    consecutive_high_cns = True
+
+            if not consecutive_high_cns and high_cns:
+                checks.append((
+                    f"no_consecutive_high_cns_w{week_num}",
+                    True,
+                    f"High-CNS sessions properly separated"
+                ))
+
+            # Constraint 4: Minimum 1 aerobic session per week
+            aerobic_count = self._count_aerobic_sessions(week_sessions)
+            aerobic_ok = aerobic_count >= 1
+            checks.append((
+                f"min_aerobic_w{week_num}",
+                aerobic_ok,
+                f"Week {week_num} has {aerobic_count} aerobic session(s) (need >=1)"
+            ))
+            if not aerobic_ok:
+                passed = False
+
+        return (passed, checks)
+
     def validate_wod(self, wod: Dict) -> ValidationResult:
         """Validate a single WOD against KB rules."""
         passed = True
@@ -342,16 +519,25 @@ class KBValidator:
         checks = []
 
         # Extract sessions from program structure
-        program_data = program.get("program", {})
-        program_id = program_data.get("id", program.get("id", "unknown"))
-        sessions = program_data.get("sessions", [])
+        prog = program.get("program", program)
+        program_id = prog.get("id", program.get("id", "unknown"))
+        sessions = prog.get("sessions", [])
 
         if not sessions:
             checks.append(("sessions_exist", False, "No sessions found in program"))
             return ValidationResult(passed=False, wod_id=program_id, checks=checks)
 
-        # Validate each session
+        # Flowchart 3: Weekly sequencing (program-level check)
+        fc3_passed, fc3_checks = self._check_weekly_sequencing_alignment(prog)
+        checks.extend(fc3_checks)
+        if not fc3_passed:
+            passed = False
+
+        # Flowchart 1 & 2: Per-session checks
         for session in sessions:
+            if session.get("is_rest_day"):
+                continue
+
             session_id = session.get("id", "unknown")
             week = session.get("week")
 
@@ -361,6 +547,16 @@ class KBValidator:
                 )
                 passed = False
                 continue
+
+            # Flowchart 1: Energy system → metcon format
+            fc1_passed, fc1_checks = self._check_metcon_format_alignment(session)
+            if not fc1_passed:
+                passed = False
+
+            # Format checks with session context
+            for check_name, check_passed, reason in fc1_checks:
+                qualified_name = f"session_{session_id}_{check_name}"
+                checks.append((qualified_name, check_passed, reason))
 
             # Flowchart 2: Loading intensity alignment
             fc2_passed, fc2_checks = self._check_loading_intensity_alignment(
