@@ -1,14 +1,38 @@
 #!/usr/bin/env python3
 """
-KB Decision Flowcharts Validator
+KB Alignment Validator — Trace KB flowcharts to generated WODs
 
-Validates that generated WODs follow the decision flowcharts documented in the knowledge base.
-Ensures AI-generated content aligns with sports science principles.
+This script validates that generated WODs and programs follow the decision logic
+documented in the KB Decision Flowcharts design spec.
+
+Three flowcharts are validated:
+
+  1. FLOWCHART 1 (Energy System → Metcon Format):
+     Given a target energy system, check that metcon format and time cap align.
+     - Phosphocreatine (0-10s): EMOM only, 8-12 min
+     - Glycolytic (10s-2m): AMRAP/For Time, 7-15 min
+     - Oxidative (>2m): AMRAP only, 15-20 min
+     Source: KB 01 Energy Systems, KB 02 CrossFit Methodology
+
+  2. FLOWCHART 2 (Week → Loading Intensity):
+     Given program week, check intensity %, rep scheme, and rest periods.
+     - Week 1: 70-75%, 5x5/4x5, 180-300s rest
+     - Week 2: 75-80%, 4x4/4x3, 120-180s rest
+     - Week 3: 80-85%, 4x3/5x2, 180-300s rest
+     - Week 4 (deload): 60-65%, 3x5/3x3, 120-180s rest
+     Source: KB 03 Periodization
+
+  3. FLOWCHART 3 (Weekly Sequencing):
+     Check that weekly session ordering follows interference-minimizing rules.
+     - No Olympic lifting on consecutive days
+     - No heavy lower body on consecutive days
+     - No high-CNS sessions back-to-back
+     - Minimum 1 aerobic session per week
+     Source: KB 01 Energy Systems, KB 03 Concurrent Periodization
 
 Usage:
-    python validate-kb-alignment.py --wod path/to/wod.json --verbose
-    python validate-kb-alignment.py --program path/to/program.json --verbose
-    python validate-kb-alignment.py --help
+  python validate-kb-alignment.py --wod output/back-in-shape-3w.json --verbose
+  python validate-kb-alignment.py --program output/back-in-shape-3w-program.json
 """
 
 import json
@@ -325,7 +349,9 @@ class KBValidator:
 
     def _has_olympic_lift(self, session: Dict) -> bool:
         """Check if session contains Olympic lifting movements."""
-        strength = session.get("blocks", {}).get("strength", {})
+        strength = session.get("blocks", {}).get("strength")
+        if not strength:
+            return False
         movements = strength.get("movements", [])
 
         olympic_keywords = ["snatch", "clean", "jerk", "power clean", "power snatch"]
@@ -339,7 +365,9 @@ class KBValidator:
 
     def _is_heavy_lower_body(self, session: Dict) -> bool:
         """Check if session is heavy lower body work (intensity >75%)."""
-        strength = session.get("blocks", {}).get("strength", {})
+        strength = session.get("blocks", {}).get("strength")
+        if not strength:
+            return False
         movements = strength.get("movements", [])
 
         lower_keywords = ["squat", "deadlift", "front squat", "back squat", "leg press"]
@@ -574,9 +602,20 @@ class KBValidator:
 
 
 def main():
-    """CLI entry point."""
+    """CLI entry point for KB alignment validator."""
     parser = argparse.ArgumentParser(
-        description="Validate generated WODs against KB decision flowcharts"
+        description="Validate generated WODs and programs against KB decision flowcharts",
+        epilog="""
+Examples:
+  python validate-kb-alignment.py --wod output/my-wod.json --verbose
+  python validate-kb-alignment.py --program output/my-program.json --verbose
+
+Flowcharts validated:
+  1. Energy System → Metcon Format (time caps and formats)
+  2. Program Week → Loading Intensity (% 1RM and rep schemes)
+  3. Weekly Sequencing (no consecutive heavy days, min 1 aerobic/week)
+        """,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument(
         "--wod",
@@ -591,7 +630,7 @@ def main():
     parser.add_argument(
         "--verbose",
         action="store_true",
-        help="Show detailed check results",
+        help="Show detailed check results for each session",
     )
 
     args = parser.parse_args()
@@ -607,7 +646,14 @@ def main():
             with open(args.wod, "r") as f:
                 wod = json.load(f)
             result = validator.validate_wod(wod)
-            print(result)
+            status = "✓ PASS" if result.passed else "✗ FAIL"
+            print(f"\n{status} — WOD Validation: {result.wod_id}\n")
+            if args.verbose:
+                for check_name, passed, reason in result.checks:
+                    marker = "  ✓" if passed else "  ✗"
+                    print(f"{marker} {check_name}")
+                    print(f"      {reason}")
+                print()
             return 0 if result.passed else 1
         except FileNotFoundError:
             print(f"Error: File not found: {args.wod}", file=sys.stderr)
@@ -621,7 +667,17 @@ def main():
             with open(args.program, "r") as f:
                 program = json.load(f)
             result = validator.validate_program(program)
-            print(result)
+            passed_count = sum(1 for _, passed, _ in result.checks if passed)
+            total = len(result.checks)
+            status = "✓ PASS" if result.passed else "⚠ PARTIAL"
+            print(f"\n{status} — Program Validation: {result.wod_id}\n")
+
+            if args.verbose:
+                for check_name, passed, reason in result.checks:
+                    marker = "  ✓" if passed else "  ✗"
+                    print(f"{marker} {check_name}")
+                    print(f"      {reason}")
+                print()
             return 0 if result.passed else 1
         except FileNotFoundError:
             print(f"Error: File not found: {args.program}", file=sys.stderr)
