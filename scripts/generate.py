@@ -440,26 +440,158 @@ def validate_schema_structure(data: dict, content_type: str) -> list[str]:
     return violations
 
 
-def validate_program(program: dict, rules: dict) -> list[str]:
-    """Basic validation of generated program against hard rules. Returns list of violations."""
+def validate_program(program: dict, rules: dict, movements: dict = None) -> list[str]:
+    """Comprehensive validation of generated program against hard rules. Returns list of violations."""
     violations = []
     sessions = program.get("program", {}).get("sessions", [])
+
+    if not sessions:
+        violations.append("Program has no sessions")
+        return violations
+
+    # Build movement set for validation (if provided)
+    valid_movements = set()
+    if movements:
+        for category in movements.get("categories", {}).values():
+            valid_movements.update(m.get("name", "").lower() for m in category.get("movements", []))
+
+    # Track metrics for weekly validation
+    weekly_metrics = {}
+    progression_schemes_used = set()
 
     for s in sessions:
         if s.get("is_rest_day"):
             continue
+
+        session_id = s.get("id", "unknown")
+        week = s.get("week", 1)
+
+        # Initialize weekly tracking for this week
+        if week not in weekly_metrics:
+            weekly_metrics[week] = {
+                "olympic_sessions": 0,
+                "heavy_lower": 0,
+                "heavy_upper": 0,
+                "high_intensity_metcons": 0,
+                "aerobic_sessions": 0,
+                "metcon_formats": [],
+                "prev_day_session": None
+            }
+
+        # ─── Session Duration Validation ───
         dur = s.get("duration_minutes", 0)
         if dur > rules["session"]["full_session_max_minutes"]:
-            violations.append(f"Session {s['id']}: duration {dur} exceeds 60 min")
+            violations.append(f"Session {session_id}: duration {dur} exceeds {rules['session']['full_session_max_minutes']} min")
 
+        # ─── Block Duration Validation ───
+        blocks = s.get("blocks", {})
+        block_durations = {}
+        for block_name in ["static_warmup", "active_warmup", "strength", "metcon", "cooldown"]:
+            block = blocks.get(block_name, {})
+            block_dur = block.get("duration_minutes", 0)
+            block_durations[block_name] = block_dur
+
+            if block_name == "static_warmup" and block_dur != 5:
+                violations.append(f"Session {session_id}: static_warmup duration {block_dur} should be 5 min")
+            elif block_name == "active_warmup" and block_dur != 5:
+                violations.append(f"Session {session_id}: active_warmup duration {block_dur} should be 5 min")
+            elif block_name == "strength":
+                expected_min, expected_max = rules["session"]["blocks"]["strength_block_minutes"]["min"], rules["session"]["blocks"]["strength_block_minutes"]["max"]
+                if not (expected_min <= block_dur <= expected_max):
+                    violations.append(f"Session {session_id}: strength duration {block_dur} outside {expected_min}-{expected_max} min range")
+            elif block_name == "metcon":
+                expected_min, expected_max = rules["session"]["blocks"]["metcon_minutes"]["min"], rules["session"]["blocks"]["metcon_minutes"]["max"]
+                if not (expected_min <= block_dur <= expected_max):
+                    violations.append(f"Session {session_id}: metcon duration {block_dur} outside {expected_min}-{expected_max} min range")
+            elif block_name == "cooldown":
+                expected_min, expected_max = rules["session"]["blocks"]["cooldown_minutes"]["min"], rules["session"]["blocks"]["cooldown_minutes"]["max"]
+                if not (expected_min <= block_dur <= expected_max):
+                    violations.append(f"Session {session_id}: cooldown duration {block_dur} outside {expected_min}-{expected_max} min range")
+
+        # ─── Movement Name Validation ───
+        if valid_movements:
+            for block_name in ["static_warmup", "active_warmup", "strength", "metcon", "cooldown"]:
+                block = blocks.get(block_name, {})
+                for movement in block.get("movements", []):
+                    mov_name = movement.get("name", "").lower().strip()
+                    if mov_name and mov_name not in valid_movements:
+                        violations.append(f"Session {session_id}: '{mov_name}' not found in movement library")
+
+        # ─── Metcon Validation ───
+        metcon = blocks.get("metcon", {})
+        if metcon and isinstance(metcon, dict):
+            metcon_format = metcon.get("format", "")
+            if metcon_format:
+                metcon_format = metcon_format.upper()
+                if metcon_format not in rules["session"]["metcon"]["allowed_formats"]:
+                    violations.append(f"Session {session_id}: metcon format '{metcon_format}' not in allowed formats {rules['session']['metcon']['allowed_formats']}")
+
+                time_cap = metcon.get("time_cap_minutes", 0)
+                if time_cap > rules["session"]["metcon"]["max_time_cap_minutes"]:
+                    violations.append(f"Session {session_id}: metcon time cap {time_cap} exceeds {rules['session']['metcon']['max_time_cap_minutes']} min")
+
+                # Track for weekly validation
+                weekly_metrics[week]["metcon_formats"].append(metcon_format)
+                if metcon_format in ["AMRAP", "FOR TIME"]:
+                    weekly_metrics[week]["high_intensity_metcons"] += 1
+
+        # ─── Equipment Validation ───
+        equipment = s.get("equipment", [])
+        for item in equipment:
+            if item in rules["equipment_restrictions"]["forbidden_equipment"]:
+                violations.append(f"Session {session_id}: forbidden equipment '{item}'")
+
+        # ─── Rationale Validation ───
         rationale = s.get("rationale", {})
         for key in ["session_why", "movement_why", "loading_why"]:
             if not rationale.get(key, {}).get("text"):
-                violations.append(f"Session {s['id']}: missing rationale.{key}.text")
+                violations.append(f"Session {session_id}: missing rationale.{key}.text")
+
             source = rationale.get(key, {}).get("source", "")
             allowed = rules["rationale"]["allowed_sources"]
-            if source and not any(a.lower() in source.lower() or source.lower() in a.lower() for a in allowed):
-                violations.append(f"Session {s['id']}: rationale.{key}.source '{source}' not in allowed sources")
+            # Check if source appears in allowed sources (case-insensitive, partial match)
+            if source:
+                source_found = False
+                for allowed_src in allowed:
+                    if source.lower() in allowed_src.lower() or allowed_src.lower() in source.lower():
+                        source_found = True
+                        break
+                if not source_found:
+                    violations.append(f"Session {session_id}: rationale.{key}.source '{source}' not in allowed sources")
+
+        # ─── Progression Scheme Tracking ───
+        if "strength" in blocks and blocks["strength"].get("movements"):
+            # Simple heuristic: check loading pattern from first strength movement
+            first_movement = blocks["strength"]["movements"][0]
+            load = first_movement.get("load", "").lower()
+            if "%" in load or "rpe" in load.lower():
+                # Track scheme for variety validation later
+                if "rpe" in load.lower():
+                    scheme_type = "rpe-based"
+                elif any(x in load for x in ["%"]):
+                    scheme_type = "percentage-based"
+                else:
+                    scheme_type = "unknown"
+                progression_schemes_used.add(scheme_type)
+
+    # ─── Weekly Validation ───
+    for week, metrics in weekly_metrics.items():
+        if metrics["high_intensity_metcons"] > rules["weekly"]["frequency_limits"]["high_intensity_metcon_sessions_max"]:
+            violations.append(f"Week {week}: {metrics['high_intensity_metcons']} high-intensity metcon sessions exceed max {rules['weekly']['frequency_limits']['high_intensity_metcon_sessions_max']}")
+
+        if metrics["aerobic_sessions"] < rules["weekly"]["frequency_limits"]["aerobic_sessions_min"]:
+            violations.append(f"Week {week}: {metrics['aerobic_sessions']} aerobic sessions below minimum {rules['weekly']['frequency_limits']['aerobic_sessions_min']}")
+
+    # ─── Program Structure Validation ───
+    program_weeks = program.get("program", {}).get("weeks", 0)
+    if program_weeks == 4:
+        # Check that week 4 exists and has deload indicator
+        week_4_sessions = [s for s in sessions if s.get("week") == 4 and not s.get("is_rest_day")]
+        if week_4_sessions:
+            # Week 4 should have moderate intensity noted in rationale
+            w4_intensities = [s.get("rationale", {}).get("session_why", {}).get("text", "").lower() for s in week_4_sessions]
+            if not any("deload" in t or "recovery" in t for t in w4_intensities):
+                violations.append(f"Week 4 (deload): sessions should emphasize recovery/reduced intensity")
 
     return violations
 
@@ -619,13 +751,13 @@ def main():
             raise ValueError(f"Generated JSON does not match expected schema")
 
         print("Validating against hard rules...")
-        violations = validate_program(data, rules)
+        violations = validate_program(data, rules, movements)
         if violations:
             print(f"⚠️  {len(violations)} validation issues:")
             for v in violations:
                 print(f"   - {v}")
         else:
-            print("✅ Validation passed")
+            print("✅ Validation passed (0 warnings)")
 
         # Save JSON
         json_path = OUTPUT_DIR / f"{args.name}-{args.weeks}w.json"
