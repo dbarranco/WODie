@@ -77,6 +77,106 @@ generate.py                  →    docs/data/*.json
 
 ---
 
+## Knowledge Base Maintenance & Curation
+
+The knowledge base is the foundation of WOD quality. It evolves quarterly as new research, competitions, and coaching insights emerge.
+
+### KB Modules
+
+| Module | File | Purpose | Refresh Frequency |
+|---|---|---|---|
+| Energy Systems | `01-energy-systems.md` | Physiological foundations | Annual (low change) |
+| CrossFit Methodology | `02-crossfit-methodology.md` | Fundamental training principles | Annual (low change) |
+| Periodization | `03-periodization.md` | Multi-week program structure | Annual (low change) |
+| Recovery | `04-recovery.md` | Rest, deload, injury prevention | Annual (low change) |
+| Gymnastics | `05-gymnastics.md` | Gymnastics-specific progressions | Annual (low change) |
+| Movement Science | `06-movement-biomechanics.md` | Exercise selection, injury prevention, scaling | Quarterly (moderate) |
+| Metcon Pacing | `07-metcon-pacing-strategies.md` | Work-to-rest ratios, energy system mixing | Quarterly (moderate) |
+| Competitive Patterns | `08-competitive-wod-analysis.md` | Famous WODs, movement combos, intensity profiles | Quarterly (high) |
+| Programming Frameworks | `09-programming-decision-trees.md` | Session type selection, athlete progression | Quarterly (moderate) |
+
+### Curated Sources
+
+The KB is grounded in vetted sources. Every new addition must cite at least one source below:
+
+**Academic & Research:**
+- Haff & Triplett - NSCA Essentials of Strength and Conditioning
+- Bompa & Haff - Periodization: Theory and Methodology of Training
+- Zatsiorsky & Kraemer - Science and Practice of Strength Training
+- Schoenfeld - Science and Development of Muscle Hypertrophy
+- Gastin - Energy System Interaction and Relative Contribution
+- Wilson et al - Concurrent Training Meta-Analysis
+- Robbins - Post-Activation Potentiation
+- Behm et al - Acute Effects of Muscle Stretching
+- Kreher & Schwartz - Overtraining Syndrome
+
+**Competition & Official Sources:**
+- CrossFit Games Archives (games.crossfit.com) — Official WODs, athlete performances
+- CrossFit Level 2 Training Guide — Foundational methodology
+- CrossFit Gymnastics Specialty Course — Movement progressions and safety
+
+**Coach Content:**
+- [Curator identifies 2–3 trusted coaches or blogs; update this quarterly]
+- Example: Mayhem Athletics (published programming notes, competition analysis)
+
+### Quarterly Curation Workflow
+
+**Month 1 of each quarter:**
+1. Review 1–2 new peer-reviewed papers in sports science
+2. Document 10–15 recent competition WODs (Games, Regionals)
+3. Scan 3–5 coach blogs or YouTube channels for new programming trends
+4. Identify contradictions or gaps in current KB
+
+**Month 2–3:**
+1. Write or update 1–2 KB modules based on new insights
+2. Update `hard-rules.json` → `allowed_sources` if new citations are introduced
+3. Generate sample WODs using updated KB
+4. Review generated WODs for quality improvement
+5. Commit changes with tag `KB-Q<year>-<quarter>` (e.g., `KB-Q2026-Q2`)
+
+**After refresh:**
+- Run `python generate.py --type program --name <current-season> --weeks 3` to create a fresh program
+- Compare generated WODs against previous quarter — expect improvement in rationale depth and movement variety
+- Update programs in `docs/data/programs/` (overwrite old versions)
+
+### Adding New Citations
+
+To add a new source to the KB:
+
+1. **Verify the source:** Ensure it's peer-reviewed, published by a reputable organization (NSCA, CrossFit Inc., academic journal), or documented coach content with traceable methodology
+2. **Add to `hard-rules.json`:** Append to the `allowed_sources` array with format `"Author(s) Year - Title"` (exact match with how it appears in KB files)
+3. **Document in KB:** Cite the source in the module that uses it
+4. **Update this section:** Add the source to the appropriate category above
+
+Example:
+```json
+"allowed_sources": [
+  "Glassman 2002 - CrossFit Journal",
+  "Haff & Triplett - NSCA Essentials 4th ed",
+  ...
+  "NewAuthor 2025 - New Research Topic"
+]
+```
+
+### What NOT to Add to KB
+
+- Fabricated citations or invented loading percentages
+- Unverified claims (no contradictions with sports science principles)
+- Trends that contradict energy systems or periodization principles
+- Equipment or movements not commonly available (e.g., very specialized equipment)
+
+### KB Refresh Impact on Generated WODs
+
+Every KB module addition improves generator output:
+- **Better rationales:** Generator cites deeper, more specific sources
+- **Richer movement variety:** New modules inform movement selection and pairing
+- **More intentional progressions:** Decision trees guide athlete-appropriate loading
+- **Competitive readiness:** Competitive WOD analysis ensures workouts match real-world stimulus
+
+After refreshing, regenerate all programs to incorporate improvements.
+
+---
+
 ## Running the Generator
 
 ```bash
